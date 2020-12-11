@@ -1,0 +1,125 @@
+﻿<Window x:Class="FootDev2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FootDev2"
+        mc:Ignorable="d"
+        Title="Вход в систему"
+        Height="400"
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        WindowStyle="None">
+
+
+
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/Back.jpeg"
+                    Opacity="0.4"/>
+    </Window.Background>
+    <Grid MouseDown="Grid_MouseDown" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="ToolBar"
+                    Grid.Column="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Image x:Name="MinimazeImage"
+                   Margin="5,5,5,0"
+                   Width="45" MouseDown="MinimazeImage_MouseDown">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/Images/chertaNeak.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinimazeImage}"
+                                         Value="true">
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <Image x:Name="CloseImage"
+                   Margin="5,5,5,0"
+                   Width="33" MouseDown="CloseImage_MouseDown">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/Images/krestNeak.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseImage}"
+                                         Value="true">
+                                <Setter Property="Source" Value="/Images/KrestAkt.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+
+        </StackPanel>
+
+        <TextBlock Text="FootDev"
+                   FontSize="50"
+                   Foreground="Aquamarine"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Grid.ColumnSpan="2"
+                   Margin="100 0" 
+                   Width="255"
+                   VerticalAlignment="Top" FontFamily="Rockwell Extra Bold" Grid.Row="1" Height="64"/>
+        <TextBlock Text="Login"
+                   FontSize="30"
+                   Foreground="white"
+                   FontWeight="Bold"
+                   Grid.Row="1"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right" Margin="0,100,0,0"/>
+        <TextBlock Text="Password"
+                   FontSize="30"
+                   Foreground="white"
+                   FontWeight="Bold"
+                   Grid.Row="2"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right" Margin="0,22,0,25" Height="38"/>
+        <TextBox   x:Name="Logintxt"
+                   FontSize="20"
+                   Foreground="Black"
+                   FontWeight="DemiBold"
+                   Grid.Row="1"
+                   Grid.Column="1" Margin="10,100,36,0"
+                   ToolTip="Введите логин" Height="40"
+                   VerticalAlignment="Top"/>
+
+        <PasswordBox   x:Name="Passtxt"
+                  FontSize="20"
+                   Foreground="Black"
+                   FontWeight="DemiBold"
+                   Grid.Row="2"
+                   Grid.Column="1" Margin="10,22,36,23" Height="40"
+                   ToolTip="Введите пароль"/>
+        <Button x:Name="AuthBtn" Margin="89,0,269,39"
+                Grid.Row="3"
+                Content="Sign In"
+                FontSize="25"
+                Foreground="Black"
+                Background="Aquamarine"
+                FontWeight="Bold" Grid.ColumnSpan="2"/>
+
+        <Button x:Name="RegBtn" Margin="0,0,36,39"
+                Grid.Row="3"
+                Content="Sign Up"
+                FontSize="25"
+                Foreground="Black"
+                Background="Aquamarine"
+                FontWeight="Bold" HorizontalAlignment="Right" Width="185" Grid.Column="1" Click="RegBtn_Click"/>
+    </Grid>
+</Window>
