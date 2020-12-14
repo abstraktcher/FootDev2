@@ -18,7 +18,7 @@
         <ImageBrush ImageSource="/Images/Back.jpeg"
                     Opacity="0.4"/>
     </Window.Background>
-    <Grid MouseDown="Grid_MouseDown" Background="Transparent">
+    <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
@@ -36,7 +36,7 @@
                     HorizontalAlignment="Right">
             <Image x:Name="MinimazeImage"
                    Margin="5,5,5,0"
-                   Width="45" MouseDown="MinimazeImage_MouseDown">
+                   Width="31" MouseDown="MinimazeImage_MouseDown">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="/Images/chertaNeak.png"/>
@@ -51,7 +51,7 @@
             </Image>
             <Image x:Name="CloseImage"
                    Margin="5,5,5,0"
-                   Width="33" MouseDown="CloseImage_MouseDown">
+                   Width="28" MouseDown="CloseImage_MouseDown">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="/Images/krestNeak.png"/>
@@ -112,7 +112,7 @@
                 FontSize="25"
                 Foreground="Black"
                 Background="Aquamarine"
-                FontWeight="Bold" Grid.ColumnSpan="2"/>
+                FontWeight="Bold" Grid.ColumnSpan="2" Click="AuthBtn_Click"/>
 
         <Button x:Name="RegBtn" Margin="0,0,36,39"
                 Grid.Row="3"
@@ -120,6 +120,6 @@
                 FontSize="25"
                 Foreground="Black"
                 Background="Aquamarine"
-                FontWeight="Bold" HorizontalAlignment="Right" Width="185" Grid.Column="1" Click="RegBtn_Click"/>
+                FontWeight="Bold" HorizontalAlignment="Right" Width="185" Grid.Column="1"/>
     </Grid>
 </Window>

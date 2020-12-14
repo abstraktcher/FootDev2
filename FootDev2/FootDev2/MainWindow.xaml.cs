@@ -24,5 +24,29 @@ namespace FootDev2
         {
             InitializeComponent();
         }
+
+        private void AuthBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(Logintxt.Text) || string.IsNullOrWhiteSpace(Passtxt.Password))
+            {
+                MessageBox.Show("Password or Login cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+        }
+
+        private void RegBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MinimazeImage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void CloseImage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
