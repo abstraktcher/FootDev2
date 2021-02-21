@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FootDev2.Windows"
         mc:Ignorable="d"
-        Background="black"
+        Background="BlueViolet"
         Title="Authorization"
         Height="400"
         Width="400"
@@ -14,13 +14,12 @@
         WindowStyle="None">
     <Grid>
         <Image x:Name="CloseImage2"
-                   Margin="362,-175,10,180"
-                   Width="28" MouseDown="CloseImage2_MouseDown">
+                   Margin="361,10,10,368" MouseDown="CloseImage2_MouseDown">
             <Image.Style>
                 <Style TargetType="{x:Type Image}">
                     <Setter Property="Source" Value="/Images/krestNeak.png"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseImage}"
+                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=CloseImage2}"
                                          Value="true">
                             <Setter Property="Source" Value="/Images/KrestAkt.png"/>
                         </DataTrigger>
@@ -28,5 +27,40 @@
                 </Style>
             </Image.Style>
         </Image>
+        <TextBlock Text="FootDev"
+                   FontSize="47"
+                   Foreground="Aquamarine"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="95,10,98,0" 
+                   Width="207"
+                   VerticalAlignment="Top" FontFamily="Stencil" Height="64"/>
+        <TextBox   x:Name="TextLogin" 
+                   FontSize="20"
+                   Background="BlueViolet"
+                   Foreground="Black"
+                   FontWeight="DemiBold" Margin="95,123,98,0"
+                   ToolTip="Enter Login" Height="40"
+                       BorderThickness="2" BorderBrush="Aquamarine"
+                   VerticalAlignment="Top">
+
+        </TextBox>
+
+        <PasswordBox   x:Name="TextPassword" 
+                   FontSize="20"
+                   Background="BlueViolet"
+                   Foreground="Black"
+                   FontWeight="DemiBold" Margin="95,200,98,0"
+                   ToolTip="Enter Password" Height="40"
+                       BorderThickness="2" BorderBrush="Aquamarine"
+                   VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="BtnAuthorization" Margin="133,264,132,93"
+                Content="Sign In"
+                FontSize="18"
+                Foreground="Black"
+                Background="BlueViolet"
+                BorderBrush="Aquamarine"
+                BorderThickness="2"
+                FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -120,7 +120,7 @@
         <Button x:Name="BtnAuthorization" Margin="25,0,296,140"
                 Grid.Row="3"
                 Content="Sign In"
-                FontSize="25"
+                FontSize="18"
                 Foreground="Black"
                 Background="Aquamarine"
                 FontWeight="Bold" Click="AuthBtn_Click"  Grid.Column="1"/>
