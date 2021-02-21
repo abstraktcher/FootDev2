@@ -27,7 +27,7 @@ namespace FootDev2
 
         private void AuthBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(Logintxt.Text) || string.IsNullOrWhiteSpace(Passtxt.Password))
+            if(string.IsNullOrWhiteSpace(TextLogin.Text) || string.IsNullOrWhiteSpace(TextPassword.Password))
             {
                 MessageBox.Show("Password or Login cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -47,6 +47,52 @@ namespace FootDev2
         private void CloseImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void TextLogin_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_".IndexOf(e.Text) < 0;
+        }
+
+        private void TextPassword_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&'()*+,-./:;<=>?@[]^_`{|}~!$&".IndexOf(e.Text) < 0;
+        }
+
+        private void TextLogin_PreviewExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            if(e.Command == ApplicationCommands.Copy ||
+                e.Command == ApplicationCommands.Cut ||
+                e.Command == ApplicationCommands.Paste)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TextPassword_PreviewExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            if(e.Command == ApplicationCommands.Copy ||
+                e.Command == ApplicationCommands.Cut ||
+                e.Command == ApplicationCommands.Paste)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TextLogin_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TextPassword_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

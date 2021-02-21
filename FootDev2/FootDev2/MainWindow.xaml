@@ -73,9 +73,9 @@
                    FontWeight="Bold"
                    HorizontalAlignment="Center"
                    Grid.ColumnSpan="2"
-                   Margin="100 0" 
+                   Margin="138,0,107,0" 
                    Width="255"
-                   VerticalAlignment="Top" FontFamily="Rockwell Extra Bold" Grid.Row="1" Height="64"/>
+                   VerticalAlignment="Top" FontFamily="Stencil" Grid.Row="1" Height="64"/>
         <TextBlock Text="Login"
                    FontSize="30"
                    Foreground="white"
@@ -90,36 +90,40 @@
                    Grid.Row="2"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Right" Margin="0,22,0,25" Height="38"/>
-        <TextBox   x:Name="Logintxt"
+        <TextBox   x:Name="TextLogin"
                    FontSize="20"
                    Foreground="Black"
                    FontWeight="DemiBold"
                    Grid.Row="1"
                    Grid.Column="1" Margin="10,100,36,0"
                    ToolTip="Введите логин" Height="40"
-                   VerticalAlignment="Top"/>
+                   VerticalAlignment="Top" 
+                   PreviewTextInput="TextLogin_PreviewTextInput"
+                   CommandManager.PreviewExecuted="TextLogin_PreviewExecuted" PreviewKeyDown="TextLogin_PreviewKeyDown"/>
 
-        <PasswordBox   x:Name="Passtxt"
+        <PasswordBox   x:Name="TextPassword"
                   FontSize="20"
                    Foreground="Black"
                    FontWeight="DemiBold"
                    Grid.Row="2"
                    Grid.Column="1" Margin="10,22,36,23" Height="40"
-                   ToolTip="Введите пароль"/>
-        <Button x:Name="AuthBtn" Margin="89,0,269,39"
+                   ToolTip="Введите пароль" 
+                   PreviewTextInput="TextPassword_PreviewTextInput"
+                   CommandManager.PreviewExecuted="TextPassword_PreviewExecuted" PreviewKeyDown="TextPassword_PreviewKeyDown"/>
+        <Button x:Name="BtnAuthorization" Margin="93,0,259,39"
                 Grid.Row="3"
                 Content="Sign In"
                 FontSize="25"
                 Foreground="Black"
                 Background="Aquamarine"
-                FontWeight="Bold" Grid.ColumnSpan="2" Click="AuthBtn_Click"/>
+                FontWeight="Bold" Grid.ColumnSpan="2" Click="AuthBtn_Click" RenderTransformOrigin="0.232,0.444"/>
 
-        <Button x:Name="RegBtn" Margin="0,0,36,39"
+        <Button x:Name="BtnForget" Margin="0,0,36,39"
                 Grid.Row="3"
-                Content="Sign Up"
-                FontSize="25"
+                Content="Forget Password?"
+                FontSize="15"
                 Foreground="Black"
-                Background="Aquamarine"
-                FontWeight="Bold" HorizontalAlignment="Right" Width="185" Grid.Column="1"/>
+                Background="White"
+                FontWeight="Bold" HorizontalAlignment="Right" Width="156" Grid.Column="1"/>
     </Grid>
 </Window>
