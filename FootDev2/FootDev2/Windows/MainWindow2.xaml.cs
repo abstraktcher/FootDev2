@@ -12,16 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace FootDev2
+namespace FootDev2.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для FootballPlayersList.xaml
+    /// Логика взаимодействия для MainWindow2.xaml
     /// </summary>
-    public partial class FootballPlayersList : Window
+    public partial class MainWindow2 : Window
     {
-        public FootballPlayersList()
+        public MainWindow2()
         {
             InitializeComponent();
+        }
+
+        private void CloseImage2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

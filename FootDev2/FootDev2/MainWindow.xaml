@@ -6,22 +6,29 @@
         xmlns:local="clr-namespace:FootDev2"
         mc:Ignorable="d"
         Title="Вход в систему"
-        Height="400"
-        Width="500"
+        Height="600"
+        Width="800"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
         WindowStyle="None">
-
-
-
     <Window.Background>
-        <ImageBrush ImageSource="/Images/Back.jpeg"
-                    Opacity="0.4"/>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF501785" Offset="0"/>
+            <GradientStop Color="BlueViolet" Offset="1"/>
+        </LinearGradientBrush>
     </Window.Background>
-    <Grid Background="Transparent">
+
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF8209F3" Offset="0"/>
+                <GradientStop Color="#FFA154EA" Offset="0.566"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="366"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -33,7 +40,7 @@
         <StackPanel x:Name="ToolBar"
                     Grid.Column="1"
                     Orientation="Horizontal"
-                    HorizontalAlignment="Right">
+                    HorizontalAlignment="Right" Width="79">
             <Image x:Name="MinimazeImage"
                    Margin="5,5,5,0"
                    Width="31" MouseDown="MinimazeImage_MouseDown">
@@ -72,31 +79,30 @@
                    Foreground="Aquamarine"
                    FontWeight="Bold"
                    HorizontalAlignment="Center"
-                   Grid.ColumnSpan="2"
-                   Margin="138,0,107,0" 
-                   Width="255"
-                   VerticalAlignment="Top" FontFamily="Stencil" Grid.Row="1" Height="64"/>
-        <TextBlock Text="Login"
-                   FontSize="30"
+                   Margin="25,10,153,0" 
+                   Width="256"
+                   VerticalAlignment="Top" FontFamily="Stencil" Height="64" Grid.RowSpan="2" Grid.Column="1"/>
+        <TextBlock Text="E-Mail/Phone"
+                   FontSize="20"
                    Foreground="white"
                    FontWeight="Bold"
                    Grid.Row="1"
                    VerticalAlignment="Center"
-                   HorizontalAlignment="Right" Margin="0,100,0,0"/>
+                   HorizontalAlignment="Right" Margin="0,100,276,0" Grid.Column="1" Width="133" Height="40"/>
         <TextBlock Text="Password"
-                   FontSize="30"
+                   FontSize="20"
                    Foreground="white"
                    FontWeight="Bold"
                    Grid.Row="2"
                    VerticalAlignment="Center"
-                   HorizontalAlignment="Right" Margin="0,22,0,25" Height="38"/>
+                   HorizontalAlignment="Right" Margin="0,72,276,75" Height="38" Grid.Column="1" Width="102"/>
         <TextBox   x:Name="TextLogin"
                    FontSize="20"
                    Foreground="Black"
                    FontWeight="DemiBold"
                    Grid.Row="1"
-                   Grid.Column="1" Margin="10,100,36,0"
-                   ToolTip="Введите логин" Height="40"
+                   Grid.Column="1" Margin="180,100,40,0"
+                   ToolTip="Enter Login" Height="40"
                    VerticalAlignment="Top" 
                    PreviewTextInput="TextLogin_PreviewTextInput"
                    CommandManager.PreviewExecuted="TextLogin_PreviewExecuted" PreviewKeyDown="TextLogin_PreviewKeyDown"/>
@@ -106,24 +112,61 @@
                    Foreground="Black"
                    FontWeight="DemiBold"
                    Grid.Row="2"
-                   Grid.Column="1" Margin="10,22,36,23" Height="40"
-                   ToolTip="Введите пароль" 
+                   Grid.Column="1" Margin="180,72,40,75"
+                   ToolTip="Enter password" 
                    PreviewTextInput="TextPassword_PreviewTextInput"
-                   CommandManager.PreviewExecuted="TextPassword_PreviewExecuted" PreviewKeyDown="TextPassword_PreviewKeyDown"/>
-        <Button x:Name="BtnAuthorization" Margin="93,0,259,39"
+                   CommandManager.PreviewExecuted="TextPassword_PreviewExecuted"
+                       PreviewKeyDown="TextPassword_PreviewKeyDown"/>
+        <Button x:Name="BtnAuthorization" Margin="25,0,296,140"
                 Grid.Row="3"
                 Content="Sign In"
                 FontSize="25"
                 Foreground="Black"
                 Background="Aquamarine"
-                FontWeight="Bold" Grid.ColumnSpan="2" Click="AuthBtn_Click" RenderTransformOrigin="0.232,0.444"/>
+                FontWeight="Bold" Click="AuthBtn_Click"  Grid.Column="1"/>
 
-        <Button x:Name="BtnForget" Margin="0,0,36,39"
+        <TextBlock Text="If you have any questions submit message &#10; on vasilii.bavkaev@gmail.com"
+                   FontSize="15"
+                   Foreground="Black"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" FontFamily="Stencil" 
+                   Height="40" Margin="10,0" Width="414" 
+                   Grid.Row="4" Grid.Column="1"/>
+
+        <Button x:Name="BtnForget" Margin="0,0,63,140"
                 Grid.Row="3"
-                Content="Forget Password?"
-                FontSize="15"
+                Content="Forgot Password?"
+                FontSize="18"
+                
                 Foreground="Black"
                 Background="White"
-                FontWeight="Bold" HorizontalAlignment="Right" Width="156" Grid.Column="1"/>
+                FontWeight="Bold" HorizontalAlignment="Right" Width="166"
+                Grid.Column="1"/>
+
+        <Grid Grid.Column="0" Grid.RowSpan="5">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF04FFAB" Offset="0"/>
+                    <GradientStop Color="#FFCEFFEE" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="WELCOME TO"
+                   FontSize="50"
+                   Foreground="#8A2BE2"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="40,10,10,0" 
+                   Width="316"
+                   VerticalAlignment="Top" FontFamily="Stencil" Height="62"/>
+
+            <TextBlock Text="Developed by abstraktcher"
+                   FontSize="15"
+                   Foreground="#8A2BE2"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="101,550,0,0" 
+                   Width="265"
+                   VerticalAlignment="Top" FontFamily="Stencil" Height="23"/>
+        </Grid>
     </Grid>
 </Window>
