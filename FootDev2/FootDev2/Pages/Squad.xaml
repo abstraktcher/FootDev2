@@ -1,0 +1,53 @@
+﻿<Page x:Class="FootDev2.Pages.Squad"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FootDev2.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1250"
+      Title="Squad">
+
+    <Grid Background="Wheat">
+        <ListView Name="ListViewInjuries" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListView.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel/>
+            </ItemsPanelTemplate>
+        </ListView.ItemsPanel>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <Grid Height="400" Width="600">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="240"/>
+                        <RowDefinition Height="200"/>
+                    </Grid.RowDefinitions>
+
+                    <Border BorderBrush="Orange" BorderThickness="4" >
+                        <Image/>
+                    </Border>
+
+                    <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
+                   HorizontalAlignment="Left" Margin="5" Grid.Column="1">
+                        <TextBlock Text="{Binding FirstName}" FontSize="20"/>
+                        <TextBlock Text="{Binding LastName}" FontSize="20"/>
+                        <TextBlock Text="{Binding MiddleName}" FontSize="20"/>
+                    </WrapPanel>
+
+                        <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
+                   HorizontalAlignment="Left" Margin="5" Grid.Column="0" Grid.Row="1">
+                            <TextBlock Text="{Binding DateOfInjury}" FontSize="20"/>
+                            <TextBlock Text="{Binding DateOfRecovery}" FontSize="20"/>
+                            <TextBlock Text="{Binding Treatment}" FontSize="20"/>
+                        </WrapPanel>
+                    </Grid>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+         </ListView>
+
+    </Grid>
+</Page>

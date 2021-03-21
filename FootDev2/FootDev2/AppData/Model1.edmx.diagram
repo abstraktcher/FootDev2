@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="499ee6e3c2364690af02c6a131be8a2d" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="FootDevModel.Club" Width="1.5" PointX="8.25" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Country" Width="1.5" PointX="3.75" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.DefenderCharacteristics" Width="1.5" PointX="12" PointY="45.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Disadvantages" Width="1.5" PointX="12" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.DominantLeg" Width="1.5" PointX="3.75" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Exercise" Width="1.5" PointX="9" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.ExerciseForTest" Width="1.5" PointX="11.25" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.ExerciseToTraining" Width="1.5" PointX="16.5" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.ForwardCharacteristics" Width="1.5" PointX="12" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Gender" Width="1.5" PointX="0.75" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.GoalKeeperCharacteristics" Width="1.5" PointX="12" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.HistoryOfChangingSkills" Width="1.5" PointX="8.25" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.IndividualTraining" Width="1.5" PointX="11.25" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Injury" Width="1.5" PointX="9" PointY="45.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.InjuryToPlayer" Width="1.5" PointX="11.25" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Languages" Width="1.5" PointX="6" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.LanguageToPlayer" Width="1.5" PointX="8.25" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Location" Width="1.5" PointX="6" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.MidFielderCharacteristics" Width="1.5" PointX="12" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Nationality" Width="1.5" PointX="6" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.NationalityToPlayer" Width="1.5" PointX="8.25" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Personnel" Width="1.5" PointX="3" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Player" Width="1.5" PointX="6" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.PlayerGoals" Width="1.5" PointX="8.25" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.PlayerToDFCharacteristics" Width="1.5" PointX="14.25" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.PlayerToDisadvantages" Width="1.5" PointX="14.25" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.PlayerToFWCharacteristics" Width="1.5" PointX="14.25" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.PlayerToGKCharacteristics" Width="1.5" PointX="14.25" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.PlayerToMFCharacteristics" Width="1.5" PointX="14.25" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.PlayerToPosition" Width="1.5" PointX="11.25" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.PlayerToRespReson" Width="1.5" PointX="8.25" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.PlayerToTraits" Width="1.5" PointX="8.25" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Position" Width="1.5" PointX="9" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Predisposition" Width="1.5" PointX="9" PointY="51.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.PredispositionToPlayer" Width="1.5" PointX="11.25" PointY="39.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Punishment" Width="1.5" PointX="15" PointY="40.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Reprimand" Width="1.5" PointX="17.25" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.ResponsiblePerson" Width="1.5" PointX="3" PointY="43.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Role" Width="1.5" PointX="0.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Sponsor" Width="1.5" PointX="12" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.StatusOfDisadvantage" Width="1.5" PointX="12" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.StatusOfLanguage" Width="1.5" PointX="3.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Tournament" Width="1.5" PointX="14.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Training" Width="1.5" PointX="14.25" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.TrainToTeam" Width="1.5" PointX="16.5" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Traits" Width="1.5" PointX="6" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.Injuries" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootDevModel.ViewInfoTournament" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="FootDevModel.FK_Club_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Club_Personnel" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_TrainToTeam_Club" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Location_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToDFCharacteristics_DefenderCharacteristics" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToDisadvantages_Disadvantages" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Player_DominantLeg" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_ExerciseForTest_Exercise" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_ExerciseToTraining_Exercise" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_ExerciseForTest_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_ExerciseToTraining_Training" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToFWCharacteristics_ForwardCharacteristics" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Coach_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Player_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_ResponsiblePerson_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToGKCharacteristics_GoalKeeperCharacteristics" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_HistoryOfChangingSkills_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_IndividualTraining_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_IndividualTraining_Training" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_InjuryToPlayer_Injury" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_InjuryToPlayer_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Languages_status" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_LanguageToPlayer_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_LanguageToPlayer_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Tournament_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToMFCharacteristics_MidFielderCharacteristics" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_NationalityToPlayer_Nationality" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_NationalityToPlayer_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Coach_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Player_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerGoals_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToCharacteristics_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToDFCharacteristics_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToDisadvantages_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToFWCharacteristics_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToGKCharacteristics_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToPosition_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToRespReson_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToTraits_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PredispositionToPlayer_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Reprimand_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToDisadvantages_StatusOfDisadvantage" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToPosition_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToRespReson_ResponsiblePerson" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PlayerToTraits_Traits" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_PredispositionToPlayer_Predisposition" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Reprimand_Punishment" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_Tournament_Sponsor" ManuallyRouted="false" />
+        <AssociationConnector Association="FootDevModel.FK_TrainToTeam_Training" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
