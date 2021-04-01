@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FootDev2.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="1250"
+      d:DesignHeight="700" d:DesignWidth="1250"
       Title="Squad">
 
     <Grid Background="Wheat">
-        <ListView Name="ListViewInjuries" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListView Name="ListViewSquad" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
         <ListView.ItemsPanel>
             <ItemsPanelTemplate>
                 <WrapPanel/>
@@ -17,7 +17,7 @@
         </ListView.ItemsPanel>
         <ListView.ItemTemplate>
             <DataTemplate>
-                <Grid Height="400" Width="600">
+                <Grid Height="400" Width="500" Margin="30">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="250"/>
                         <ColumnDefinition Width="*"/>
@@ -27,22 +27,26 @@
                         <RowDefinition Height="200"/>
                     </Grid.RowDefinitions>
 
-                    <Border BorderBrush="Orange" BorderThickness="4" >
-                        <Image/>
-                    </Border>
-
-                    <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
-                   HorizontalAlignment="Left" Margin="5" Grid.Column="1">
-                        <TextBlock Text="{Binding FirstName}" FontSize="20"/>
-                        <TextBlock Text="{Binding LastName}" FontSize="20"/>
-                        <TextBlock Text="{Binding MiddleName}" FontSize="20"/>
-                    </WrapPanel>
+                    <Border BorderBrush="Aquamarine" BorderThickness="4" >
+                            <Image x:Name="ImageFootballer" Source="/Images/DefaultPicture.jpg"
+                       Margin="20"/>
+                        </Border>
 
                         <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
+                   HorizontalAlignment="Left" Margin="5" Grid.Column="1">
+                            <TextBlock Text="{Binding FullName}" FontSize="20" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding NameGender}" FontSize="20"/>
+                            <TextBlock Text="{Binding Age}" FontSize="20"/>
+                            <TextBlock Text="{Binding DateOfBirth , StringFormat={}{0:dd-MM-yyyy}}" FontSize="20" />
+                            <TextBlock Text="{Binding NationalityName}" FontSize="20" TextWrapping="Wrap"/>
+
+                        </WrapPanel>
+                        <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
                    HorizontalAlignment="Left" Margin="5" Grid.Column="0" Grid.Row="1">
-                            <TextBlock Text="{Binding DateOfInjury}" FontSize="20"/>
-                            <TextBlock Text="{Binding DateOfRecovery}" FontSize="20"/>
-                            <TextBlock Text="{Binding Treatment}" FontSize="20"/>
+                            <TextBlock Text="{Binding PhoneNumber}" FontSize="20"/>
+                            <!--="{Binding StartTime, StringFormat={}{0:yyyy-MM-dd HH:mm}}"-->
+                            <TextBlock Text="{Binding Email}" FontSize="20" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding DateJoining , StringFormat={}{0:dd-MM-yyyy}}" FontSize="20"/>
                         </WrapPanel>
                     </Grid>
             </DataTemplate>

@@ -12,18 +12,15 @@ namespace FootDev2.AppData
     using System;
     using System.Collections.Generic;
     
-    public partial class Languages
+    public partial class ViewReprimands
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Languages()
-        {
-            this.LanguageToPlayer = new HashSet<LanguageToPlayer>();
-        }
-    
-        public byte IdLanguage { get; set; }
-        public string LanguageName { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LanguageToPlayer> LanguageToPlayer { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string MiddleName { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string PunishmentName { get; set; }
+        public string ReprimandName { get; set; }
+        public Nullable<byte> Age { get; set; }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FootDev2.Windows"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="ManagerWindow" Height="800" Width="1500"
+        Title="ManagerWindow" Height="900" Width="1500"
         MinHeight="600" MinWidth="800">
     <Grid Background="Aquamarine">
         <Grid.ColumnDefinitions>

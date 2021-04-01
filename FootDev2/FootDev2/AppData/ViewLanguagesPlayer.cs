@@ -12,16 +12,9 @@ namespace FootDev2.AppData
     using System;
     using System.Collections.Generic;
     
-    public partial class PlayerGoals
+    public partial class ViewLanguagesPlayer
     {
-        public int IdPlayerGoals { get; set; }
-        public string GoalName { get; set; }
-        public string Description { get; set; }
-        public int IdPlayer { get; set; }
-        public Nullable<System.DateTime> DateStart { get; set; }
-        public Nullable<System.DateTime> DateEnd { get; set; }
-        public bool IsActive { get; set; }
-    
-        public virtual Player Player { get; set; }
+        public string FullName { get; set; }
+        public string Languages { get; set; }
     }
 }

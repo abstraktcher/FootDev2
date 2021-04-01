@@ -17,8 +17,10 @@ namespace FootDev2.AppData
         public int IdPlaToLang { get; set; }
         public int IdPlayer { get; set; }
         public byte IdLanguage { get; set; }
+        public Nullable<byte> IdStatusOfLanguage { get; set; }
     
         public virtual Languages Languages { get; set; }
         public virtual Player Player { get; set; }
+        public virtual StatusOfLanguage StatusOfLanguage { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace FootDev2.Pages
         public Squad()
         {
             InitializeComponent();
-            ListViewInjuries.ItemsSource = context.Injuries.ToList();
+            ListViewSquad.ItemsSource = context.ViewAllInfo.ToList();
         }
     }
 }

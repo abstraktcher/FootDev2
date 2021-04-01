@@ -12,18 +12,10 @@ namespace FootDev2.AppData
     using System;
     using System.Collections.Generic;
     
-    public partial class Languages
+    public partial class ViewShowPositions
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Languages()
-        {
-            this.LanguageToPlayer = new HashSet<LanguageToPlayer>();
-        }
-    
-        public byte IdLanguage { get; set; }
-        public string LanguageName { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LanguageToPlayer> LanguageToPlayer { get; set; }
+        public string Fullname { get; set; }
+        public string DominantLeg { get; set; }
+        public string Positions { get; set; }
     }
 }

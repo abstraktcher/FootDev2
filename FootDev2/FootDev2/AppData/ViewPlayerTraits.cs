@@ -12,19 +12,10 @@ namespace FootDev2.AppData
     using System;
     using System.Collections.Generic;
     
-    public partial class Disadvantages
+    public partial class ViewPlayerTraits
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Disadvantages()
-        {
-            this.PlayerToDisadvantages = new HashSet<PlayerToDisadvantages>();
-        }
-    
-        public int IdDisAdv { get; set; }
-        public string Name { get; set; }
-        public string HowToFix { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PlayerToDisadvantages> PlayerToDisadvantages { get; set; }
+        public string Fullname { get; set; }
+        public Nullable<byte> Age { get; set; }
+        public string Traits { get; set; }
     }
 }

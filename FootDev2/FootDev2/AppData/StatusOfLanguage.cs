@@ -17,13 +17,13 @@ namespace FootDev2.AppData
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public StatusOfLanguage()
         {
-            this.Languages = new HashSet<Languages>();
+            this.LanguageToPlayer = new HashSet<LanguageToPlayer>();
         }
     
         public byte IdStatus { get; set; }
         public string StatusName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Languages> Languages { get; set; }
+        public virtual ICollection<LanguageToPlayer> LanguageToPlayer { get; set; }
     }
 }

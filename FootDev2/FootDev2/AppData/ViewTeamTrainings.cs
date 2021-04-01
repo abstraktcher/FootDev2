@@ -12,15 +12,13 @@ namespace FootDev2.AppData
     using System;
     using System.Collections.Generic;
     
-    public partial class PlayerToDisadvantages
+    public partial class ViewTeamTrainings
     {
-        public int IdPlToDis { get; set; }
-        public int IdPlayer { get; set; }
-        public int IdDisAdv { get; set; }
-        public Nullable<byte> IdStatus { get; set; }
-    
-        public virtual Disadvantages Disadvantages { get; set; }
-        public virtual Player Player { get; set; }
-        public virtual StatusOfDisadvantage StatusOfDisadvantage { get; set; }
+        public string ClubName { get; set; }
+        public string TrainingName { get; set; }
+        public System.DateTime Date { get; set; }
+        public string CountryName { get; set; }
+        public string City { get; set; }
+        public string Manager_s_Name { get; set; }
     }
 }

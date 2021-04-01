@@ -23,10 +23,8 @@ namespace FootDev2.AppData
             this.InjuryToPlayer = new HashSet<InjuryToPlayer>();
             this.LanguageToPlayer = new HashSet<LanguageToPlayer>();
             this.NationalityToPlayer = new HashSet<NationalityToPlayer>();
-            this.PlayerGoals = new HashSet<PlayerGoals>();
             this.PlayerToMFCharacteristics = new HashSet<PlayerToMFCharacteristics>();
             this.PlayerToDFCharacteristics = new HashSet<PlayerToDFCharacteristics>();
-            this.PlayerToDisadvantages = new HashSet<PlayerToDisadvantages>();
             this.PlayerToFWCharacteristics = new HashSet<PlayerToFWCharacteristics>();
             this.PlayerToGKCharacteristics = new HashSet<PlayerToGKCharacteristics>();
             this.PlayerToPosition = new HashSet<PlayerToPosition>();
@@ -66,13 +64,9 @@ namespace FootDev2.AppData
         public virtual ICollection<NationalityToPlayer> NationalityToPlayer { get; set; }
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PlayerGoals> PlayerGoals { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlayerToMFCharacteristics> PlayerToMFCharacteristics { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlayerToDFCharacteristics> PlayerToDFCharacteristics { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PlayerToDisadvantages> PlayerToDisadvantages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlayerToFWCharacteristics> PlayerToFWCharacteristics { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

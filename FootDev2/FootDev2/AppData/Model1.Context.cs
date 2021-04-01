@@ -30,7 +30,6 @@ namespace FootDev2.AppData
         public virtual DbSet<Club> Club { get; set; }
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<DefenderCharacteristics> DefenderCharacteristics { get; set; }
-        public virtual DbSet<Disadvantages> Disadvantages { get; set; }
         public virtual DbSet<DominantLeg> DominantLeg { get; set; }
         public virtual DbSet<Exercise> Exercise { get; set; }
         public virtual DbSet<ExerciseForTest> ExerciseForTest { get; set; }
@@ -50,9 +49,7 @@ namespace FootDev2.AppData
         public virtual DbSet<NationalityToPlayer> NationalityToPlayer { get; set; }
         public virtual DbSet<Personnel> Personnel { get; set; }
         public virtual DbSet<Player> Player { get; set; }
-        public virtual DbSet<PlayerGoals> PlayerGoals { get; set; }
         public virtual DbSet<PlayerToDFCharacteristics> PlayerToDFCharacteristics { get; set; }
-        public virtual DbSet<PlayerToDisadvantages> PlayerToDisadvantages { get; set; }
         public virtual DbSet<PlayerToFWCharacteristics> PlayerToFWCharacteristics { get; set; }
         public virtual DbSet<PlayerToGKCharacteristics> PlayerToGKCharacteristics { get; set; }
         public virtual DbSet<PlayerToMFCharacteristics> PlayerToMFCharacteristics { get; set; }
@@ -67,7 +64,6 @@ namespace FootDev2.AppData
         public virtual DbSet<ResponsiblePerson> ResponsiblePerson { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Sponsor> Sponsor { get; set; }
-        public virtual DbSet<StatusOfDisadvantage> StatusOfDisadvantage { get; set; }
         public virtual DbSet<StatusOfLanguage> StatusOfLanguage { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tournament> Tournament { get; set; }
@@ -75,7 +71,22 @@ namespace FootDev2.AppData
         public virtual DbSet<TrainToTeam> TrainToTeam { get; set; }
         public virtual DbSet<Traits> Traits { get; set; }
         public virtual DbSet<Injuries> Injuries { get; set; }
+        public virtual DbSet<ViewChanges> ViewChanges { get; set; }
+        public virtual DbSet<ViewDFCharacteristics> ViewDFCharacteristics { get; set; }
+        public virtual DbSet<ViewExcForTest> ViewExcForTest { get; set; }
+        public virtual DbSet<ViewGkCharacteristics> ViewGkCharacteristics { get; set; }
+        public virtual DbSet<ViewIndTrainings> ViewIndTrainings { get; set; }
         public virtual DbSet<ViewInfoTournament> ViewInfoTournament { get; set; }
+        public virtual DbSet<ViewLanguagesPlayer> ViewLanguagesPlayer { get; set; }
+        public virtual DbSet<ViewMFCharacteristics> ViewMFCharacteristics { get; set; }
+        public virtual DbSet<ViewPlayerTraits> ViewPlayerTraits { get; set; }
+        public virtual DbSet<ViewPredispositions> ViewPredispositions { get; set; }
+        public virtual DbSet<ViewReprimands> ViewReprimands { get; set; }
+        public virtual DbSet<ViewResponsiblePerson> ViewResponsiblePerson { get; set; }
+        public virtual DbSet<ViewShowPositions> ViewShowPositions { get; set; }
+        public virtual DbSet<ViewStrikerCharacteristics> ViewStrikerCharacteristics { get; set; }
+        public virtual DbSet<ViewTeamTrainings> ViewTeamTrainings { get; set; }
+        public virtual DbSet<ViewAllInfo> ViewAllInfo { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
