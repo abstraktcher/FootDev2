@@ -273,11 +273,18 @@
     <Compile Include="Helper1.xaml.cs">
       <DependentUpon>Helper1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HelperClass\Helper.cs" />
+    <Compile Include="Pages\Injuries.xaml.cs">
+      <DependentUpon>Injuries.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Squad.xaml.cs">
       <DependentUpon>Squad.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Tournaments.xaml.cs">
       <DependentUpon>Tournaments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Traits.xaml.cs">
+      <DependentUpon>Traits.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MainWindow2.xaml.cs">
       <DependentUpon>MainWindow2.xaml</DependentUpon>
@@ -302,11 +309,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Injuries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Squad.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Tournaments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Traits.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

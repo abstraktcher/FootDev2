@@ -17,15 +17,14 @@ using static FootDev2.AppData.AppDataClass;
 namespace FootDev2.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Squad.xaml
+    /// Логика взаимодействия для Traits.xaml
     /// </summary>
-    public partial class Squad : Page
+    public partial class Traits : Page
     {
-        public Squad()
+        public Traits()
         {
             InitializeComponent();
-            ListViewSquad.ItemsSource = context.ViewAllInfo.ToList();
+            ListViewTraits.ItemsSource = context.ViewPlayerTraits.ToList();
         }
-        
     }
 }

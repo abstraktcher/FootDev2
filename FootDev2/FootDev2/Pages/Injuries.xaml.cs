@@ -12,20 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static FootDev2.AppData.AppDataClass;
+using  static FootDev2.AppData.AppDataClass;
 
 namespace FootDev2.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Squad.xaml
+    /// Логика взаимодействия для Injuries.xaml
     /// </summary>
-    public partial class Squad : Page
+    public partial class Injuries : Page
     {
-        public Squad()
+        public Injuries()
         {
             InitializeComponent();
-            ListViewSquad.ItemsSource = context.ViewAllInfo.ToList();
+            ListViewInjuries.ItemsSource = context.Injuries.ToList();
+
         }
-        
     }
 }

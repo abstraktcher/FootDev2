@@ -26,6 +26,8 @@ namespace FootDev2.Windows
             MainFrame.Content = new Squad();
         }
 
+        
+
         private void BtnTournaments_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Content = new Tournaments();
@@ -33,7 +35,17 @@ namespace FootDev2.Windows
 
         private void BtnInjuries_Click(object sender, RoutedEventArgs e)
         {
+            MainFrame.Content = new Injuries();
+        }
+
+        private void BtnSquad_Click(object sender, RoutedEventArgs e)
+        {
             MainFrame.Content = new Squad();
+        }
+
+        private void BtnTraits_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Traits();
         }
     }
 }

@@ -30,13 +30,13 @@
 
         <StackPanel Grid.Row="1" Background="Aquamarine">
             <Button x:Name="BtnSquad" Content="Squad" Background="Transparent" BorderThickness="0"
-                    Foreground="White" FontSize="25" FontWeight="DemiBold" Margin="5"/>
+                    Foreground="White" FontSize="25" FontWeight="DemiBold" Margin="5" Click="BtnSquad_Click"/>
             <Button x:Name="BtnTournaments" Content="Tournaments"  Background="Transparent" BorderThickness="0"
                     Foreground="White" FontSize="25" FontWeight="DemiBold" Margin="5" Click="BtnTournaments_Click"/>
             <Button x:Name="BtnInjuries" Content="Injuries" Background="Transparent" BorderThickness="0"
                     Foreground="White" FontSize="25" FontWeight="DemiBold" Margin="5" Click="BtnInjuries_Click"/>
             <Button x:Name="BtnTraits" Content="Traits" Background="Transparent" BorderThickness="0"
-                    Foreground="White" FontSize="25" FontWeight="DemiBold" Margin="5"/>
+                    Foreground="White" FontSize="25" FontWeight="DemiBold" Margin="5" Click="BtnTraits_Click"/>
         </StackPanel>
     </Grid>
 </Window>
