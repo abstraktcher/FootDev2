@@ -47,5 +47,25 @@ namespace FootDev2.Windows
         {
             MainFrame.Content = new Traits();
         }
+
+        private void BtnLanguages_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Languages();
+        }
+
+        private void BtnPositions_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Positions();
+        }
+
+        private void BtnPredispositions_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Predispositions();
+        }
+
+        private void BtnGkCharacteristics_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new GKCharacteristics();
+        }
     }
 }

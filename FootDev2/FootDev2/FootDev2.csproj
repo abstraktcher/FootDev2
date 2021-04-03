@@ -274,11 +274,50 @@
       <DependentUpon>Helper1.xaml</DependentUpon>
     </Compile>
     <Compile Include="HelperClass\Helper.cs" />
+    <Compile Include="Pages\Changes.xaml.cs">
+      <DependentUpon>Changes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DFCharacteristics.xaml.cs">
+      <DependentUpon>DFCharacteristics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExcForTest.xaml.cs">
+      <DependentUpon>ExcForTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FWCharacteristics.xaml.cs">
+      <DependentUpon>FWCharacteristics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GKCharacteristics.xaml.cs">
+      <DependentUpon>GKCharacteristics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\IndividualTrainings.xaml.cs">
+      <DependentUpon>IndividualTrainings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Injuries.xaml.cs">
       <DependentUpon>Injuries.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Languages.xaml.cs">
+      <DependentUpon>Languages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MFCharacteristics.xaml.cs">
+      <DependentUpon>MFCharacteristics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Positions.xaml.cs">
+      <DependentUpon>Positions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Predispositions.xaml.cs">
+      <DependentUpon>Predispositions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Reprimands.xaml.cs">
+      <DependentUpon>Reprimands.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ResponsiblePerson.xaml.cs">
+      <DependentUpon>ResponsiblePerson.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Squad.xaml.cs">
       <DependentUpon>Squad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TeamTrainings.xaml.cs">
+      <DependentUpon>TeamTrainings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Tournaments.xaml.cs">
       <DependentUpon>Tournaments.xaml</DependentUpon>
@@ -309,11 +348,63 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Changes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DFCharacteristics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ExcForTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FWCharacteristics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\GKCharacteristics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\IndividualTrainings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Injuries.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Languages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MFCharacteristics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Positions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Predispositions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Reprimands.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ResponsiblePerson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Squad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TeamTrainings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

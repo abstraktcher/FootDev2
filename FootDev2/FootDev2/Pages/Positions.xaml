@@ -1,0 +1,47 @@
+﻿<Page x:Class="FootDev2.Pages.Positions"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FootDev2.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Positions">
+
+    <Grid Background="Wheat">
+        <ListView Name="ListViewPositions" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="400" Width="530" Margin="30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border BorderBrush="Aquamarine" BorderThickness="4" >
+                            <Image x:Name="ImageFootballer" Source="/Images/DefaultPicture.jpg"
+                       Margin="20"/>
+                        </Border>
+
+                        <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
+                   HorizontalAlignment="Left" Margin="5" Grid.Column="1" Grid.ColumnSpan="2">
+                            <TextBlock Text="{Binding Fullname}" FontSize="20" TextWrapping="Wrap" Margin="0 0 0 5"
+                                       FontFamily="Comic Sans Ms" FontWeight="Bold" Background="White" Foreground="Black"/>
+                            <TextBlock Text="{Binding DominantLeg1}" FontSize="20" TextWrapping="Wrap" Margin="0 0 0 5"
+                                       FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
+                            <TextBlock Text="{Binding Positions1}" FontSize="20" TextWrapping="Wrap" Margin="0 0 0 5"
+                                       FontFamily="Comic Sans Ms" FontWeight="Bold" Background="White" Foreground="Black"/>
+                            
+                        </WrapPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Page>

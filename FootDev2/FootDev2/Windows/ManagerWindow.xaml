@@ -21,7 +21,7 @@
             <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
 
-        <Frame x:Name="MainFrame" Background="black" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1"/>
+        <Frame x:Name="MainFrame" Background="black" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
 
         <StackPanel Grid.ColumnSpan="2" Background="Aquamarine">
             <TextBlock Text="Foot Dev" Foreground="White" FontSize="60"
@@ -29,14 +29,30 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Background="Aquamarine">
-            <Button x:Name="BtnSquad" Content="Squad" Background="Transparent" BorderThickness="0"
-                    Foreground="White" FontSize="25" FontWeight="DemiBold" Margin="5" Click="BtnSquad_Click"/>
-            <Button x:Name="BtnTournaments" Content="Tournaments"  Background="Transparent" BorderThickness="0"
-                    Foreground="White" FontSize="25" FontWeight="DemiBold" Margin="5" Click="BtnTournaments_Click"/>
-            <Button x:Name="BtnInjuries" Content="Injuries" Background="Transparent" BorderThickness="0"
-                    Foreground="White" FontSize="25" FontWeight="DemiBold" Margin="5" Click="BtnInjuries_Click"/>
-            <Button x:Name="BtnTraits" Content="Traits" Background="Transparent" BorderThickness="0"
-                    Foreground="White" FontSize="25" FontWeight="DemiBold" Margin="5" Click="BtnTraits_Click"/>
+            <Button x:Name="BtnSquad" Content="Squad" Background="Black" BorderThickness="0"
+                    Foreground="White" FontSize="25" Margin="5" Click="BtnSquad_Click" FontWeight="ExtraBold" />
+            <Button x:Name="BtnTournaments" Content="Tournaments"  Background="Black" BorderThickness="0"
+                    Foreground="White" FontSize="25" FontWeight="ExtraBold" Margin="5" Click="BtnTournaments_Click"/>
+            <Button x:Name="BtnInjuries" Content="Injuries" Background="Black" BorderThickness="0"
+                    Foreground="White" FontSize="25" FontWeight="ExtraBlack" Margin="5" Click="BtnInjuries_Click"/>
+            <Button x:Name="BtnTraits" Content="Traits" Background="Black" BorderThickness="0"
+                    Foreground="White" FontSize="25" FontWeight="ExtraBold" Margin="5" Click="BtnTraits_Click"/>
+            <Button x:Name="BtnLanguages" Content="Languages" Background="Black" BorderThickness="0"
+                    Foreground="White" FontSize="25" FontWeight="ExtraBold" Margin="5" Click="BtnLanguages_Click"/>
+            <Button x:Name="BtnPositions" Content="Positions" Background="Black" BorderThickness="0"
+                    Foreground="White" FontSize="25" FontWeight="ExtraBold" Margin="5" Click="BtnPositions_Click"/>
+            <Button x:Name="BtnPredispositions" Content="Predispositions" Background="Black" BorderThickness="0"
+                    Foreground="White" FontSize="22" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnPredispositions_Click"/>
+            <Border BorderThickness="25" Height="10" BorderBrush="Black"/>
+            <Button x:Name="BtnGkCharacteristics" Content="Goalkeepers" Background="White" BorderThickness="0"
+                    Foreground="Black" FontSize="25" FontWeight="ExtraBold" Margin="5" Click="BtnGkCharacteristics_Click" />
+            <Button x:Name="BtnDFCharacteristics" Content="Defenders" Background="White" BorderThickness="0"
+                    Foreground="Black" FontSize="25" FontWeight="ExtraBold" Margin="5" Height="43"/>
+            <Button x:Name="BtnMFCharacteristics" Content="Positions" Background="White" BorderThickness="0"
+                    Foreground="Black" FontSize="25" FontWeight="ExtraBold" Margin="5"/>
+            <Button x:Name="BtnFWCharacteristics" Content="Forwards" Background="White" BorderThickness="0"
+                    Foreground="Black" FontSize="25" FontWeight="ExtraBold" Margin="5" Height="43"/>
+            <Border BorderThickness="25" Height="10" BorderBrush="Black"/>
         </StackPanel>
     </Grid>
 </Window>
