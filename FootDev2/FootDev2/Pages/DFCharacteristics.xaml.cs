@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static FootDev2.AppData.AppDataClass;
 
 namespace FootDev2.Pages
 {
@@ -23,6 +24,7 @@ namespace FootDev2.Pages
         public DFCharacteristics()
         {
             InitializeComponent();
+            ListViewDF.ItemsSource = context.ViewDFCharacteristics.ToList();
         }
     }
 }

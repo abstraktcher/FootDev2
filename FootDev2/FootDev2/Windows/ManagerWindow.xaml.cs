@@ -48,10 +48,7 @@ namespace FootDev2.Windows
             MainFrame.Content = new Traits();
         }
 
-        private void BtnLanguages_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Content = new Languages();
-        }
+        
 
         private void BtnPositions_Click(object sender, RoutedEventArgs e)
         {
@@ -66,6 +63,36 @@ namespace FootDev2.Windows
         private void BtnGkCharacteristics_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Content = new GKCharacteristics();
+        }
+
+        private void BtnDFCharacteristics_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new DFCharacteristics();
+        }
+
+        private void BtnMFCharacteristics_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new MFCharacteristics();
+        }
+
+        private void BtnFWCharacteristics_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new FWCharacteristics();
+        }
+
+        private void BtnTeamTrainings_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new TeamTrainings();
+        }
+
+        private void BtnIndTrainings_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new IndividualTrainings();
+        }
+
+        private void BtnExerciseForTest_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new ExcForTest();
         }
     }
 }

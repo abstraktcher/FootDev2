@@ -480,6 +480,7 @@
           <Property Name="DateJoining" Type="date" />
           <Property Name="NameGender" Type="nchar" MaxLength="6" />
           <Property Name="NationalityName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Languages" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewChanges" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -620,15 +621,6 @@
           <Property Name="City" Type="nvarchar" MaxLength="50" />
           <Property Name="CountryName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="SponsorName" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewLanguagesPlayer" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
-        <EntityType Name="ViewLanguagesPlayer">
-          <Key>
-            <PropertyRef Name="FullName" />
-          </Key>
-          <Property Name="FullName" Type="nvarchar" MaxLength="452" Nullable="false" />
-          <Property Name="Languages" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewMFCharacteristics" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -1455,7 +1447,8 @@
     [ViewAllInfo].[PlayerImage] AS [PlayerImage], 
     [ViewAllInfo].[DateJoining] AS [DateJoining], 
     [ViewAllInfo].[NameGender] AS [NameGender], 
-    [ViewAllInfo].[NationalityName] AS [NationalityName]
+    [ViewAllInfo].[NationalityName] AS [NationalityName], 
+    [ViewAllInfo].[Languages] AS [Languages]
     FROM [dbo].[ViewAllInfo] AS [ViewAllInfo]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewChanges" EntityType="Self.ViewChanges" store:Type="Views" store:Schema="dbo">
@@ -1538,12 +1531,6 @@
     [ViewInfoTournament].[CountryName] AS [CountryName], 
     [ViewInfoTournament].[SponsorName] AS [SponsorName]
     FROM [dbo].[ViewInfoTournament] AS [ViewInfoTournament]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="ViewLanguagesPlayer" EntityType="Self.ViewLanguagesPlayer" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ViewLanguagesPlayer].[FullName] AS [FullName], 
-    [ViewLanguagesPlayer].[Languages] AS [Languages]
-    FROM [dbo].[ViewLanguagesPlayer] AS [ViewLanguagesPlayer]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewMFCharacteristics" EntityType="Self.ViewMFCharacteristics" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1913,7 +1900,6 @@
           <EntitySet Name="ViewGkCharacteristics" EntityType="FootDevModel.ViewGkCharacteristics" />
           <EntitySet Name="ViewIndTrainings" EntityType="FootDevModel.ViewIndTrainings" />
           <EntitySet Name="ViewInfoTournament" EntityType="FootDevModel.ViewInfoTournament" />
-          <EntitySet Name="ViewLanguagesPlayer" EntityType="FootDevModel.ViewLanguagesPlayer" />
           <EntitySet Name="ViewMFCharacteristics" EntityType="FootDevModel.ViewMFCharacteristics" />
           <EntitySet Name="ViewPlayerTraits" EntityType="FootDevModel.ViewPlayerTraits" />
           <EntitySet Name="ViewPredispositions" EntityType="FootDevModel.ViewPredispositions" />
@@ -2788,13 +2774,6 @@
           <Property Name="CountryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SponsorName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="ViewLanguagesPlayer">
-          <Key>
-            <PropertyRef Name="FullName" />
-          </Key>
-          <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
-          <Property Name="Languages" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="ViewMFCharacteristics">
           <Key>
             <PropertyRef Name="FullName" />
@@ -3509,6 +3488,7 @@
           <Property Name="DateJoining" Type="DateTime" Precision="0" />
           <Property Name="NameGender" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
           <Property Name="NationalityName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Languages" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4130,14 +4110,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ViewLanguagesPlayer">
-            <EntityTypeMapping TypeName="FootDevModel.ViewLanguagesPlayer">
-              <MappingFragment StoreEntitySet="ViewLanguagesPlayer">
-                <ScalarProperty Name="Languages" ColumnName="Languages" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ViewMFCharacteristics">
             <EntityTypeMapping TypeName="FootDevModel.ViewMFCharacteristics">
               <MappingFragment StoreEntitySet="ViewMFCharacteristics">
@@ -4259,6 +4231,7 @@
           <EntitySetMapping Name="ViewAllInfo">
             <EntityTypeMapping TypeName="FootDevModel.ViewAllInfo">
               <MappingFragment StoreEntitySet="ViewAllInfo">
+                <ScalarProperty Name="Languages" ColumnName="Languages" />
                 <ScalarProperty Name="NationalityName" ColumnName="NationalityName" />
                 <ScalarProperty Name="NameGender" ColumnName="NameGender" />
                 <ScalarProperty Name="DateJoining" ColumnName="DateJoining" />

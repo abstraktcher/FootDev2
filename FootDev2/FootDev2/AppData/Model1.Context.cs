@@ -77,7 +77,6 @@ namespace FootDev2.AppData
         public virtual DbSet<ViewGkCharacteristics> ViewGkCharacteristics { get; set; }
         public virtual DbSet<ViewIndTrainings> ViewIndTrainings { get; set; }
         public virtual DbSet<ViewInfoTournament> ViewInfoTournament { get; set; }
-        public virtual DbSet<ViewLanguagesPlayer> ViewLanguagesPlayer { get; set; }
         public virtual DbSet<ViewMFCharacteristics> ViewMFCharacteristics { get; set; }
         public virtual DbSet<ViewPlayerTraits> ViewPlayerTraits { get; set; }
         public virtual DbSet<ViewPredispositions> ViewPredispositions { get; set; }

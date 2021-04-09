@@ -23,5 +23,6 @@ namespace FootDev2.AppData
         public Nullable<System.DateTime> DateJoining { get; set; }
         public string NameGender { get; set; }
         public string NationalityName { get; set; }
+        public string Languages { get; set; }
     }
 }

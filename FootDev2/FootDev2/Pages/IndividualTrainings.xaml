@@ -8,7 +8,31 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="IndividualTrainings">
 
-    <Grid>
-        
+    <Grid Background="Wheat">
+        <ListView Name="ListViewIndTrainings" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="300" Width="320" Margin="30">
+
+                        <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
+                   HorizontalAlignment="Center" Margin="5" Grid.Column="1" Grid.ColumnSpan="2">
+                            <TextBlock Text="{Binding FullName1}" FontSize="20" TextWrapping="Wrap" Margin="0 0 0 5"
+                                       FontFamily="Comic Sans Ms" FontWeight="Bold" Background="White" Foreground="Black"/>
+                            <TextBlock Text="{Binding Training1}" FontSize="20" TextWrapping="Wrap" Margin="0 0 0 5"
+                                       FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
+                            <TextBlock Text="{Binding Date1 , StringFormat={}{0:dd-MM-yyyy}}" FontSize="20" Margin="0 0 0 5" TextWrapping="Wrap"
+                                        FontFamily="Comic Sans Ms" FontWeight="Bold" Background="White" Foreground="Black"/>
+
+                        </WrapPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 </Page>

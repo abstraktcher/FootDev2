@@ -17,7 +17,7 @@
         </ListView.ItemsPanel>
         <ListView.ItemTemplate>
             <DataTemplate>
-                <Grid Height="400" Width="530" Margin="30">
+                <Grid Height="450" Width="530" Margin="30">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="250"/>
                         <ColumnDefinition Width="*"/>
@@ -49,7 +49,7 @@
 
                         </WrapPanel>
                         <WrapPanel Orientation="Vertical" VerticalAlignment="Top" Grid.ColumnSpan="2"
-                   HorizontalAlignment="Center"  Grid.Column="0" Grid.Row="1" >
+                   HorizontalAlignment="Left"  Grid.Column="0" Grid.Row="1" Margin="10 10 10 10">
                             <TextBlock Text="{Binding PhoneNumber1}" FontSize="20" Margin="0 0 0 5"
                                         FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
                             <!--="{Binding StartTime, StringFormat={}{0:yyyy-MM-dd HH:mm}}"-->
@@ -59,6 +59,8 @@
                                        Background="Aquamarine" Foreground="Black"/>
                             <TextBlock Text="{Binding DateJoining , StringFormat={}{0:dd-MM-yyyy}}" FontSize="20" Margin="0 0 0 5"
                                         FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
+                            <TextBlock Text="{Binding Languages1}" FontSize="20"  FontFamily="Comic Sans Ms" FontWeight="Bold"
+                                       Background="White" Foreground="Black"/>
                         </WrapPanel>
                     </Grid>
             </DataTemplate>
