@@ -469,7 +469,6 @@
             <PropertyRef Name="FullName" />
             <PropertyRef Name="Email" />
             <PropertyRef Name="DateOfBirth" />
-            <PropertyRef Name="NationalityName" />
           </Key>
           <Property Name="FullName" Type="nvarchar" MaxLength="452" Nullable="false" />
           <Property Name="Age" Type="tinyint" />
@@ -479,8 +478,8 @@
           <Property Name="PlayerImage" Type="varbinary(max)" />
           <Property Name="DateJoining" Type="date" />
           <Property Name="NameGender" Type="nchar" MaxLength="6" />
-          <Property Name="NationalityName" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Languages" Type="nvarchar" MaxLength="200" />
+          <Property Name="Citizenships" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewChanges" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -694,15 +693,12 @@
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewReprimands" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="ViewReprimands">
           <Key>
-            <PropertyRef Name="FirstName" />
-            <PropertyRef Name="LastName" />
+            <PropertyRef Name="FullName" />
             <PropertyRef Name="Email" />
             <PropertyRef Name="PunishmentName" />
             <PropertyRef Name="ReprimandName" />
           </Key>
-          <Property Name="FirstName" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="MiddleName" Type="nvarchar" MaxLength="150" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="452" Nullable="false" />
           <Property Name="PhoneNumber" Type="nchar" MaxLength="13" />
           <Property Name="Email" Type="nvarchar" MaxLength="75" Nullable="false" />
           <Property Name="PunishmentName" Type="nvarchar" MaxLength="30" Nullable="false" />
@@ -1447,8 +1443,8 @@
     [ViewAllInfo].[PlayerImage] AS [PlayerImage], 
     [ViewAllInfo].[DateJoining] AS [DateJoining], 
     [ViewAllInfo].[NameGender] AS [NameGender], 
-    [ViewAllInfo].[NationalityName] AS [NationalityName], 
-    [ViewAllInfo].[Languages] AS [Languages]
+    [ViewAllInfo].[Languages] AS [Languages], 
+    [ViewAllInfo].[Citizenships] AS [Citizenships]
     FROM [dbo].[ViewAllInfo] AS [ViewAllInfo]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewChanges" EntityType="Self.ViewChanges" store:Type="Views" store:Schema="dbo">
@@ -1574,9 +1570,7 @@
           </EntitySet>
           <EntitySet Name="ViewReprimands" EntityType="Self.ViewReprimands" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [ViewReprimands].[FirstName] AS [FirstName], 
-    [ViewReprimands].[LastName] AS [LastName], 
-    [ViewReprimands].[MiddleName] AS [MiddleName], 
+    [ViewReprimands].[FullName] AS [FullName], 
     [ViewReprimands].[PhoneNumber] AS [PhoneNumber], 
     [ViewReprimands].[Email] AS [Email], 
     [ViewReprimands].[PunishmentName] AS [PunishmentName], 
@@ -1903,7 +1897,6 @@
           <EntitySet Name="ViewMFCharacteristics" EntityType="FootDevModel.ViewMFCharacteristics" />
           <EntitySet Name="ViewPlayerTraits" EntityType="FootDevModel.ViewPlayerTraits" />
           <EntitySet Name="ViewPredispositions" EntityType="FootDevModel.ViewPredispositions" />
-          <EntitySet Name="ViewReprimands" EntityType="FootDevModel.ViewReprimands" />
           <EntitySet Name="ViewResponsiblePerson" EntityType="FootDevModel.ViewResponsiblePerson" />
           <EntitySet Name="ViewShowPositions" EntityType="FootDevModel.ViewShowPositions" />
           <EntitySet Name="ViewStrikerCharacteristics" EntityType="FootDevModel.ViewStrikerCharacteristics" />
@@ -2088,6 +2081,7 @@
             <End Role="Training" EntitySet="Training" />
             <End Role="TrainToTeam" EntitySet="TrainToTeam" />
           </AssociationSet>
+          <EntitySet Name="ViewReprimands" EntityType="FootDevModel.ViewReprimands" />
           <EntitySet Name="ViewAllInfo" EntityType="FootDevModel.ViewAllInfo" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -2836,23 +2830,6 @@
           <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Treatment" Type="String" MaxLength="175" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="ViewReprimands">
-          <Key>
-            <PropertyRef Name="FirstName" />
-            <PropertyRef Name="LastName" />
-            <PropertyRef Name="Email" />
-            <PropertyRef Name="PunishmentName" />
-            <PropertyRef Name="ReprimandName" />
-          </Key>
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="MiddleName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
-          <Property Name="PunishmentName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="ReprimandName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Age" Type="Byte" />
-        </EntityType>
         <EntityType Name="ViewResponsiblePerson">
           <Key>
             <PropertyRef Name="Player" />
@@ -3472,12 +3449,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ViewReprimands">
+          <Key>
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="PunishmentName" />
+            <PropertyRef Name="ReprimandName" />
+          </Key>
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="PunishmentName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ReprimandName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Byte" />
+        </EntityType>
         <EntityType Name="ViewAllInfo">
           <Key>
             <PropertyRef Name="FullName" />
             <PropertyRef Name="Email" />
             <PropertyRef Name="DateOfBirth" />
-            <PropertyRef Name="NationalityName" />
           </Key>
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="Byte" />
@@ -3487,8 +3477,8 @@
           <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="DateJoining" Type="DateTime" Precision="0" />
           <Property Name="NameGender" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
-          <Property Name="NationalityName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Languages" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Citizenships" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4156,20 +4146,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ViewReprimands">
-            <EntityTypeMapping TypeName="FootDevModel.ViewReprimands">
-              <MappingFragment StoreEntitySet="ViewReprimands">
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="ReprimandName" ColumnName="ReprimandName" />
-                <ScalarProperty Name="PunishmentName" ColumnName="PunishmentName" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ViewResponsiblePerson">
             <EntityTypeMapping TypeName="FootDevModel.ViewResponsiblePerson">
               <MappingFragment StoreEntitySet="ViewResponsiblePerson">
@@ -4228,11 +4204,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ViewReprimands">
+            <EntityTypeMapping TypeName="FootDevModel.ViewReprimands">
+              <MappingFragment StoreEntitySet="ViewReprimands">
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="ReprimandName" ColumnName="ReprimandName" />
+                <ScalarProperty Name="PunishmentName" ColumnName="PunishmentName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ViewAllInfo">
             <EntityTypeMapping TypeName="FootDevModel.ViewAllInfo">
               <MappingFragment StoreEntitySet="ViewAllInfo">
+                <ScalarProperty Name="Citizenships" ColumnName="Citizenships" />
                 <ScalarProperty Name="Languages" ColumnName="Languages" />
-                <ScalarProperty Name="NationalityName" ColumnName="NationalityName" />
                 <ScalarProperty Name="NameGender" ColumnName="NameGender" />
                 <ScalarProperty Name="DateJoining" ColumnName="DateJoining" />
                 <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />

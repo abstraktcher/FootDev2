@@ -94,5 +94,20 @@ namespace FootDev2.Windows
         {
             MainFrame.Content = new ExcForTest();
         }
+
+        private void BtnExerciseForTest_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Changes();
+        }
+
+        private void BtnReprimands_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new Reprimands();
+        }
+
+        private void BtnRespPeople_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new ResponsiblePerson();
+        }
     }
 }

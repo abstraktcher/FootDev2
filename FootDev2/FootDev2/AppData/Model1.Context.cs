@@ -80,11 +80,11 @@ namespace FootDev2.AppData
         public virtual DbSet<ViewMFCharacteristics> ViewMFCharacteristics { get; set; }
         public virtual DbSet<ViewPlayerTraits> ViewPlayerTraits { get; set; }
         public virtual DbSet<ViewPredispositions> ViewPredispositions { get; set; }
-        public virtual DbSet<ViewReprimands> ViewReprimands { get; set; }
         public virtual DbSet<ViewResponsiblePerson> ViewResponsiblePerson { get; set; }
         public virtual DbSet<ViewShowPositions> ViewShowPositions { get; set; }
         public virtual DbSet<ViewStrikerCharacteristics> ViewStrikerCharacteristics { get; set; }
         public virtual DbSet<ViewTeamTrainings> ViewTeamTrainings { get; set; }
+        public virtual DbSet<ViewReprimands> ViewReprimands { get; set; }
         public virtual DbSet<ViewAllInfo> ViewAllInfo { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

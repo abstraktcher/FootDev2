@@ -8,7 +8,54 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ResponsiblePerson">
 
-    <Grid>
-        
+    <Grid Background="Wheat">
+        <ListView Name="ListViewRespPerson" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="500" Width="500" Margin="30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="240"/>
+                            <RowDefinition Height="200"/>
+                        </Grid.RowDefinitions>
+
+                        <Border BorderBrush="Aquamarine" BorderThickness="4" >
+                            <Image x:Name="ImageFootballer" Source="/Images/DefaultPicture.jpg"
+                       Margin="20"/>
+                        </Border>
+
+                        <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
+                   HorizontalAlignment="Left" Margin="5" Grid.Column="1">
+                            <TextBlock Text="{Binding Player}" FontSize="20" Margin="0 0 0 5"
+                                       FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" 
+                                       TextWrapping="Wrap" Foreground="Black"/>
+                            <TextBlock Text="{Binding PlayersPhone1}" FontSize="20" Margin="0 0 0 5"
+                                       FontFamily="Comic Sans Ms" FontWeight="Bold" Background="White" TextWrapping="Wrap"  Foreground="Black"/>
+                            <TextBlock Text="{Binding Email1}" FontSize="20" Margin="0 0 0 5"
+                                       FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine"  TextWrapping="Wrap"  Foreground="Black"/>
+
+                        </WrapPanel>
+                        <WrapPanel Orientation="Vertical" VerticalAlignment="Top" Grid.ColumnSpan="2"
+                   HorizontalAlignment="Left"  Grid.Column="0" Grid.Row="1" Margin="10 10 10 10">
+
+                            <TextBlock Text="{Binding ResponsiblePersonName1}" FontSize="20"  TextWrapping="Wrap" Margin="0 0 0 5"
+                                        FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
+                            <TextBlock Text="{Binding ResponsiblePersonPhone1}" FontSize="20"  TextWrapping="Wrap" Margin="0 0 0 5"
+                                        FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
+
+                        </WrapPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 </Page>

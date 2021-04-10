@@ -22,7 +22,7 @@ namespace FootDev2.AppData
         public byte[] PlayerImage { get; set; }
         public Nullable<System.DateTime> DateJoining { get; set; }
         public string NameGender { get; set; }
-        public string NationalityName { get; set; }
         public string Languages { get; set; }
+        public string Citizenships { get; set; }
     }
 }

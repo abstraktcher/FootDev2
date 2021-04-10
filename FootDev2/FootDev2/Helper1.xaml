@@ -6,32 +6,97 @@
         xmlns:local="clr-namespace:FootDev2"
         mc:Ignorable="d"
         Title="Helper1" Height="400" Width="600">
-    <Grid Height="400" Width="600">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+    <Grid Background="BlueViolet">
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
-                   HorizontalAlignment="Left" Margin="5" Grid.Column="0">
-            <TextBlock Text="{Binding TournamentName}" FontSize="20"/>
-            <TextBlock Text="{Binding PrizePool}" FontSize="20"/>
-        </WrapPanel> 
-        
-        <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
-                   HorizontalAlignment="Left" Margin="5" Grid.Column="1">
-            <TextBlock Text="{Binding City}" FontSize="20"/>
-            <TextBlock Text="{Binding CountryName}" FontSize="20"/>
-        </WrapPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Search" Margin="10,14,0,14" Width="56" VerticalAlignment="Center"
+                       FontWeight="Bold" FontSize="15" FontFamily="Comic Sans MS"/>
+            <TextBox x:Name="TxtSearch" Margin="0 10 10 10" Width="123"/>
+            <TextBlock Text="Gender" Margin="0,14,0,14" Width="56" VerticalAlignment="Center"
+                       FontWeight="Bold" FontSize="15" FontFamily="Comic Sans MS"/>
+            <ComboBox Name="CmbGender" Margin="0,14,0,10" Width="55" VerticalAlignment="Center" Background="Aquamarine"
+                       FontWeight="Bold" FontSize="15" FontFamily="Comic Sans MS"/>
+            <TextBlock Text="Sort" Margin="4,14,0,14" Width="42" VerticalAlignment="Center"
+                       FontWeight="Bold" FontSize="15" FontFamily="Comic Sans MS"/>
+            <ComboBox Name="CmbSort" Margin="0,14,0,10" Width="80" VerticalAlignment="Center" Background="Aquamarine"
+                       FontWeight="Bold" FontSize="15" FontFamily="Comic Sans MS"/>
+            <Button x:Name="BtnResetFilters" Content="Reset Filters" VerticalAlignment="Center"
+             Background="Aquamarine"    FontWeight="Bold" FontSize="15" FontFamily="Comic Sans MS"
+                     Margin="10,10,5,10" Width="136" Height="30"/>
 
-        <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
-                   HorizontalAlignment="Left" Margin="5" Grid.Column="0" Grid.Row="1">
-            <TextBlock Text="{Binding DateStart}" FontSize="20"/>
-            <TextBlock Text="{Binding DateEnd}" FontSize="20"/>
-            <TextBlock Text="{Binding NumberOfParticipants}" FontSize="20"/>
-        </WrapPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Button x:Name="BtnAddPlayer" Content="Add Player" VerticalAlignment="Center"
+             Background="Aquamarine"    FontWeight="Bold" FontSize="15" FontFamily="Comic Sans MS"
+                    RenderTransformOrigin="0.751,0.687" Margin="40 10 5 10" Width="132"/>
+            <Button x:Name="BtnEditPlayer" Content="Edit Player" VerticalAlignment="Center"
+             Background="Aquamarine"    FontWeight="Bold" FontSize="15" FontFamily="Comic Sans MS"
+                    RenderTransformOrigin="0.751,0.687" Margin="40 10 5 10" Width="132"/>
+            <Button x:Name="BtnDeletePlayer" Content="Delete Player" VerticalAlignment="Center"
+             Background="Red"    FontWeight="Bold" FontSize="15" FontFamily="Comic Sans MS"
+                    RenderTransformOrigin="0.751,0.687" Margin="40 10 5 10" Width="132"/>
+        </StackPanel>
+        <ListView Name="ListViewSquad" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="450" Width="530" Margin="30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="240"/>
+                            <RowDefinition Height="200"/>
+                        </Grid.RowDefinitions>
+
+                        <Border BorderBrush="Aquamarine" BorderThickness="4" >
+                            <Image x:Name="ImageFootballer" Source="/Images/DefaultPicture.jpg"
+                       Margin="20"/>
+                        </Border>
+
+                        <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
+                   HorizontalAlignment="Left" Margin="5" Grid.Column="1">
+                            <TextBlock Text="{Binding FullName}" FontSize="20" TextWrapping="Wrap" Margin="0 0 0 5"
+                                       FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
+                            <TextBlock Text="{Binding NameGender1}" FontSize="20" Margin="0 0 0 5"
+                                       FontFamily="Comic Sans Ms" FontWeight="Bold" Background="White" Foreground="Black"/>
+                            <TextBlock Text="{Binding Age1}" FontSize="20" Margin="0 0 0 5"
+                                       FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
+                            <TextBlock Text="BirthDate" FontSize="20"  FontFamily="Comic Sans Ms" FontWeight="Bold"
+                                       Background="White" Foreground="Black"/>
+                            <TextBlock Text="{Binding DateOfBirth , StringFormat={}{0:dd-MM-yyyy}}" FontSize="20" Margin="0 0 0 5"
+                                        FontFamily="Comic Sans Ms" FontWeight="Bold" Background="White" Foreground="Black"/>
+                            <TextBlock Text="{Binding NationalityName1}" FontSize="20" TextWrapping="Wrap" Margin="0 0 0 5"
+                                        FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
+
+                        </WrapPanel>
+                        <WrapPanel Orientation="Vertical" VerticalAlignment="Top" Grid.ColumnSpan="2"
+                   HorizontalAlignment="Left"  Grid.Column="0" Grid.Row="1" Margin="10 10 10 10">
+                            <TextBlock Text="{Binding PhoneNumber1}" FontSize="20" Margin="0 0 0 5"
+                                        FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
+                            <!--="{Binding StartTime, StringFormat={}{0:yyyy-MM-dd HH:mm}}"-->
+                            <TextBlock Text="{Binding Email1}" FontSize="20" TextWrapping="Wrap" Margin="0 0 0 5"
+                                        FontFamily="Comic Sans Ms" FontWeight="Bold" Background="White" Foreground="Black"/>
+                            <TextBlock Text="Date Joining" FontSize="20"  FontFamily="Comic Sans Ms" FontWeight="Bold"
+                                       Background="Aquamarine" Foreground="Black"/>
+                            <TextBlock Text="{Binding DateJoining , StringFormat={}{0:dd-MM-yyyy}}" FontSize="20" Margin="0 0 0 5"
+                                        FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
+                            <TextBlock Text="{Binding Languages1}" FontSize="20"  FontFamily="Comic Sans Ms" FontWeight="Bold"
+                                       Background="White" Foreground="Black"/>
+                        </WrapPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 </Window>

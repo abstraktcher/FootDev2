@@ -9,13 +9,13 @@ namespace FootDev2.AppData
     public partial class ViewAllInfo
     {
 
-        public  string Age1 { get => $"Age: {Age}"; }
+        public string Age1 { get => $"Age: {Age}"; }
 
         public string Email1 { get => $"Email: {Email}"; }
 
         public string NameGender1 { get => $"Gender: {NameGender}"; }
 
-        public string NationalityName1 { get => $"Nationality: {NationalityName}"; }
+        public string NationalityName1 { get => $"Nationality: {Citizenships}"; }
 
         public string PhoneNumber1 { get => $"Phone: {PhoneNumber}"; }
 
@@ -32,7 +32,7 @@ namespace FootDev2.AppData
 
         public string Treatment1 { get => $"Treatment: {Treatment}"; }
 
-        
+
     }
 
     public partial class ViewInfoTournament
@@ -56,7 +56,7 @@ namespace FootDev2.AppData
 
         public string DominantLeg1 { get => $"Dominant Leg: {DominantLeg}"; }
 
-        public string Positions1 { get => $"Positions: {Positions}" ; }
+        public string Positions1 { get => $"Positions: {Positions}"; }
     }
 
     public partial class ViewPredispositions
@@ -198,6 +198,46 @@ namespace FootDev2.AppData
         public string Time1 { get => $"Time: {Time}"; }
         public string Number1 { get => $"Number: {Number}"; }
         public string Date1 { get => $"Date of Testing: {DateTesting}"; }
+
+
+    }
+
+    public partial class ViewChanges
+    {
+        public string FullName1 { get => $"Name: {Fullname}"; }
+
+        public string Age1 { get => $"Age: {Age}"; }
+
+        public string Action1 { get => $"Action: {Action}"; }
+        public string Time1 { get => $"Time Of Change: {TimeOfChange}"; }
+        public string PreviousValue1 { get => $"Previous Value: {PreviousValue}"; }
+        public string NewValue1 { get => $"New Value: {NewValue}"; }
+        public string Difference1 { get => $"Difference: {PreviousValue}"; }
+
+    }
+
+    public partial class ViewReprimands
+    {
+        public string FullName1 { get => $"Name: {FullName}"; }
+
+        public string Age1 { get => $"Age: {Age}"; }
+
+        public string Phone1 { get => $"Phone Number: {PhoneNumber}"; }
+        public string Email1 { get => $"Email: {Email}"; }
+        public string Reprimand { get => $"Reprimand: {ReprimandName}"; }
+        public string Punishment1 { get => $"Punishment: {PunishmentName}"; }
+
+    }
+
+    public partial class ViewResponsiblePerson
+    {
+        public string FullName1 { get => $"Player's Name: {Player}"; }
+
+        public string PlayersPhone1 { get => $"Player's Phone number: {Player_s_Phone}"; }
+
+        public string Email1 { get => $"Player's email: {Player_s_Email}"; }
+        public string ResponsiblePersonPhone1 { get => $"Phone of the person in charge: {Resp_Person_s_phone}"; }
+        public string ResponsiblePersonName1 { get => $"Name of the person in charge: {Pesponsible_Person}"; }
 
     }
 }

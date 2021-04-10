@@ -26,35 +26,42 @@
             <TextBlock Text="FootDev" FontSize="50" FontWeight="ExtraBold"  Foreground="Purple" HorizontalAlignment="Center" Height="63" Margin="235,0,1008,0" Width="209"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Background="Aquamarine">
+        <StackPanel Grid.Row="0" Background="Aquamarine" Grid.RowSpan="2">
             <Button x:Name="BtnSquad" Content="Squad"  BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="25" Margin="5" Click="BtnSquad_Click" FontWeight="ExtraBold" />
+                    Foreground="Black" Background="Transparent" FontSize="23" Margin="5" Click="BtnSquad_Click" FontWeight="ExtraBold" />
+            <Button x:Name="BtnRespPeople" Content="Responsible &#10;    People"  BorderThickness="0"
+                    Foreground="Black" Background="Transparent" FontSize="23" Margin="5" Click="BtnRespPeople_Click" FontWeight="ExtraBold" />
             <Button x:Name="BtnTournaments" Content="Tournaments" BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="25" FontWeight="ExtraBold" Margin="5" Click="BtnTournaments_Click"/>
+                    Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Click="BtnTournaments_Click"/>
             <Button x:Name="BtnInjuries" Content="Injuries" BorderThickness="0"
-                   Foreground="Black" Background="Transparent" FontSize="25" FontWeight="ExtraBlack" Margin="5" Click="BtnInjuries_Click"/>
+                   Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBlack" Margin="5" Click="BtnInjuries_Click"/>
             <Button x:Name="BtnTraits" Content="Traits" Foreground="Black" Background="Transparent" BorderThickness="0"
-                     FontSize="25" FontWeight="ExtraBold" Margin="5" Click="BtnTraits_Click"/>
+                     FontSize="23" FontWeight="ExtraBold" Margin="5" Click="BtnTraits_Click"/>
             <Button x:Name="BtnPositions" Content="Positions" BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="25" FontWeight="ExtraBold" Margin="5" Click="BtnPositions_Click"/>
+                    Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Click="BtnPositions_Click"/>
             <Button x:Name="BtnPredispositions" Content="Predispositions"  BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="22" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnPredispositions_Click"/>
-            <Border BorderThickness="25" Height="10" BorderBrush="Black"/>
+                    Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnPredispositions_Click"/>
+            <Border BorderThickness="23" Height="10" BorderBrush="Black"/>
             <Button x:Name="BtnGkCharacteristics" Content="Goalkeepers" BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="25" FontWeight="ExtraBold" Margin="5" Click="BtnGkCharacteristics_Click" />
+                    Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Click="BtnGkCharacteristics_Click" />
             <Button x:Name="BtnDFCharacteristics" Content="Defenders" BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="25" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnDFCharacteristics_Click"/>
+                    Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnDFCharacteristics_Click"/>
             <Button x:Name="BtnMFCharacteristics" Content="MidFielders"  BorderThickness="0"
-                   Foreground="Black" Background="Transparent" FontSize="25" FontWeight="ExtraBold" Margin="5" Click="BtnMFCharacteristics_Click"/>
+                   Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Click="BtnMFCharacteristics_Click"/>
             <Button x:Name="BtnFWCharacteristics" Content="Forwards" Foreground="Black" Background="Transparent" BorderThickness="0"
-                     FontSize="25" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnFWCharacteristics_Click"/>
+                     FontSize="23" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnFWCharacteristics_Click"/>
             <Border BorderThickness="25" Height="10" BorderBrush="Black"/>
             <Button x:Name="BtnTeamTrainings" Content="Team Trainings"  BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="22" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnTeamTrainings_Click"/>
+                    Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnTeamTrainings_Click"/>
             <Button x:Name="BtnIndTrainings" Content="Individual&#10;Trainings"  BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="22" FontWeight="ExtraBold" Margin="5" Height="69" Click="BtnIndTrainings_Click"/>
+                    Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Height="69" Click="BtnIndTrainings_Click"/>
             <Button x:Name="BtnExerciseForTest" Content="Exercise Test"  BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="22" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnExerciseForTest_Click"/>
+                    Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnExerciseForTest_Click"/>
+            <Button x:Name="BtnChanges" Content="Changes"  BorderThickness="0"
+                    Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnExerciseForTest_Click_1"/>
+            <Border BorderThickness="25" Height="10" BorderBrush="Black"/>
+            <Button x:Name="BtnReprimands" Content="Reprimands"  BorderThickness="0"
+                    Foreground="Black" Background="Transparent" FontSize="22" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnReprimands_Click"/>
         </StackPanel>
     </Grid>
 </Window>
