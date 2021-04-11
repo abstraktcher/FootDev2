@@ -35,7 +35,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
             <Button x:Name="BtnAddPlayer" Content="Add Player" VerticalAlignment="Center"
              Background="Aquamarine"    FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
-                     Margin="0,10,150,10" Width="299" Height="40"/>
+                     Margin="0,10,150,10" Width="299" Height="40" Click="BtnAddPlayer_Click"/>
             <Button x:Name="BtnEditPlayer" Content="Edit Player" VerticalAlignment="Center"
              Background="Aquamarine"    FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
                      Margin="40,10,150,10" Width="270" Height="40" Click="BtnEditPlayer_Click"/>

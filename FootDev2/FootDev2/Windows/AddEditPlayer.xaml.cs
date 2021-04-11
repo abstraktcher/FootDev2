@@ -33,6 +33,10 @@ namespace FootDev2.Windows
             CmbPositions.DisplayMemberPath = "NamePosition";
             CmbPositions.SelectedIndex = 0;
 
+            CmbNationality.ItemsSource = context.Nationality.ToList();
+            CmbNationality.DisplayMemberPath = "NationalityName";
+            CmbNationality.SelectedIndex = 0;
+
             CmbLeg.ItemsSource = context.DominantLeg.ToList();
             CmbLeg.DisplayMemberPath = "Name";
 
@@ -44,27 +48,29 @@ namespace FootDev2.Windows
         {
             InitializeComponent();
 
-            //cmbTypeMAterial.ItemsSource = Context.TypeMaterial.ToList();
-            //cmbTypeMAterial.DisplayMemberPath = "Name";
+            CmbGender.ItemsSource = context.Gender.ToList();
+            CmbGender.DisplayMemberPath = "NameGender";
 
-            //cmbUnitMaterial.ItemsSource = Context.UntType.ToList();
-            //cmbUnitMaterial.DisplayMemberPath = "Unit";
+            CmbLeg.ItemsSource = context.Gender.ToList();
+            CmbLeg.DisplayMemberPath = "Name";
+           
+            TxtFirstName.Text = player.FirstName.ToString();
+            TxtLastName.Text = player.LastName.ToString();
+            TxtMiddleName.Text = player.MiddleName.ToString();
+            TxtEmail.Text = player.Email.ToString();
+            TxtPhone.Text = player.PhoneNumber.ToString();
+            TxtPassword.Text = player.Password.ToString();
+            CmbGender.SelectedIndex = player.idGender - 1;
+            CmbLeg.SelectedIndex = (int)(player.IdDominantLeg - 1);
 
-
-            //cmbSupplier.ItemsSource = Context.Supplier.ToList();
-            //cmbSupplier.DisplayMemberPath = "Name";
-
-            //txtName.Text = material.Name;
-            //txtCount.Text = material.Count.ToString();
-            //txtCountInBox.Text = material.CountInBox.ToString();
-            //txtMinCount.Text = material.MinCount.ToString();
-            //txtPrice.Text = material.Price.ToString();
-            //cmbTypeMAterial.SelectedIndex = material.TypeId - 1;
-            //cmbUnitMaterial.SelectedIndex = material.TypeDimension - 1;
+           
             //imgMaterial.Source = new BitmapImage(new Uri(material.Image));
 
+            var Languages = context.LanguageToPlayer.Where(i => i.IdPlayer == player.IdPlayer).ToList();
             //var supMaterial = Context.MaterialSupp.Where(i => i.IdMaterial == material.ID).ToList();
 
         }
+
+
     }
 }

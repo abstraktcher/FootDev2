@@ -107,10 +107,18 @@ namespace FootDev2.Pages
         private void BtnEditPlayer_Click(object sender, RoutedEventArgs e)
         {
             AddEditPlayer addEditMateralWindow = new AddEditPlayer(ListViewSquad.SelectedItem as Player);
-            AddEditPlayer AddEditWindow = new AddEditPlayer();
             this.Opacity = 0.3;
             Filter();
-            AddEditWindow.ShowDialog();
+            addEditMateralWindow.ShowDialog();
+            this.Opacity = 1;
+        }
+
+        private void BtnAddPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditPlayer addEditMateralWindow = new AddEditPlayer();
+            this.Opacity = 0.3;
+            Filter();
+            addEditMateralWindow.ShowDialog();
             this.Opacity = 1;
         }
     }

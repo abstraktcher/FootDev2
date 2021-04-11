@@ -271,6 +271,7 @@
       <DependentUpon>Helper1.xaml</DependentUpon>
     </Compile>
     <Compile Include="HelperClass\Helper.cs" />
+    <Compile Include="HelperClass\Helper11.cs" />
     <Compile Include="Pages\Changes.xaml.cs">
       <DependentUpon>Changes.xaml</DependentUpon>
     </Compile>

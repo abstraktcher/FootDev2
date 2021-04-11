@@ -76,24 +76,22 @@
             <Button x:Name="btnChooseImg"
                     Content="Choose Image"
                     HorizontalAlignment="Center"
-                    Margin="112,10,127,10"
+                    Margin="5"
                     Background="Aquamarine"
                     FontWeight="Bold" FontSize="25"
-                     FontFamily="Comic Sans MS" Foreground="Black" Width="307" Height="42"/>
+                     FontFamily="Comic Sans MS" Foreground="Black" Width="252" Height="45"/>
 
             <StackPanel>
                 <TextBlock Text="Languages"
                        HorizontalAlignment="Center"
                        FontWeight="Bold" FontSize="25"
                            FontFamily="Comic Sans MS" Foreground="Black"
-                           Margin="0 0 0 0"/>
+                           Margin="194,0,196,0" Height="41" Width="156"/>
                 <ComboBox x:Name="CmbLanguages"
                           HorizontalAlignment="Center"
-                          Width="278"
-                          Height="33"
+                          Margin="5"
                           FontSize="18"
-                          Margin="142,0,126,20"
-                          IsEditable="True"/>
+                          IsEditable="True" Width="199" Height="36"/>
                 <ListView x:Name="ListViewLanguages" 
                           Height="69" HorizontalAlignment="Right" Width="491" Margin="0,0,35,0">
                     <ListView.View>
@@ -119,11 +117,10 @@
                            Margin="0 0 0 0"/>
                 <ComboBox x:Name="CmbPositions"
                           HorizontalAlignment="Center"
-                          Width="282"
-                          Height="27"
+                          
                           FontSize="18"
-                          Margin="148,0,116,20"
-                          IsEditable="True"/>
+                          Margin="5"
+                          IsEditable="True" Width="191"/>
                 <ListView x:Name="ListViewPositions" 
                           Height="104" HorizontalAlignment="Right" Width="491" Margin="0,0,35,0">
                     <ListView.View>
@@ -153,11 +150,9 @@
                            Margin="0 0 0 0"/>
             <ComboBox x:Name="CmbNationality"
                           HorizontalAlignment="Center"
-                          Width="281"
-                          Height="27"
+                          Margin="6"
                           FontSize="18"
-                          Margin="131,0,134,20"
-                          IsEditable="True"/>
+                          IsEditable="True" Width="214"/>
             <ListView x:Name="ListViewNAtionality" 
                           Height="104" HorizontalAlignment="Right" Width="491" Margin="0,0,35,0">
                 <ListView.View>
