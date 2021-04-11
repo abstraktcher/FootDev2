@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static FootDev2.AppData.AppDataClass;
 using  FootDev2.AppData;
+using FootDev2.Windows;
 
 namespace FootDev2.Pages
 {
@@ -101,6 +102,16 @@ namespace FootDev2.Pages
             CmbGender.SelectedIndex = 0;
             CmbSort.SelectedIndex = 0;
             TxtSearch.Text = "";
+        }
+
+        private void BtnEditPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditPlayer addEditMateralWindow = new AddEditPlayer(ListViewSquad.SelectedItem as Player);
+            AddEditPlayer AddEditWindow = new AddEditPlayer();
+            this.Opacity = 0.3;
+            Filter();
+            AddEditWindow.ShowDialog();
+            this.Opacity = 1;
         }
     }
 }

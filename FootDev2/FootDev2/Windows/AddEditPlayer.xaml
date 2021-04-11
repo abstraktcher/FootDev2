@@ -1,0 +1,203 @@
+﻿<Window x:Class="FootDev2.Windows.AddEditPlayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FootDev2.Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Add/Edit Player" Height="900" Width="1100"
+        MinHeight="600" MinWidth="900" Icon="/Images/favicon.png" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="380"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <StackPanel  Grid.Column="0" Margin="10,25,10,0">
+            <TextBlock Text="First Name" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7"/>
+            <TextBlock Text="Last Name" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7"/>
+            <TextBlock Text="Middle Name" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" />
+            <TextBlock Text="Phone Number" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" />
+            <TextBlock Text="Email" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="30" />
+            <TextBlock Text="Date Of Birth" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="38" />
+            <TextBlock Text="Dominant Leg" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="30" />
+            <TextBlock Text="Gender" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="28" />
+            <TextBlock Text="PassWord" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" />
+
+
+        </StackPanel>
+
+        <StackPanel   Grid.Column="1" Margin="10,25,61,10">
+            <TextBox x:Name="TxtFirstName"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="28" VerticalAlignment="Top"/>
+            <TextBox x:Name="TxtLastName"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="26" VerticalAlignment="Top"/>
+            <TextBox x:Name="TxtMiddleName"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="27" VerticalAlignment="Top"/>
+            <TextBox x:Name="TxtPhone"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="26" VerticalAlignment="Top"/>
+            <TextBox x:Name="TxtEmail"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="26" VerticalAlignment="Top"/>
+            <DatePicker x:Name="DpDateOfBirth"
+                        Margin="0,27,10,-7" Height="35" VerticalAlignment="Top"/>
+            <ComboBox x:Name="CmbLeg"  Margin="0,27,10,-7" Height="29" VerticalAlignment="Top"/>
+            <ComboBox x:Name="CmbGender"  Margin="0,27,10,-7" Height="28" VerticalAlignment="Top"/>
+            <TextBox x:Name="TxtPassword"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="32" VerticalAlignment="Top"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2">
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="4">
+            <Border BorderBrush="Aquamarine" BorderThickness="3" Margin="134,0,160,0">
+                <Image x:Name="ImgPlayer"
+                   Height="156" Margin="7,10" RenderTransformOrigin="0.5,0.5"/>
+            </Border>
+
+            <Button x:Name="btnChooseImg"
+                    Content="Choose Image"
+                    HorizontalAlignment="Center"
+                    Margin="112,10,127,10"
+                    Background="Aquamarine"
+                    FontWeight="Bold" FontSize="25"
+                     FontFamily="Comic Sans MS" Foreground="Black" Width="307" Height="42"/>
+
+            <StackPanel>
+                <TextBlock Text="Languages"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold" FontSize="25"
+                           FontFamily="Comic Sans MS" Foreground="Black"
+                           Margin="0 0 0 0"/>
+                <ComboBox x:Name="CmbLanguages"
+                          HorizontalAlignment="Center"
+                          Width="278"
+                          Height="33"
+                          FontSize="18"
+                          Margin="142,0,126,20"
+                          IsEditable="True"/>
+                <ListView x:Name="ListViewLanguages" 
+                          Height="69" HorizontalAlignment="Right" Width="491" Margin="0,0,35,0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Language" Width="300" DisplayMemberBinding="{Binding LanguageName}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <Button x:Name="ButtonLanguages"
+                        Content="Confirm"
+                        Height="39"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine"
+                        Margin="173,10,159,10"/>
+            </StackPanel>
+            <StackPanel Height="270">
+                <TextBlock Text="Positions"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold" FontSize="25"
+                           FontFamily="Comic Sans MS" Foreground="Black"
+                           Margin="0 0 0 0"/>
+                <ComboBox x:Name="CmbPositions"
+                          HorizontalAlignment="Center"
+                          Width="282"
+                          Height="27"
+                          FontSize="18"
+                          Margin="148,0,116,20"
+                          IsEditable="True"/>
+                <ListView x:Name="ListViewPositions" 
+                          Height="104" HorizontalAlignment="Right" Width="491" Margin="0,0,35,0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Position Name" Width="300" DisplayMemberBinding="{Binding NamePosition}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <Button x:Name="BtnAddPositions"
+                        Content="Add Positions"
+                        Height="39"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine"
+                        Margin="173,10,159,10"/>
+            </StackPanel>
+
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,55">
+            <TextBlock Text="Nationality"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold" FontSize="25"
+                           FontFamily="Comic Sans MS" Foreground="Black"
+                           Margin="0 0 0 0"/>
+            <ComboBox x:Name="CmbNationality"
+                          HorizontalAlignment="Center"
+                          Width="281"
+                          Height="27"
+                          FontSize="18"
+                          Margin="131,0,134,20"
+                          IsEditable="True"/>
+            <ListView x:Name="ListViewNAtionality" 
+                          Height="104" HorizontalAlignment="Right" Width="491" Margin="0,0,35,0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Position Name" Width="300" DisplayMemberBinding="{Binding NamePosition}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Button x:Name="BtnAddNationality"
+                        Content="Add Nationality"
+                        Height="39"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine"
+                        Margin="173,10,159,10"/>
+        </StackPanel>
+
+        <Button x:Name="BtnConfirm"
+                        Content="Confirm"
+                        Height="39"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Grid.ColumnSpan="2" Margin="56,325,218,16" Grid.Row="1"
+                       />
+
+        <Button x:Name="BtnCancel"
+                        Content="Cancel"
+                        Height="39"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Grid.Row="1" Margin="240,325,26,16" Grid.Column="2"
+                       />
+
+        <Button x:Name="BtnClear"
+                        Content="Clear All"
+                        Height="39"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Grid.ColumnSpan="2" Margin="157,325,390,16" Grid.Row="1" Grid.Column="1"
+                       />
+    </Grid>
+</Window>
