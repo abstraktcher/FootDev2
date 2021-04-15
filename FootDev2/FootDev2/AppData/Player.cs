@@ -22,7 +22,6 @@ namespace FootDev2.AppData
             this.IndividualTraining = new HashSet<IndividualTraining>();
             this.InjuryToPlayer = new HashSet<InjuryToPlayer>();
             this.LanguageToPlayer = new HashSet<LanguageToPlayer>();
-            this.NationalityToPlayer = new HashSet<NationalityToPlayer>();
             this.PlayerToMFCharacteristics = new HashSet<PlayerToMFCharacteristics>();
             this.PlayerToDFCharacteristics = new HashSet<PlayerToDFCharacteristics>();
             this.PlayerToFWCharacteristics = new HashSet<PlayerToFWCharacteristics>();
@@ -41,12 +40,13 @@ namespace FootDev2.AppData
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public System.DateTime DateOfBirth { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
         public byte IdRole { get; set; }
         public Nullable<byte> IdDominantLeg { get; set; }
         public byte[] PlayerImage { get; set; }
         public byte idGender { get; set; }
         public Nullable<System.DateTime> DateJoining { get; set; }
+        public Nullable<int> IdNationality { get; set; }
     
         public virtual DominantLeg DominantLeg { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -60,8 +60,7 @@ namespace FootDev2.AppData
         public virtual ICollection<InjuryToPlayer> InjuryToPlayer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LanguageToPlayer> LanguageToPlayer { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NationalityToPlayer> NationalityToPlayer { get; set; }
+        public virtual Nationality Nationality { get; set; }
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlayerToMFCharacteristics> PlayerToMFCharacteristics { get; set; }

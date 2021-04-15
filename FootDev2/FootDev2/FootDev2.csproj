@@ -144,9 +144,6 @@
     <Compile Include="AppData\Nationality.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppData\NationalityToPlayer.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="AppData\Personnel.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

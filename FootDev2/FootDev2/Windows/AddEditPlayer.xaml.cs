@@ -25,35 +25,29 @@ namespace FootDev2.Windows
         public AddEditPlayer()
         {
             InitializeComponent();
-            CmbLanguages.ItemsSource = context.Languages.ToList();
-            CmbLanguages.DisplayMemberPath = "LanguageName";
-            CmbLanguages.SelectedIndex = 0;
+           
 
-            CmbPositions.ItemsSource = context.Position.ToList();
-            CmbPositions.DisplayMemberPath = "NamePosition";
-            CmbPositions.SelectedIndex = 0;
+            //           CmbPositions.ItemsSource = context.Position.ToList();
+            //CmbPositions.DisplayMemberPath = "NamePosition";
+            //CmbPositions.SelectedIndex = 0;
 
-            CmbNationality.ItemsSource = context.Nationality.ToList();
-            CmbNationality.DisplayMemberPath = "NationalityName";
-            CmbNationality.SelectedIndex = 0;
-
-            CmbLeg.ItemsSource = context.DominantLeg.ToList();
-            CmbLeg.DisplayMemberPath = "Name";
-
-            CmbGender.ItemsSource = context.Gender.ToList();
-            CmbGender.DisplayMemberPath = "NameGender";
+          
         }
 
-        public AddEditPlayer(Player player)
+        public AddEditPlayer(ViewAllInfo player)
         {
             InitializeComponent();
 
             CmbGender.ItemsSource = context.Gender.ToList();
             CmbGender.DisplayMemberPath = "NameGender";
 
-            CmbLeg.ItemsSource = context.Gender.ToList();
+            CmbLeg.ItemsSource = context.DominantLeg.ToList();
             CmbLeg.DisplayMemberPath = "Name";
-           
+
+            CmbNationality.ItemsSource = context.Nationality.ToList();
+            CmbNationality.DisplayMemberPath = "NationalityName";
+
+
             TxtFirstName.Text = player.FirstName.ToString();
             TxtLastName.Text = player.LastName.ToString();
             TxtMiddleName.Text = player.MiddleName.ToString();
@@ -66,7 +60,7 @@ namespace FootDev2.Windows
            
             //imgMaterial.Source = new BitmapImage(new Uri(material.Image));
 
-            var Languages = context.LanguageToPlayer.Where(i => i.IdPlayer == player.IdPlayer).ToList();
+            
             //var supMaterial = Context.MaterialSupp.Where(i => i.IdMaterial == material.ID).ToList();
 
         }

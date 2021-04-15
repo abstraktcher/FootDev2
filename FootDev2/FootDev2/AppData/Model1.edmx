@@ -226,14 +226,6 @@
           <Property Name="IdNationality" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NationalityName" Type="nvarchar" MaxLength="40" Nullable="false" />
         </EntityType>
-        <EntityType Name="NationalityToPlayer">
-          <Key>
-            <PropertyRef Name="IdNatToPla" />
-          </Key>
-          <Property Name="IdNatToPla" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdNationality" Type="int" Nullable="false" />
-          <Property Name="IdPlayer" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="Personnel">
           <Key>
             <PropertyRef Name="IdPersonnel" />
@@ -258,15 +250,16 @@
           <Property Name="FirstName" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="MiddleName" Type="nvarchar" MaxLength="150" />
-          <Property Name="PhoneNumber" Type="nchar" MaxLength="13" />
-          <Property Name="Email" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="75" />
           <Property Name="Password" Type="nvarchar" MaxLength="75" Nullable="false" />
-          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" />
           <Property Name="IdRole" Type="tinyint" Nullable="false" />
           <Property Name="IdDominantLeg" Type="tinyint" />
           <Property Name="PlayerImage" Type="varbinary(max)" />
           <Property Name="idGender" Type="tinyint" Nullable="false" />
           <Property Name="DateJoining" Type="date" />
+          <Property Name="IdNationality" Type="int" />
         </EntityType>
         <EntityType Name="PlayerToDFCharacteristics">
           <Key>
@@ -467,19 +460,32 @@
         <EntityType Name="ViewAllInfo">
           <Key>
             <PropertyRef Name="FullName" />
-            <PropertyRef Name="Email" />
-            <PropertyRef Name="DateOfBirth" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="IdDominantLeg" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="NationalityName" />
+            <PropertyRef Name="idGender" />
           </Key>
           <Property Name="FullName" Type="nvarchar" MaxLength="452" Nullable="false" />
           <Property Name="Age" Type="tinyint" />
-          <Property Name="PhoneNumber" Type="nchar" MaxLength="13" />
-          <Property Name="Email" Type="nvarchar" MaxLength="75" Nullable="false" />
-          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="75" />
+          <Property Name="DateOfBirth" Type="date" />
           <Property Name="PlayerImage" Type="varbinary(max)" />
           <Property Name="DateJoining" Type="date" />
           <Property Name="NameGender" Type="nchar" MaxLength="6" />
           <Property Name="Languages" Type="nvarchar" MaxLength="200" />
-          <Property Name="Citizenships" Type="nvarchar" MaxLength="200" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Password" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="IdDominantLeg" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="NationalityName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="idGender" Type="tinyint" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewChanges" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -996,30 +1002,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_NationalityToPlayer_Nationality">
-          <End Role="Nationality" Type="Self.Nationality" Multiplicity="1" />
-          <End Role="NationalityToPlayer" Type="Self.NationalityToPlayer" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Nationality">
-              <PropertyRef Name="IdNationality" />
-            </Principal>
-            <Dependent Role="NationalityToPlayer">
-              <PropertyRef Name="IdNationality" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NationalityToPlayer_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="NationalityToPlayer" Type="Self.NationalityToPlayer" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Player">
-              <PropertyRef Name="IdPlayer" />
-            </Principal>
-            <Dependent Role="NationalityToPlayer">
-              <PropertyRef Name="IdPlayer" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Player_DominantLeg">
           <End Role="DominantLeg" Type="Self.DominantLeg" Multiplicity="0..1" />
           <End Role="Player" Type="Self.Player" Multiplicity="*" />
@@ -1041,6 +1023,18 @@
             </Principal>
             <Dependent Role="Player">
               <PropertyRef Name="idGender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Player_Nationality">
+          <End Role="Nationality" Type="Self.Nationality" Multiplicity="0..1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nationality">
+              <PropertyRef Name="IdNationality" />
+            </Principal>
+            <Dependent Role="Player">
+              <PropertyRef Name="IdNationality" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1339,6 +1333,9 @@
         <Function Name="FuncAge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="tinyint">
           <Parameter Name="BirthDate" Type="date" Mode="In" />
         </Function>
+        <Function Name="FuncShowCitizenships" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
+          <Parameter Name="IdPlayer" Type="int" Mode="In" />
+        </Function>
         <Function Name="FuncShowLangs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="IdPlayer" Type="int" Mode="In" />
         </Function>
@@ -1398,7 +1395,6 @@
           <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MidFielderCharacteristics" EntityType="Self.MidFielderCharacteristics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nationality" EntityType="Self.Nationality" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="NationalityToPlayer" EntityType="Self.NationalityToPlayer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personnel" EntityType="Self.Personnel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlayerToDFCharacteristics" EntityType="Self.PlayerToDFCharacteristics" Schema="dbo" store:Type="Tables" />
@@ -1444,7 +1440,14 @@
     [ViewAllInfo].[DateJoining] AS [DateJoining], 
     [ViewAllInfo].[NameGender] AS [NameGender], 
     [ViewAllInfo].[Languages] AS [Languages], 
-    [ViewAllInfo].[Citizenships] AS [Citizenships]
+    [ViewAllInfo].[FirstName] AS [FirstName], 
+    [ViewAllInfo].[LastName] AS [LastName], 
+    [ViewAllInfo].[MiddleName] AS [MiddleName], 
+    [ViewAllInfo].[Password] AS [Password], 
+    [ViewAllInfo].[IdDominantLeg] AS [IdDominantLeg], 
+    [ViewAllInfo].[Name] AS [Name], 
+    [ViewAllInfo].[NationalityName] AS [NationalityName], 
+    [ViewAllInfo].[idGender] AS [idGender]
     FROM [dbo].[ViewAllInfo] AS [ViewAllInfo]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewChanges" EntityType="Self.ViewChanges" store:Type="Views" store:Schema="dbo">
@@ -1696,20 +1699,16 @@
             <End Role="Country" EntitySet="Country" />
             <End Role="Location" EntitySet="Location" />
           </AssociationSet>
-          <AssociationSet Name="FK_NationalityToPlayer_Nationality" Association="Self.FK_NationalityToPlayer_Nationality">
-            <End Role="Nationality" EntitySet="Nationality" />
-            <End Role="NationalityToPlayer" EntitySet="NationalityToPlayer" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NationalityToPlayer_Player" Association="Self.FK_NationalityToPlayer_Player">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="NationalityToPlayer" EntitySet="NationalityToPlayer" />
-          </AssociationSet>
           <AssociationSet Name="FK_Player_DominantLeg" Association="Self.FK_Player_DominantLeg">
             <End Role="DominantLeg" EntitySet="DominantLeg" />
             <End Role="Player" EntitySet="Player" />
           </AssociationSet>
           <AssociationSet Name="FK_Player_Gender" Association="Self.FK_Player_Gender">
             <End Role="Gender" EntitySet="Gender" />
+            <End Role="Player" EntitySet="Player" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Player_Nationality" Association="Self.FK_Player_Nationality">
+            <End Role="Nationality" EntitySet="Nationality" />
             <End Role="Player" EntitySet="Player" />
           </AssociationSet>
           <AssociationSet Name="FK_Player_Role" Association="Self.FK_Player_Role">
@@ -1863,7 +1862,6 @@
           <EntitySet Name="Location" EntityType="FootDevModel.Location" />
           <EntitySet Name="MidFielderCharacteristics" EntityType="FootDevModel.MidFielderCharacteristics" />
           <EntitySet Name="Nationality" EntityType="FootDevModel.Nationality" />
-          <EntitySet Name="NationalityToPlayer" EntityType="FootDevModel.NationalityToPlayer" />
           <EntitySet Name="Personnel" EntityType="FootDevModel.Personnel" />
           <EntitySet Name="Player" EntityType="FootDevModel.Player" />
           <EntitySet Name="PlayerToDFCharacteristics" EntityType="FootDevModel.PlayerToDFCharacteristics" />
@@ -1888,6 +1886,7 @@
           <EntitySet Name="TrainToTeam" EntityType="FootDevModel.TrainToTeam" />
           <EntitySet Name="Traits" EntityType="FootDevModel.Traits" />
           <EntitySet Name="Injuries" EntityType="FootDevModel.Injuries" />
+          <EntitySet Name="ViewAllInfo" EntityType="FootDevModel.ViewAllInfo" />
           <EntitySet Name="ViewChanges" EntityType="FootDevModel.ViewChanges" />
           <EntitySet Name="ViewDFCharacteristics" EntityType="FootDevModel.ViewDFCharacteristics" />
           <EntitySet Name="ViewExcForTest" EntityType="FootDevModel.ViewExcForTest" />
@@ -1897,6 +1896,7 @@
           <EntitySet Name="ViewMFCharacteristics" EntityType="FootDevModel.ViewMFCharacteristics" />
           <EntitySet Name="ViewPlayerTraits" EntityType="FootDevModel.ViewPlayerTraits" />
           <EntitySet Name="ViewPredispositions" EntityType="FootDevModel.ViewPredispositions" />
+          <EntitySet Name="ViewReprimands" EntityType="FootDevModel.ViewReprimands" />
           <EntitySet Name="ViewResponsiblePerson" EntityType="FootDevModel.ViewResponsiblePerson" />
           <EntitySet Name="ViewShowPositions" EntityType="FootDevModel.ViewShowPositions" />
           <EntitySet Name="ViewStrikerCharacteristics" EntityType="FootDevModel.ViewStrikerCharacteristics" />
@@ -2001,13 +2001,9 @@
             <End Role="MidFielderCharacteristics" EntitySet="MidFielderCharacteristics" />
             <End Role="PlayerToMFCharacteristics" EntitySet="PlayerToMFCharacteristics" />
           </AssociationSet>
-          <AssociationSet Name="FK_NationalityToPlayer_Nationality" Association="FootDevModel.FK_NationalityToPlayer_Nationality">
+          <AssociationSet Name="FK_Player_Nationality" Association="FootDevModel.FK_Player_Nationality">
             <End Role="Nationality" EntitySet="Nationality" />
-            <End Role="NationalityToPlayer" EntitySet="NationalityToPlayer" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NationalityToPlayer_Player" Association="FootDevModel.FK_NationalityToPlayer_Player">
             <End Role="Player" EntitySet="Player" />
-            <End Role="NationalityToPlayer" EntitySet="NationalityToPlayer" />
           </AssociationSet>
           <AssociationSet Name="FK_Coach_Role" Association="FootDevModel.FK_Coach_Role">
             <End Role="Role" EntitySet="Role" />
@@ -2081,9 +2077,7 @@
             <End Role="Training" EntitySet="Training" />
             <End Role="TrainToTeam" EntitySet="TrainToTeam" />
           </AssociationSet>
-          <EntitySet Name="ViewReprimands" EntityType="FootDevModel.ViewReprimands" />
-          <EntitySet Name="ViewAllInfo" EntityType="FootDevModel.ViewAllInfo" />
-        </EntityContainer>
+          </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -2346,17 +2340,7 @@
           </Key>
           <Property Name="IdNationality" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NationalityName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="NationalityToPlayer" Relationship="FootDevModel.FK_NationalityToPlayer_Nationality" FromRole="Nationality" ToRole="NationalityToPlayer" />
-        </EntityType>
-        <EntityType Name="NationalityToPlayer">
-          <Key>
-            <PropertyRef Name="IdNatToPla" />
-          </Key>
-          <Property Name="IdNatToPla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdNationality" Type="Int32" Nullable="false" />
-          <Property Name="IdPlayer" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Nationality" Relationship="FootDevModel.FK_NationalityToPlayer_Nationality" FromRole="NationalityToPlayer" ToRole="Nationality" />
-          <NavigationProperty Name="Player" Relationship="FootDevModel.FK_NationalityToPlayer_Player" FromRole="NationalityToPlayer" ToRole="Player" />
+          <NavigationProperty Name="Player" Relationship="FootDevModel.FK_Player_Nationality" FromRole="Nationality" ToRole="Player" />
         </EntityType>
         <EntityType Name="Personnel">
           <Key>
@@ -2385,15 +2369,16 @@
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="MiddleName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
-          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
           <Property Name="IdRole" Type="Byte" Nullable="false" />
           <Property Name="IdDominantLeg" Type="Byte" />
           <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="idGender" Type="Byte" Nullable="false" />
           <Property Name="DateJoining" Type="DateTime" Precision="0" />
+          <Property Name="IdNationality" Type="Int32" />
           <NavigationProperty Name="DominantLeg" Relationship="FootDevModel.FK_Player_DominantLeg" FromRole="Player" ToRole="DominantLeg" />
           <NavigationProperty Name="ExerciseForTest" Relationship="FootDevModel.FK_ExerciseForTest_Player" FromRole="Player" ToRole="ExerciseForTest" />
           <NavigationProperty Name="Gender" Relationship="FootDevModel.FK_Player_Gender" FromRole="Player" ToRole="Gender" />
@@ -2401,7 +2386,7 @@
           <NavigationProperty Name="IndividualTraining" Relationship="FootDevModel.FK_IndividualTraining_Player" FromRole="Player" ToRole="IndividualTraining" />
           <NavigationProperty Name="InjuryToPlayer" Relationship="FootDevModel.FK_InjuryToPlayer_Player" FromRole="Player" ToRole="InjuryToPlayer" />
           <NavigationProperty Name="LanguageToPlayer" Relationship="FootDevModel.FK_LanguageToPlayer_Player" FromRole="Player" ToRole="LanguageToPlayer" />
-          <NavigationProperty Name="NationalityToPlayer" Relationship="FootDevModel.FK_NationalityToPlayer_Player" FromRole="Player" ToRole="NationalityToPlayer" />
+          <NavigationProperty Name="Nationality" Relationship="FootDevModel.FK_Player_Nationality" FromRole="Player" ToRole="Nationality" />
           <NavigationProperty Name="Role" Relationship="FootDevModel.FK_Player_Role" FromRole="Player" ToRole="Role" />
           <NavigationProperty Name="PlayerToMFCharacteristics" Relationship="FootDevModel.FK_PlayerToCharacteristics_Player" FromRole="Player" ToRole="PlayerToMFCharacteristics" />
           <NavigationProperty Name="PlayerToDFCharacteristics" Relationship="FootDevModel.FK_PlayerToDFCharacteristics_Player" FromRole="Player" ToRole="PlayerToDFCharacteristics" />
@@ -2640,6 +2625,36 @@
           <Property Name="DateOfRecovery" Type="DateTime" Precision="0" />
           <Property Name="Treatment" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="ViewAllInfo">
+          <Key>
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="IdDominantLeg" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="NationalityName" />
+            <PropertyRef Name="idGender" />
+          </Key>
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Byte" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateJoining" Type="DateTime" Precision="0" />
+          <Property Name="NameGender" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="Languages" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="IdDominantLeg" Type="Byte" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NationalityName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="idGender" Type="Byte" Nullable="false" />
+        </EntityType>
         <EntityType Name="ViewChanges">
           <Key>
             <PropertyRef Name="Fullname" />
@@ -2829,6 +2844,20 @@
           <Property Name="PredispositionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Treatment" Type="String" MaxLength="175" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewReprimands">
+          <Key>
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="PunishmentName" />
+            <PropertyRef Name="ReprimandName" />
+          </Key>
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="PunishmentName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ReprimandName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Byte" />
         </EntityType>
         <EntityType Name="ViewResponsiblePerson">
           <Key>
@@ -3209,27 +3238,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_NationalityToPlayer_Nationality">
-          <End Type="FootDevModel.Nationality" Role="Nationality" Multiplicity="1" />
-          <End Type="FootDevModel.NationalityToPlayer" Role="NationalityToPlayer" Multiplicity="*" />
+        <Association Name="FK_Player_Nationality">
+          <End Type="FootDevModel.Nationality" Role="Nationality" Multiplicity="0..1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Nationality">
               <PropertyRef Name="IdNationality" />
             </Principal>
-            <Dependent Role="NationalityToPlayer">
+            <Dependent Role="Player">
               <PropertyRef Name="IdNationality" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NationalityToPlayer_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
-          <End Type="FootDevModel.NationalityToPlayer" Role="NationalityToPlayer" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Player">
-              <PropertyRef Name="IdPlayer" />
-            </Principal>
-            <Dependent Role="NationalityToPlayer">
-              <PropertyRef Name="IdPlayer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3449,38 +3466,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="ViewReprimands">
-          <Key>
-            <PropertyRef Name="FullName" />
-            <PropertyRef Name="Email" />
-            <PropertyRef Name="PunishmentName" />
-            <PropertyRef Name="ReprimandName" />
-          </Key>
-          <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
-          <Property Name="PunishmentName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="ReprimandName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Age" Type="Byte" />
-        </EntityType>
-        <EntityType Name="ViewAllInfo">
-          <Key>
-            <PropertyRef Name="FullName" />
-            <PropertyRef Name="Email" />
-            <PropertyRef Name="DateOfBirth" />
-          </Key>
-          <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
-          <Property Name="Age" Type="Byte" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
-          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="DateJoining" Type="DateTime" Precision="0" />
-          <Property Name="NameGender" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
-          <Property Name="Languages" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Citizenships" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-        </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -3750,15 +3736,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="NationalityToPlayer">
-            <EntityTypeMapping TypeName="FootDevModel.NationalityToPlayer">
-              <MappingFragment StoreEntitySet="NationalityToPlayer">
-                <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
-                <ScalarProperty Name="IdNationality" ColumnName="IdNationality" />
-                <ScalarProperty Name="IdNatToPla" ColumnName="IdNatToPla" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Personnel">
             <EntityTypeMapping TypeName="FootDevModel.Personnel">
               <MappingFragment StoreEntitySet="Personnel">
@@ -3779,6 +3756,7 @@
           <EntitySetMapping Name="Player">
             <EntityTypeMapping TypeName="FootDevModel.Player">
               <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="IdNationality" ColumnName="IdNationality" />
                 <ScalarProperty Name="DateJoining" ColumnName="DateJoining" />
                 <ScalarProperty Name="idGender" ColumnName="idGender" />
                 <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
@@ -4007,6 +3985,29 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ViewAllInfo">
+            <EntityTypeMapping TypeName="FootDevModel.ViewAllInfo">
+              <MappingFragment StoreEntitySet="ViewAllInfo">
+                <ScalarProperty Name="idGender" ColumnName="idGender" />
+                <ScalarProperty Name="NationalityName" ColumnName="NationalityName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdDominantLeg" ColumnName="IdDominantLeg" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Languages" ColumnName="Languages" />
+                <ScalarProperty Name="NameGender" ColumnName="NameGender" />
+                <ScalarProperty Name="DateJoining" ColumnName="DateJoining" />
+                <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ViewChanges">
             <EntityTypeMapping TypeName="FootDevModel.ViewChanges">
               <MappingFragment StoreEntitySet="ViewChanges">
@@ -4146,6 +4147,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ViewReprimands">
+            <EntityTypeMapping TypeName="FootDevModel.ViewReprimands">
+              <MappingFragment StoreEntitySet="ViewReprimands">
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="ReprimandName" ColumnName="ReprimandName" />
+                <ScalarProperty Name="PunishmentName" ColumnName="PunishmentName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ViewResponsiblePerson">
             <EntityTypeMapping TypeName="FootDevModel.ViewResponsiblePerson">
               <MappingFragment StoreEntitySet="ViewResponsiblePerson">
@@ -4204,35 +4217,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ViewReprimands">
-            <EntityTypeMapping TypeName="FootDevModel.ViewReprimands">
-              <MappingFragment StoreEntitySet="ViewReprimands">
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="ReprimandName" ColumnName="ReprimandName" />
-                <ScalarProperty Name="PunishmentName" ColumnName="PunishmentName" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ViewAllInfo">
-            <EntityTypeMapping TypeName="FootDevModel.ViewAllInfo">
-              <MappingFragment StoreEntitySet="ViewAllInfo">
-                <ScalarProperty Name="Citizenships" ColumnName="Citizenships" />
-                <ScalarProperty Name="Languages" ColumnName="Languages" />
-                <ScalarProperty Name="NameGender" ColumnName="NameGender" />
-                <ScalarProperty Name="DateJoining" ColumnName="DateJoining" />
-                <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
-                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

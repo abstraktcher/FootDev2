@@ -17,13 +17,13 @@ namespace FootDev2.AppData
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Nationality()
         {
-            this.NationalityToPlayer = new HashSet<NationalityToPlayer>();
+            this.Player = new HashSet<Player>();
         }
     
         public int IdNationality { get; set; }
         public string NationalityName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NationalityToPlayer> NationalityToPlayer { get; set; }
+        public virtual ICollection<Player> Player { get; set; }
     }
 }

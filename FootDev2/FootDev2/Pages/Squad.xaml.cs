@@ -33,6 +33,8 @@ namespace FootDev2.Pages
             CmbGender.DisplayMemberPath = "NameGender";
             CmbGender.SelectedIndex = 0;
 
+            
+
             CmbSort.ItemsSource = new List<string>()
             {
                 "By default", "By Joining Date", "By Age"
@@ -106,7 +108,7 @@ namespace FootDev2.Pages
 
         private void BtnEditPlayer_Click(object sender, RoutedEventArgs e)
         {
-            AddEditPlayer addEditMateralWindow = new AddEditPlayer(ListViewSquad.SelectedItem as Player);
+            AddEditPlayer addEditMateralWindow = new AddEditPlayer(ListViewSquad.SelectedItem as ViewAllInfo);
             this.Opacity = 0.3;
             Filter();
             addEditMateralWindow.ShowDialog();

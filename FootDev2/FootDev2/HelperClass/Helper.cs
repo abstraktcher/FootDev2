@@ -15,7 +15,7 @@ namespace FootDev2.AppData
 
         public string NameGender1 { get => $"Gender: {NameGender}"; }
 
-        public string NationalityName1 { get => $"Nationality: {Citizenships}"; }
+        public string NationalityName1 { get => $"Nationality: {NationalityName}"; }
 
         public string PhoneNumber1 { get => $"Phone: {PhoneNumber}"; }
 

@@ -46,7 +46,6 @@ namespace FootDev2.AppData
         public virtual DbSet<Location> Location { get; set; }
         public virtual DbSet<MidFielderCharacteristics> MidFielderCharacteristics { get; set; }
         public virtual DbSet<Nationality> Nationality { get; set; }
-        public virtual DbSet<NationalityToPlayer> NationalityToPlayer { get; set; }
         public virtual DbSet<Personnel> Personnel { get; set; }
         public virtual DbSet<Player> Player { get; set; }
         public virtual DbSet<PlayerToDFCharacteristics> PlayerToDFCharacteristics { get; set; }
@@ -71,6 +70,7 @@ namespace FootDev2.AppData
         public virtual DbSet<TrainToTeam> TrainToTeam { get; set; }
         public virtual DbSet<Traits> Traits { get; set; }
         public virtual DbSet<Injuries> Injuries { get; set; }
+        public virtual DbSet<ViewAllInfo> ViewAllInfo { get; set; }
         public virtual DbSet<ViewChanges> ViewChanges { get; set; }
         public virtual DbSet<ViewDFCharacteristics> ViewDFCharacteristics { get; set; }
         public virtual DbSet<ViewExcForTest> ViewExcForTest { get; set; }
@@ -80,12 +80,11 @@ namespace FootDev2.AppData
         public virtual DbSet<ViewMFCharacteristics> ViewMFCharacteristics { get; set; }
         public virtual DbSet<ViewPlayerTraits> ViewPlayerTraits { get; set; }
         public virtual DbSet<ViewPredispositions> ViewPredispositions { get; set; }
+        public virtual DbSet<ViewReprimands> ViewReprimands { get; set; }
         public virtual DbSet<ViewResponsiblePerson> ViewResponsiblePerson { get; set; }
         public virtual DbSet<ViewShowPositions> ViewShowPositions { get; set; }
         public virtual DbSet<ViewStrikerCharacteristics> ViewStrikerCharacteristics { get; set; }
         public virtual DbSet<ViewTeamTrainings> ViewTeamTrainings { get; set; }
-        public virtual DbSet<ViewReprimands> ViewReprimands { get; set; }
-        public virtual DbSet<ViewAllInfo> ViewAllInfo { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

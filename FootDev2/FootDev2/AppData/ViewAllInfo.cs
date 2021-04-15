@@ -18,11 +18,18 @@ namespace FootDev2.AppData
         public Nullable<byte> Age { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        public System.DateTime DateOfBirth { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
         public byte[] PlayerImage { get; set; }
         public Nullable<System.DateTime> DateJoining { get; set; }
         public string NameGender { get; set; }
         public string Languages { get; set; }
-        public string Citizenships { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string MiddleName { get; set; }
+        public string Password { get; set; }
+        public byte IdDominantLeg { get; set; }
+        public string Name { get; set; }
+        public string NationalityName { get; set; }
+        public byte idGender { get; set; }
     }
 }
