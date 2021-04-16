@@ -51,7 +51,7 @@ namespace FootDev2
 
         private void TextLogin_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_".IndexOf(e.Text) < 0;
+            e.Handled = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_@".IndexOf(e.Text) < 0;
         }
 
         private void TextPassword_PreviewTextInput(object sender, TextCompositionEventArgs e)

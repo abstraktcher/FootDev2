@@ -65,6 +65,103 @@ namespace FootDev2.Windows
 
         }
 
+        private void BtnConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TxtFirstName.Text) || string.IsNullOrWhiteSpace(TxtLastName.Text))
+            {
+                MessageBox.Show("Write your Name", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+        }
 
+        private void TxtFirstName_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöÖÄ".IndexOf(e.Text) < 0;
+        }
+
+        private void TxtLastName_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöÖÄ".IndexOf(e.Text) < 0;
+        }
+
+        private void TxtMiddleName_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöÖÄ".IndexOf(e.Text) < 0;
+        }
+
+        private void TxtPhone_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "1234567890".IndexOf(e.Text) < 0;
+        }
+
+        private void TxtEmail_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_@".IndexOf(e.Text) < 0;
+        }
+
+        private void TxtPassword_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&'()*+,-./:;<=>?@[]^_`{|}~!$&".IndexOf(e.Text) < 0;
+        }
+
+        private void TxtFirstName_PreviewExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (e.Command == ApplicationCommands.Copy ||
+                e.Command == ApplicationCommands.Cut ||
+                e.Command == ApplicationCommands.Paste)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtLastName_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (e.Command == ApplicationCommands.Copy ||
+                e.Command == ApplicationCommands.Cut ||
+                e.Command == ApplicationCommands.Paste)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtMiddleName_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (e.Command == ApplicationCommands.Copy ||
+                e.Command == ApplicationCommands.Cut ||
+                e.Command == ApplicationCommands.Paste)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtPhone_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (e.Command == ApplicationCommands.Copy ||
+                e.Command == ApplicationCommands.Cut ||
+                e.Command == ApplicationCommands.Paste)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtEmail_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (e.Command == ApplicationCommands.Copy ||
+                e.Command == ApplicationCommands.Cut ||
+                e.Command == ApplicationCommands.Paste)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtPassword_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (e.Command == ApplicationCommands.Copy ||
+                e.Command == ApplicationCommands.Cut ||
+                e.Command == ApplicationCommands.Paste)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
