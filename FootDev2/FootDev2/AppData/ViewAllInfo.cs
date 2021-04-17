@@ -31,5 +31,7 @@ namespace FootDev2.AppData
         public string Name { get; set; }
         public string NationalityName { get; set; }
         public byte idGender { get; set; }
+        public int IdNationality { get; set; }
+        public int IdPlayer { get; set; }
     }
 }

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using static FootDev2.AppData.AppDataClass;
 using  FootDev2.AppData;
 using FootDev2.Windows;
+using static FootDev2.HelperClass.CheckRole;
 
 namespace FootDev2.Pages
 {
@@ -108,11 +109,22 @@ namespace FootDev2.Pages
 
         private void BtnEditPlayer_Click(object sender, RoutedEventArgs e)
         {
-            AddEditPlayer addEditMateralWindow = new AddEditPlayer(ListViewSquad.SelectedItem as ViewAllInfo);
-            this.Opacity = 0.3;
-            Filter();
-            addEditMateralWindow.ShowDialog();
-            this.Opacity = 1;
+            if (ListViewSquad.SelectedItem is ViewAllInfo player)
+            {
+                VarIdPlayer = player.IdPlayer;
+                AddEditPlayer addEditMateralWindow = new AddEditPlayer(ListViewSquad.SelectedItem as ViewAllInfo);
+                this.Opacity = 0.3;
+                Filter();
+                addEditMateralWindow.ShowDialog();
+                Filter();
+                this.Opacity = 1;
+            }
+            else
+            {
+                MessageBox.Show("You did not select player", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+          
         }
 
         private void BtnAddPlayer_Click(object sender, RoutedEventArgs e)
@@ -121,6 +133,7 @@ namespace FootDev2.Pages
             this.Opacity = 0.3;
             Filter();
             addEditMateralWindow.ShowDialog();
+            Filter();
             this.Opacity = 1;
         }
     }

@@ -246,12 +246,12 @@
           <Key>
             <PropertyRef Name="IdPlayer" />
           </Key>
-          <Property Name="IdPlayer" Type="int" Nullable="false" />
+          <Property Name="IdPlayer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="MiddleName" Type="nvarchar" MaxLength="150" />
           <Property Name="PhoneNumber" Type="nchar" MaxLength="13" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="75" />
+          <Property Name="Email" Type="nvarchar" MaxLength="75" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="75" Nullable="false" />
           <Property Name="DateOfBirth" Type="date" />
           <Property Name="IdRole" Type="tinyint" Nullable="false" />
@@ -461,6 +461,7 @@
           <Key>
             <PropertyRef Name="FullName" />
             <PropertyRef Name="PhoneNumber" />
+            
             <PropertyRef Name="FirstName" />
             <PropertyRef Name="LastName" />
             <PropertyRef Name="Password" />
@@ -468,11 +469,13 @@
             <PropertyRef Name="Name" />
             <PropertyRef Name="NationalityName" />
             <PropertyRef Name="idGender" />
+            <PropertyRef Name="IdNationality" />
+            <PropertyRef Name="IdPlayer" />
           </Key>
           <Property Name="FullName" Type="nvarchar" MaxLength="452" Nullable="false" />
           <Property Name="Age" Type="tinyint" />
           <Property Name="PhoneNumber" Type="nchar" MaxLength="13" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="75" />
+          <Property Name="Email" Type="nvarchar" MaxLength="75" Nullable="false" />
           <Property Name="DateOfBirth" Type="date" />
           <Property Name="PlayerImage" Type="varbinary(max)" />
           <Property Name="DateJoining" Type="date" />
@@ -486,6 +489,8 @@
           <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="NationalityName" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="idGender" Type="tinyint" Nullable="false" />
+          <Property Name="IdNationality" Type="int" Nullable="false" />
+          <Property Name="IdPlayer" Type="int" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewChanges" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -1447,7 +1452,9 @@
     [ViewAllInfo].[IdDominantLeg] AS [IdDominantLeg], 
     [ViewAllInfo].[Name] AS [Name], 
     [ViewAllInfo].[NationalityName] AS [NationalityName], 
-    [ViewAllInfo].[idGender] AS [idGender]
+    [ViewAllInfo].[idGender] AS [idGender], 
+    [ViewAllInfo].[IdNationality] AS [IdNationality], 
+    [ViewAllInfo].[IdPlayer] AS [IdPlayer]
     FROM [dbo].[ViewAllInfo] AS [ViewAllInfo]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewChanges" EntityType="Self.ViewChanges" store:Type="Views" store:Schema="dbo">
@@ -2370,7 +2377,7 @@
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="MiddleName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
           <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
           <Property Name="IdRole" Type="Byte" Nullable="false" />
@@ -2636,11 +2643,13 @@
             <PropertyRef Name="Name" />
             <PropertyRef Name="NationalityName" />
             <PropertyRef Name="idGender" />
+            <PropertyRef Name="IdNationality" />
+            <PropertyRef Name="IdPlayer" />
           </Key>
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="Byte" />
           <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
           <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="DateJoining" Type="DateTime" Precision="0" />
@@ -2654,6 +2663,8 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="NationalityName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="idGender" Type="Byte" Nullable="false" />
+          <Property Name="IdNationality" Type="Int32" Nullable="false" />
+          <Property Name="IdPlayer" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ViewChanges">
           <Key>
@@ -3988,6 +3999,8 @@
           <EntitySetMapping Name="ViewAllInfo">
             <EntityTypeMapping TypeName="FootDevModel.ViewAllInfo">
               <MappingFragment StoreEntitySet="ViewAllInfo">
+                <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
+                <ScalarProperty Name="IdNationality" ColumnName="IdNationality" />
                 <ScalarProperty Name="idGender" ColumnName="idGender" />
                 <ScalarProperty Name="NationalityName" ColumnName="NationalityName" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

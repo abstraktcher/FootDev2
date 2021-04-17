@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FootDev2.Windows"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Add/Edit Player" Height="880.5" Width="1100"
+        Title="Add/Edit Player" Height="880.5" Width="1200"
         MinHeight="600" MinWidth="900" Icon="/Images/favicon.png" >
     <Grid >
 
@@ -18,7 +18,7 @@
 
 
 
-        <StackPanel  Grid.Column="0" Margin="10,25,10,0">
+        <StackPanel  Grid.Column="0" Margin="10,25,109,0">
             <TextBlock Text="First Name" VerticalAlignment="Center" HorizontalAlignment="Right"
                        FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7"/>
             <TextBlock Text="Last Name" VerticalAlignment="Center" HorizontalAlignment="Right"
@@ -31,37 +31,37 @@
                        FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="30" />
             <TextBlock Text="Date Of Birth" VerticalAlignment="Center" HorizontalAlignment="Right"
                        FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="38" />
-            <TextBlock Text="Dominant Leg" VerticalAlignment="Center" HorizontalAlignment="Right"
-                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="30" />
             <TextBlock Text="Gender" VerticalAlignment="Center" HorizontalAlignment="Right"
-                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="28" />
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="37" />
             <TextBlock Text="PassWord" VerticalAlignment="Center" HorizontalAlignment="Right"
-                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="31" />
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="36" />
             <TextBlock Text="Nationality" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="33" />
+            <TextBlock Text="Dominant leg" VerticalAlignment="Center" HorizontalAlignment="Right"
                        FontWeight="Bold" FontSize="18" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="31" />
 
 
         </StackPanel>
 
-        <StackPanel   Grid.Column="1" Margin="0,25,510,10" Grid.ColumnSpan="2">
-            <TextBox x:Name="TxtFirstName"
+        <StackPanel Margin="217,25,52,10" Grid.ColumnSpan="2">
+            <TextBox x:Name="TxtFirstName" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                       FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"
-                     Margin="0,27,10,-7" Height="28" VerticalAlignment="Top" PreviewTextInput="TxtFirstName_PreviewTextInput" CommandManager.PreviewExecuted="TxtFirstName_PreviewExecuted" />
-            <TextBox x:Name="TxtLastName"
-                      FontWeight="Bold" FontSize="20" CommandManager.Executed="TxtLastName_Executed" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="26" VerticalAlignment="Top" PreviewTextInput="TxtLastName_PreviewTextInput"/>
-            <TextBox x:Name="TxtMiddleName"
-                      FontWeight="Bold" CommandManager.Executed="TxtMiddleName_Executed" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="27" VerticalAlignment="Top" PreviewTextInput="TxtMiddleName_PreviewTextInput"/>
-            <TextBox x:Name="TxtPhone" CommandManager.Executed="TxtPhone_Executed"
-                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="26" VerticalAlignment="Top" PreviewTextInput="TxtPhone_PreviewTextInput"/>
-            <TextBox x:Name="TxtEmail" CommandManager.Executed="TxtEmail_Executed"
-                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="26" VerticalAlignment="Top" PreviewTextInput="TxtEmail_PreviewTextInput"/>
-            <DatePicker x:Name="DpDateOfBirth"
-                        Margin="0,27,10,-7" Height="35" VerticalAlignment="Top"/>
-            <ComboBox x:Name="CmbLeg"  Margin="0,27,10,-7" Height="29" VerticalAlignment="Top"/>
-            <ComboBox x:Name="CmbGender"  Margin="0,27,10,-7" Height="28" VerticalAlignment="Top"/>
-            <TextBox x:Name="TxtPassword" CommandManager.Executed="TxtPassword_Executed"
-                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="32" VerticalAlignment="Top" PreviewTextInput="TxtPassword_PreviewTextInput"/>
-            <ComboBox x:Name="CmbNationality"  Margin="0,27,10,-7" Height="28" VerticalAlignment="Top"/>
+                     Margin="0,27,10,-7" Height="28" VerticalAlignment="Top" PreviewTextInput="TxtFirstName_PreviewTextInput" CommandManager.PreviewExecuted="TxtFirstName_PreviewExecuted" PreviewKeyDown="TxtFirstName_PreviewKeyDown" />
+            <TextBox x:Name="TxtLastName" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      FontWeight="Bold" FontSize="20" CommandManager.Executed="TxtLastName_Executed" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="26" VerticalAlignment="Top" PreviewTextInput="TxtLastName_PreviewTextInput" PreviewKeyDown="TxtLastName_PreviewKeyDown"/>
+            <TextBox x:Name="TxtMiddleName" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      FontWeight="Bold" CommandManager.Executed="TxtMiddleName_Executed" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="27" VerticalAlignment="Top" PreviewTextInput="TxtMiddleName_PreviewTextInput" PreviewKeyDown="TxtMiddleName_PreviewKeyDown"/>
+            <TextBox x:Name="TxtPhone" CommandManager.Executed="TxtPhone_Executed" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="26" VerticalAlignment="Top" PreviewTextInput="TxtPhone_PreviewTextInput" PreviewKeyDown="TxtPhone_PreviewKeyDown"/>
+            <TextBox x:Name="TxtEmail" CommandManager.Executed="TxtEmail_Executed" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="26" VerticalAlignment="Top" PreviewTextInput="TxtEmail_PreviewTextInput" PreviewKeyDown="TxtEmail_PreviewKeyDown"/>
+            <DatePicker x:Name="DpDateOfBirth" FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"
+                        Margin="0,27,10,-7" Height="35" VerticalAlignment="Top" Text="BirthDate"/>
+            <ComboBox x:Name="CmbGender"  Margin="0,27,10,-7" Height="39" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"/>
+            <TextBox x:Name="TxtPassword"  CommandManager.Executed="TxtPassword_Executed" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="32" VerticalAlignment="Top" PreviewTextInput="TxtPassword_PreviewTextInput" PreviewKeyDown="TxtPassword_PreviewKeyDown"/>
+            <ComboBox x:Name="CmbNationality"  Margin="0,27,10,-7" Height="34" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"/>
+            <ComboBox x:Name="CmbLeg"  Margin="0,27,10,-7" Height="34" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"/>
         </StackPanel>
 
 
@@ -75,28 +75,28 @@
                     HorizontalAlignment="Center"
                     Background="Aquamarine"
                     FontWeight="Bold" FontSize="25"
-                     FontFamily="Comic Sans MS" Foreground="Black" Width="252" Margin="76,408,118,355"/>
+                     FontFamily="Comic Sans MS" Foreground="Black" Margin="116,408,106,355" Width="224"/>
 
 
             <Button x:Name="BtnConfirm"
                         Content="Confirm"
                         FontWeight="Bold" FontSize="25" 
                         FontFamily="Comic Sans MS" Foreground="Black"
-                        Background="Aquamarine" Margin="-487,733,785,46" Click="BtnConfirm_Click"
+                        Background="Aquamarine" Margin="-530,733,785,46" Click="BtnConfirm_Click"
                        />
 
             <Button x:Name="BtnCancel"
                         Content="Cancel"
                         FontWeight="Bold" FontSize="25" 
                         FontFamily="Comic Sans MS" Foreground="Black"
-                        Background="Aquamarine" Margin="230,733,24,46"
+                        Background="Aquamarine" Margin="203,733,24,46" Click="BtnCancel_Click"
                        />
 
             <Button x:Name="BtnClear"
                         Content="Clear All"
                         FontWeight="Bold" FontSize="25" 
                         FontFamily="Comic Sans MS" Foreground="Black"
-                        Background="Aquamarine" Margin="-136,733,422,46"
+                        Background="Aquamarine" Margin="-170,733,422,46" Click="BtnClear_Click"
                        />
         </Grid>
     </Grid>

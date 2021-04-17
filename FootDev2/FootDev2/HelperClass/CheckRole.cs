@@ -9,5 +9,7 @@ namespace FootDev2.HelperClass
     class CheckRole
     {
         public static int VarCheckRole { get; set; }
+
+        public static int VarIdPlayer { get; set; } = 0;
     }
 }
