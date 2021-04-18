@@ -41,7 +41,7 @@
                      Margin="40,10,150,10" Width="270" Height="40" Click="BtnEditPlayer_Click"/>
             <Button x:Name="BtnDeletePlayer" Content="Delete Player" VerticalAlignment="Center"
              Background="Black"   Foreground="Aquamarine" FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
-                    RenderTransformOrigin="0.751,0.687" Margin="40,10,5,10" Width="256" Height="40"/>
+                    RenderTransformOrigin="0.751,0.687" Margin="40,10,5,10" Width="256" Height="40" Click="BtnDeletePlayer_Click"/>
         </StackPanel>
         <ListView Name="ListViewSquad" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
             <ListView.ItemsPanel>

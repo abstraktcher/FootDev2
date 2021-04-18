@@ -109,6 +109,9 @@ namespace FootDev2.Pages
 
         private void BtnEditPlayer_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+
             if (ListViewSquad.SelectedItem is ViewAllInfo player)
             {
                 VarIdPlayer = player.IdPlayer;
@@ -124,7 +127,15 @@ namespace FootDev2.Pages
                 MessageBox.Show("You did not select player", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
-          
+
+            }
+            catch
+            {
+                MessageBox.Show("Error", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
+
         }
 
         private void BtnAddPlayer_Click(object sender, RoutedEventArgs e)
@@ -135,6 +146,37 @@ namespace FootDev2.Pages
             addEditMateralWindow.ShowDialog();
             Filter();
             this.Opacity = 1;
+        }
+
+        private void BtnDeletePlayer_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+            if (ListViewSquad.SelectedItem is ViewAllInfo player)
+            {
+                var result = MessageBox.Show($@"Are you sure you want to delete this player?{player.FullName}, All related data will be permanently deleted", "Remove Player",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                context.Player.Remove(context.Player.Where(i => i.IdPlayer == player.IdPlayer).FirstOrDefault());
+                context.SaveChanges();
+                MessageBox.Show("Removing ", "Успешно", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                Filter();
+                 
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select player!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            }
+            catch
+            {
+                MessageBox.Show("Error ", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

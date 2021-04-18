@@ -83,6 +83,7 @@ namespace FootDev2.Windows
 
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
         {
+            
 
             string[] MAssStr = TxtEmail.Text.Split('@');
 
@@ -132,32 +133,76 @@ namespace FootDev2.Windows
                                     {
                                         if (MAssStr[1].Split('.').Length == 2)
                                         {
-                                            if (VarIdPlayer != 0)
+
+                                            try
                                             {
 
-                                                Random random = new Random();
-                                                var resultClick = MessageBox.Show("Do you want to edit the information?", "Adding new player", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                                                if (resultClick == MessageBoxResult.Yes)
+                                                if (VarIdPlayer != 0)
+                                                
+                                                {
+
+                                                    Random random = new Random();
+                                                    var resultClick = MessageBox.Show("Do you want to edit the information?", "Adding new player", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                                                    if (resultClick == MessageBoxResult.Yes)
+                                                    {
+
+                                                        //if (pathPhoto != null)
+                                                        //{
+                                                        //    var format = pathPhoto.Split('.')[pathPhoto.Split('.').Length - 1];
+
+                                                        //    string namePhoto = $@"\materials\{random.Next()}.{format}";
+
+                                                        //    File.Copy(pathPhoto, $@"..\..\{namePhoto}");
+                                                        //    addPlayer.PlayerImage = namePhoto;
+                                                        //}
+
+                                                        //var clientVAR = context.Client.Where(i => i.ID == IdClientVar).FirstOrDefault();
+
+                                                        //context.SaveChanges();
+
+                                                        //MessageBox.Show("Пользователь изменен!", "Успех", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                                                        //IdClientVar = 0;
+                                                        //this.Close();
+                                                        var PlayerVar = context.Player.Where(i => i.IdPlayer == VarIdPlayer).FirstOrDefault();
+
+                                                        PlayerVar.FirstName = TxtFirstName.Text;
+                                                        PlayerVar.LastName = TxtLastName.Text;
+                                                        PlayerVar.MiddleName = TxtMiddleName.Text;
+                                                        PlayerVar.Email = TxtEmail.Text;
+                                                        PlayerVar.PhoneNumber = TxtPhone.Text;
+                                                        PlayerVar.DateOfBirth = DpDateOfBirth.SelectedDate;
+                                                        PlayerVar.idGender = (byte)(CmbGender.SelectedIndex + 1);
+                                                        PlayerVar.IdNationality = CmbNationality.SelectedIndex + 1;
+                                                        PlayerVar.Password = TxtPassword.Text;
+                                                        PlayerVar.IdRole = 2;
+                                                        PlayerVar.DateJoining = DateTime.Now;
+                                                        PlayerVar.IdDominantLeg = (byte)(CmbLeg.SelectedIndex + 1);
+
+                                                        //var clientVAR = context.Client.Where(i => i.ID == IdClientVar).FirstOrDefault();
+                                                        //clientVAR.LastName = TBLName.Text;
+                                                        //clientVAR.FirstName = TBFName.Text;
+                                                        //clientVAR.Patronymic = TBMName.Text;
+                                                        //clientVAR.Email = TBEmail.Text;
+                                                        //clientVAR.Phone = TBPhone.Text;
+                                                        //clientVAR.Birthday = DatePickerBD.SelectedDate;
+                                                        //clientVAR.GenderCode = CBGender.Text;
+                                                        //context.SaveChanges();
+
+
+                                                        context.SaveChanges();
+                                                        MessageBox.Show("Information was successfully changed", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                                                        VarIdPlayer = 0;
+                                                        Close();
+                                                    }
+                                                    else
+                                                    {
+                                                    return;
+                                                    }
+                                            }
+                                            else
+                                                
                                                 {
                                                     Player addPlayer = new Player();
-                                                    //if (pathPhoto != null)
-                                                    //{
-                                                    //    var format = pathPhoto.Split('.')[pathPhoto.Split('.').Length - 1];
-
-                                                    //    string namePhoto = $@"\materials\{random.Next()}.{format}";
-
-                                                    //    File.Copy(pathPhoto, $@"..\..\{namePhoto}");
-                                                    //    addPlayer.PlayerImage = namePhoto;
-                                                    //}
-
-                                                    //var clientVAR = context.Client.Where(i => i.ID == IdClientVar).FirstOrDefault();
-
-                                                    //context.SaveChanges();
-
-                                                    //MessageBox.Show("Пользователь изменен!", "Успех", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                                    //IdClientVar = 0;
-                                                    //this.Close();
-
                                                     addPlayer.FirstName = TxtFirstName.Text;
                                                     addPlayer.LastName = TxtLastName.Text;
                                                     addPlayer.MiddleName = TxtMiddleName.Text;
@@ -172,42 +217,23 @@ namespace FootDev2.Windows
                                                     addPlayer.IdDominantLeg = (byte)(CmbLeg.SelectedIndex + 1);
 
 
-                                                   
+                                                    //context.LanguageToPlayer.Add(new LanguageToPlayer
+                                                    //{
+                                                    //    IdLanguage = 1,
+                                                    //    IdPlayer = addPlayer.IdPlayer
+                                                    //});
+
+
+                                                    context.Player.Add(addPlayer);
                                                     context.SaveChanges();
-                                                    MessageBox.Show("Information was successfully changed", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                                    VarIdPlayer = 0;
+                                                    MessageBox.Show("Player was successfully added", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                                                     Close();
                                                 }
 
                                             }
-                                            else
+                                            catch
                                             {
-                                                Player addPlayer = new Player();
-                                                addPlayer.FirstName = TxtFirstName.Text;
-                                                addPlayer.LastName = TxtLastName.Text;
-                                                addPlayer.MiddleName = TxtMiddleName.Text;
-                                                addPlayer.Email = TxtEmail.Text;
-                                                addPlayer.PhoneNumber = TxtPhone.Text;
-                                                addPlayer.DateOfBirth = DpDateOfBirth.SelectedDate;
-                                                addPlayer.idGender = (byte)(CmbGender.SelectedIndex + 1);
-                                                addPlayer.IdNationality = CmbNationality.SelectedIndex + 1;
-                                                addPlayer.Password = TxtPassword.Text;
-                                                addPlayer.IdRole = 2;
-                                                addPlayer.DateJoining = DateTime.Now;
-                                                addPlayer.IdDominantLeg = (byte)(CmbLeg.SelectedIndex + 1);
-
-
-                                                context.LanguageToPlayer.Add(new LanguageToPlayer
-                                                {
-                                                    IdLanguage = 1,
-                                                    IdPlayer = addPlayer.IdPlayer
-                                                });
-
-
-                                                context.Player.Add(addPlayer);
-                                                context.SaveChanges();
-                                                MessageBox.Show("Player was successfully changed", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                                Close();
+                                                MessageBox.Show("Error", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                                             }
 
 
