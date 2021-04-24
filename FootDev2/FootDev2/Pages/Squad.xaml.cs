@@ -161,7 +161,7 @@ namespace FootDev2.Pages
                 {
                 context.Player.Remove(context.Player.Where(i => i.IdPlayer == player.IdPlayer).FirstOrDefault());
                 context.SaveChanges();
-                MessageBox.Show("Removing ", "Успешно", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Removing ", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 Filter();
                  
 

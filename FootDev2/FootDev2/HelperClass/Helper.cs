@@ -231,8 +231,7 @@ namespace FootDev2.AppData
 
     public partial class ViewResponsiblePerson
     {
-        public string FullName1 { get => $"Player's Name: {Player}"; }
-
+       
         public string PlayersPhone1 { get => $"Player's Phone number: {Player_s_Phone}"; }
 
         public string Email1 { get => $"Player's email: {Player_s_Email}"; }

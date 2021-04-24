@@ -250,7 +250,7 @@
           <Property Name="FirstName" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="MiddleName" Type="nvarchar" MaxLength="150" />
-          <Property Name="PhoneNumber" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="75" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="75" Nullable="false" />
           <Property Name="DateOfBirth" Type="date" />
@@ -443,17 +443,23 @@
 предупреждение 6002: В таблице или представлении "FootDev.dbo.Injuries" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="Injuries">
           <Key>
+            <PropertyRef Name="FullName" />
             <PropertyRef Name="IdPlayer" />
-            <PropertyRef Name="Fullname" />
+            <PropertyRef Name="PhoneNumber" />
             <PropertyRef Name="InjuryName" />
+            <PropertyRef Name="IdInjury" />
           </Key>
+          <Property Name="FullName" Type="nvarchar" MaxLength="452" Nullable="false" />
           <Property Name="IdPlayer" Type="int" Nullable="false" />
-          <Property Name="Fullname" Type="nvarchar" MaxLength="452" Nullable="false" />
-          <Property Name="Age" Type="tinyint" />
+          <Property Name="PhoneNumber" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="PlayerImage" Type="varbinary(max)" />
           <Property Name="InjuryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdInjury" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="70" />
           <Property Name="DateOfInjury" Type="smalldatetime" />
           <Property Name="DateOfRecovery" Type="smalldatetime" />
           <Property Name="Treatment" Type="nvarchar" MaxLength="300" />
+          <Property Name="Age" Type="tinyint" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewAllInfo" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -461,7 +467,7 @@
           <Key>
             <PropertyRef Name="FullName" />
             <PropertyRef Name="PhoneNumber" />
-            
+            <PropertyRef Name="Email" />
             <PropertyRef Name="FirstName" />
             <PropertyRef Name="LastName" />
             <PropertyRef Name="Password" />
@@ -685,6 +691,7 @@
           <Property Name="Fullname" Type="nvarchar" MaxLength="452" Nullable="false" />
           <Property Name="Age" Type="tinyint" />
           <Property Name="Traits" Type="nvarchar" MaxLength="200" />
+          <Property Name="PlayerImage" Type="varbinary(max)" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewPredispositions" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -699,37 +706,43 @@
           <Property Name="PredispositionName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="150" />
           <Property Name="Treatment" Type="nvarchar" MaxLength="175" />
+          <Property Name="PlayerImage" Type="varbinary(max)" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewReprimands" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="ViewReprimands">
           <Key>
             <PropertyRef Name="FullName" />
+            <PropertyRef Name="PhoneNumber" />
             <PropertyRef Name="Email" />
             <PropertyRef Name="PunishmentName" />
             <PropertyRef Name="ReprimandName" />
           </Key>
           <Property Name="FullName" Type="nvarchar" MaxLength="452" Nullable="false" />
-          <Property Name="PhoneNumber" Type="nchar" MaxLength="13" />
+          <Property Name="PhoneNumber" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="75" Nullable="false" />
           <Property Name="PunishmentName" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="ReprimandName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Age" Type="tinyint" />
+          <Property Name="PlayerImage" Type="varbinary(max)" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewResponsiblePerson" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="ViewResponsiblePerson">
           <Key>
             <PropertyRef Name="Player" />
-            <PropertyRef Name="Player's Email" />
             <PropertyRef Name="Pesponsible Person" />
           </Key>
           <Property Name="Player" Type="nvarchar" MaxLength="452" Nullable="false" />
-          <Property Name="Player's Phone" Type="nchar" MaxLength="13" />
-          <Property Name="Player's Email" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Player's Phone" Type="nchar" MaxLength="10" />
+          <Property Name="Player's Email" Type="nvarchar" MaxLength="75" />
           <Property Name="Pesponsible Person" Type="nvarchar" MaxLength="152" Nullable="false" />
           <Property Name="Resp Person's phone" Type="nchar" MaxLength="13" />
           <Property Name="NameGender" Type="nchar" MaxLength="6" />
+          <Property Name="IdRespPerson" Type="int" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewShowPositions" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -741,6 +754,7 @@
           <Property Name="Fullname" Type="nvarchar" MaxLength="301" Nullable="false" />
           <Property Name="DominantLeg" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Positions" Type="nvarchar" MaxLength="200" />
+          <Property Name="PlayerImage" Type="varbinary(max)" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewStrikerCharacteristics" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -864,7 +878,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExerciseForTest_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ExerciseForTest" Type="Self.ExerciseForTest" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -900,7 +916,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HistoryOfChangingSkills_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="0..1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="HistoryOfChangingSkills" Type="Self.HistoryOfChangingSkills" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -912,7 +930,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_IndividualTraining_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="IndividualTraining" Type="Self.IndividualTraining" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -948,7 +968,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_InjuryToPlayer_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="InjuryToPlayer" Type="Self.InjuryToPlayer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -972,7 +994,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LanguageToPlayer_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="LanguageToPlayer" Type="Self.LanguageToPlayer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -1056,7 +1080,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToCharacteristics_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToMFCharacteristics" Type="Self.PlayerToMFCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -1068,7 +1094,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToDFCharacteristics_DefenderCharacteristics">
-          <End Role="DefenderCharacteristics" Type="Self.DefenderCharacteristics" Multiplicity="1" />
+          <End Role="DefenderCharacteristics" Type="Self.DefenderCharacteristics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToDFCharacteristics" Type="Self.PlayerToDFCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DefenderCharacteristics">
@@ -1080,7 +1108,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToDFCharacteristics_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToDFCharacteristics" Type="Self.PlayerToDFCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -1092,7 +1122,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToFWCharacteristics_ForwardCharacteristics">
-          <End Role="ForwardCharacteristics" Type="Self.ForwardCharacteristics" Multiplicity="1" />
+          <End Role="ForwardCharacteristics" Type="Self.ForwardCharacteristics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToFWCharacteristics" Type="Self.PlayerToFWCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ForwardCharacteristics">
@@ -1104,7 +1136,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToFWCharacteristics_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToFWCharacteristics" Type="Self.PlayerToFWCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -1116,7 +1150,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToGKCharacteristics_GoalKeeperCharacteristics">
-          <End Role="GoalKeeperCharacteristics" Type="Self.GoalKeeperCharacteristics" Multiplicity="1" />
+          <End Role="GoalKeeperCharacteristics" Type="Self.GoalKeeperCharacteristics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToGKCharacteristics" Type="Self.PlayerToGKCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GoalKeeperCharacteristics">
@@ -1128,7 +1164,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToGKCharacteristics_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToGKCharacteristics" Type="Self.PlayerToGKCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -1140,7 +1178,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToMFCharacteristics_MidFielderCharacteristics">
-          <End Role="MidFielderCharacteristics" Type="Self.MidFielderCharacteristics" Multiplicity="1" />
+          <End Role="MidFielderCharacteristics" Type="Self.MidFielderCharacteristics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToMFCharacteristics" Type="Self.PlayerToMFCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MidFielderCharacteristics">
@@ -1152,7 +1192,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToPosition_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToPosition" Type="Self.PlayerToPosition" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -1176,7 +1218,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToRespReson_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToRespReson" Type="Self.PlayerToRespReson" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -1188,7 +1232,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToRespReson_ResponsiblePerson">
-          <End Role="ResponsiblePerson" Type="Self.ResponsiblePerson" Multiplicity="1" />
+          <End Role="ResponsiblePerson" Type="Self.ResponsiblePerson" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToRespReson" Type="Self.PlayerToRespReson" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ResponsiblePerson">
@@ -1200,7 +1246,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToTraits_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PlayerToTraits" Type="Self.PlayerToTraits" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -1224,7 +1272,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PredispositionToPlayer_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PredispositionToPlayer" Type="Self.PredispositionToPlayer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -1236,7 +1286,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PredispositionToPlayer_Predisposition">
-          <End Role="Predisposition" Type="Self.Predisposition" Multiplicity="1" />
+          <End Role="Predisposition" Type="Self.Predisposition" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PredispositionToPlayer" Type="Self.PredispositionToPlayer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Predisposition">
@@ -1248,7 +1300,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Reprimand_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="Player" Type="Self.Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Reprimand" Type="Self.Reprimand" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -1425,13 +1479,17 @@
           <EntitySet Name="Traits" EntityType="Self.Traits" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Injuries" EntityType="Self.Injuries" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [Injuries].[FullName] AS [FullName], 
     [Injuries].[IdPlayer] AS [IdPlayer], 
-    [Injuries].[Fullname] AS [Fullname], 
-    [Injuries].[Age] AS [Age], 
+    [Injuries].[PhoneNumber] AS [PhoneNumber], 
+    [Injuries].[PlayerImage] AS [PlayerImage], 
     [Injuries].[InjuryName] AS [InjuryName], 
+    [Injuries].[IdInjury] AS [IdInjury], 
+    [Injuries].[Description] AS [Description], 
     [Injuries].[DateOfInjury] AS [DateOfInjury], 
     [Injuries].[DateOfRecovery] AS [DateOfRecovery], 
-    [Injuries].[Treatment] AS [Treatment]
+    [Injuries].[Treatment] AS [Treatment], 
+    [Injuries].[Age] AS [Age]
     FROM [dbo].[Injuries] AS [Injuries]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewAllInfo" EntityType="Self.ViewAllInfo" store:Type="Views" store:Schema="dbo">
@@ -1565,7 +1623,8 @@
             <DefiningQuery>SELECT 
     [ViewPlayerTraits].[Fullname] AS [Fullname], 
     [ViewPlayerTraits].[Age] AS [Age], 
-    [ViewPlayerTraits].[Traits] AS [Traits]
+    [ViewPlayerTraits].[Traits] AS [Traits], 
+    [ViewPlayerTraits].[PlayerImage] AS [PlayerImage]
     FROM [dbo].[ViewPlayerTraits] AS [ViewPlayerTraits]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewPredispositions" EntityType="Self.ViewPredispositions" store:Type="Views" store:Schema="dbo">
@@ -1575,7 +1634,8 @@
     [ViewPredispositions].[NameGender] AS [NameGender], 
     [ViewPredispositions].[PredispositionName] AS [PredispositionName], 
     [ViewPredispositions].[Description] AS [Description], 
-    [ViewPredispositions].[Treatment] AS [Treatment]
+    [ViewPredispositions].[Treatment] AS [Treatment], 
+    [ViewPredispositions].[PlayerImage] AS [PlayerImage]
     FROM [dbo].[ViewPredispositions] AS [ViewPredispositions]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewReprimands" EntityType="Self.ViewReprimands" store:Type="Views" store:Schema="dbo">
@@ -1585,7 +1645,8 @@
     [ViewReprimands].[Email] AS [Email], 
     [ViewReprimands].[PunishmentName] AS [PunishmentName], 
     [ViewReprimands].[ReprimandName] AS [ReprimandName], 
-    [ViewReprimands].[Age] AS [Age]
+    [ViewReprimands].[Age] AS [Age], 
+    [ViewReprimands].[PlayerImage] AS [PlayerImage]
     FROM [dbo].[ViewReprimands] AS [ViewReprimands]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewResponsiblePerson" EntityType="Self.ViewResponsiblePerson" store:Type="Views" store:Schema="dbo">
@@ -1595,14 +1656,19 @@
     [ViewResponsiblePerson].[Player's Email] AS [Player's Email], 
     [ViewResponsiblePerson].[Pesponsible Person] AS [Pesponsible Person], 
     [ViewResponsiblePerson].[Resp Person's phone] AS [Resp Person's phone], 
-    [ViewResponsiblePerson].[NameGender] AS [NameGender]
+    [ViewResponsiblePerson].[NameGender] AS [NameGender], 
+    [ViewResponsiblePerson].[IdRespPerson] AS [IdRespPerson], 
+    [ViewResponsiblePerson].[FirstName] AS [FirstName], 
+    [ViewResponsiblePerson].[LastName] AS [LastName], 
+    [ViewResponsiblePerson].[MiddleName] AS [MiddleName]
     FROM [dbo].[ViewResponsiblePerson] AS [ViewResponsiblePerson]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewShowPositions" EntityType="Self.ViewShowPositions" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [ViewShowPositions].[Fullname] AS [Fullname], 
     [ViewShowPositions].[DominantLeg] AS [DominantLeg], 
-    [ViewShowPositions].[Positions] AS [Positions]
+    [ViewShowPositions].[Positions] AS [Positions], 
+    [ViewShowPositions].[PlayerImage] AS [PlayerImage]
     FROM [dbo].[ViewShowPositions] AS [ViewShowPositions]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewStrikerCharacteristics" EntityType="Self.ViewStrikerCharacteristics" store:Type="Views" store:Schema="dbo">
@@ -2372,12 +2438,12 @@
           <Key>
             <PropertyRef Name="IdPlayer" />
           </Key>
-          <Property Name="IdPlayer" Type="Int32" Nullable="false" />
+          <Property Name="IdPlayer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="MiddleName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
           <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
           <Property Name="IdRole" Type="Byte" Nullable="false" />
@@ -2620,22 +2686,29 @@
         </EntityType>
         <EntityType Name="Injuries">
           <Key>
+            <PropertyRef Name="FullName" />
             <PropertyRef Name="IdPlayer" />
-            <PropertyRef Name="Fullname" />
+            <PropertyRef Name="PhoneNumber" />
             <PropertyRef Name="InjuryName" />
+            <PropertyRef Name="IdInjury" />
           </Key>
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
           <Property Name="IdPlayer" Type="Int32" Nullable="false" />
-          <Property Name="Fullname" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
-          <Property Name="Age" Type="Byte" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="InjuryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdInjury" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="DateOfInjury" Type="DateTime" Precision="0" />
           <Property Name="DateOfRecovery" Type="DateTime" Precision="0" />
           <Property Name="Treatment" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Byte" />
         </EntityType>
         <EntityType Name="ViewAllInfo">
           <Key>
             <PropertyRef Name="FullName" />
             <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="Email" />
             <PropertyRef Name="FirstName" />
             <PropertyRef Name="LastName" />
             <PropertyRef Name="Password" />
@@ -2649,7 +2722,7 @@
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="Byte" />
           <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
           <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
           <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="DateJoining" Type="DateTime" Precision="0" />
@@ -2843,6 +2916,7 @@
           <Property Name="Fullname" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="Byte" />
           <Property Name="Traits" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="ViewPredispositions">
           <Key>
@@ -2855,33 +2929,39 @@
           <Property Name="PredispositionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Treatment" Type="String" MaxLength="175" FixedLength="false" Unicode="true" />
+          <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="ViewReprimands">
           <Key>
             <PropertyRef Name="FullName" />
+            <PropertyRef Name="PhoneNumber" />
             <PropertyRef Name="Email" />
             <PropertyRef Name="PunishmentName" />
             <PropertyRef Name="ReprimandName" />
           </Key>
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
           <Property Name="PunishmentName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="ReprimandName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="Byte" />
+          <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="ViewResponsiblePerson">
           <Key>
             <PropertyRef Name="Player" />
-            <PropertyRef Name="Player_s_Email" />
             <PropertyRef Name="Pesponsible_Person" />
           </Key>
           <Property Name="Player" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
-          <Property Name="Player_s_Phone" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
-          <Property Name="Player_s_Email" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="Player_s_Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Player_s_Email" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
           <Property Name="Pesponsible_Person" Type="String" Nullable="false" MaxLength="152" FixedLength="false" Unicode="true" />
           <Property Name="Resp_Person_s_phone" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
           <Property Name="NameGender" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdRespPerson" Type="Int32" />
         </EntityType>
         <EntityType Name="ViewShowPositions">
           <Key>
@@ -2891,6 +2971,7 @@
           <Property Name="Fullname" Type="String" Nullable="false" MaxLength="301" FixedLength="false" Unicode="true" />
           <Property Name="DominantLeg" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Positions" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="ViewStrikerCharacteristics">
           <Key>
@@ -2998,7 +3079,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToDFCharacteristics_DefenderCharacteristics">
-          <End Type="FootDevModel.DefenderCharacteristics" Role="DefenderCharacteristics" Multiplicity="1" />
+          <End Type="FootDevModel.DefenderCharacteristics" Role="DefenderCharacteristics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToDFCharacteristics" Role="PlayerToDFCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DefenderCharacteristics">
@@ -3046,7 +3129,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExerciseForTest_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.ExerciseForTest" Role="ExerciseForTest" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3070,7 +3155,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToFWCharacteristics_ForwardCharacteristics">
-          <End Type="FootDevModel.ForwardCharacteristics" Role="ForwardCharacteristics" Multiplicity="1" />
+          <End Type="FootDevModel.ForwardCharacteristics" Role="ForwardCharacteristics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToFWCharacteristics" Role="PlayerToFWCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ForwardCharacteristics">
@@ -3118,7 +3205,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToGKCharacteristics_GoalKeeperCharacteristics">
-          <End Type="FootDevModel.GoalKeeperCharacteristics" Role="GoalKeeperCharacteristics" Multiplicity="1" />
+          <End Type="FootDevModel.GoalKeeperCharacteristics" Role="GoalKeeperCharacteristics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToGKCharacteristics" Role="PlayerToGKCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GoalKeeperCharacteristics">
@@ -3130,7 +3219,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HistoryOfChangingSkills_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="0..1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.HistoryOfChangingSkills" Role="HistoryOfChangingSkills" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3142,7 +3233,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_IndividualTraining_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.IndividualTraining" Role="IndividualTraining" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3178,7 +3271,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_InjuryToPlayer_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.InjuryToPlayer" Role="InjuryToPlayer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3202,7 +3297,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LanguageToPlayer_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.LanguageToPlayer" Role="LanguageToPlayer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3238,7 +3335,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToMFCharacteristics_MidFielderCharacteristics">
-          <End Type="FootDevModel.MidFielderCharacteristics" Role="MidFielderCharacteristics" Multiplicity="1" />
+          <End Type="FootDevModel.MidFielderCharacteristics" Role="MidFielderCharacteristics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToMFCharacteristics" Role="PlayerToMFCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MidFielderCharacteristics">
@@ -3286,7 +3385,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToCharacteristics_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToMFCharacteristics" Role="PlayerToMFCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3298,7 +3399,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToDFCharacteristics_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToDFCharacteristics" Role="PlayerToDFCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3310,7 +3413,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToFWCharacteristics_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToFWCharacteristics" Role="PlayerToFWCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3322,7 +3427,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToGKCharacteristics_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToGKCharacteristics" Role="PlayerToGKCharacteristics" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3334,7 +3441,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToPosition_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToPosition" Role="PlayerToPosition" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3346,7 +3455,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToRespReson_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToRespReson" Role="PlayerToRespReson" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3358,7 +3469,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToTraits_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToTraits" Role="PlayerToTraits" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3370,7 +3483,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PredispositionToPlayer_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PredispositionToPlayer" Role="PredispositionToPlayer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3382,7 +3497,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Reprimand_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.Reprimand" Role="Reprimand" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -3406,7 +3523,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToRespReson_ResponsiblePerson">
-          <End Type="FootDevModel.ResponsiblePerson" Role="ResponsiblePerson" Multiplicity="1" />
+          <End Type="FootDevModel.ResponsiblePerson" Role="ResponsiblePerson" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PlayerToRespReson" Role="PlayerToRespReson" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ResponsiblePerson">
@@ -3430,7 +3549,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PredispositionToPlayer_Predisposition">
-          <End Type="FootDevModel.Predisposition" Role="Predisposition" Multiplicity="1" />
+          <End Type="FootDevModel.Predisposition" Role="Predisposition" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="FootDevModel.PredispositionToPlayer" Role="PredispositionToPlayer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Predisposition">
@@ -3986,13 +4107,17 @@
           <EntitySetMapping Name="Injuries">
             <EntityTypeMapping TypeName="FootDevModel.Injuries">
               <MappingFragment StoreEntitySet="Injuries">
+                <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="Treatment" ColumnName="Treatment" />
                 <ScalarProperty Name="DateOfRecovery" ColumnName="DateOfRecovery" />
                 <ScalarProperty Name="DateOfInjury" ColumnName="DateOfInjury" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IdInjury" ColumnName="IdInjury" />
                 <ScalarProperty Name="InjuryName" ColumnName="InjuryName" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4142,6 +4267,7 @@
           <EntitySetMapping Name="ViewPlayerTraits">
             <EntityTypeMapping TypeName="FootDevModel.ViewPlayerTraits">
               <MappingFragment StoreEntitySet="ViewPlayerTraits">
+                <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
                 <ScalarProperty Name="Traits" ColumnName="Traits" />
                 <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="Fullname" ColumnName="Fullname" />
@@ -4151,6 +4277,7 @@
           <EntitySetMapping Name="ViewPredispositions">
             <EntityTypeMapping TypeName="FootDevModel.ViewPredispositions">
               <MappingFragment StoreEntitySet="ViewPredispositions">
+                <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
                 <ScalarProperty Name="Treatment" ColumnName="Treatment" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="PredispositionName" ColumnName="PredispositionName" />
@@ -4163,6 +4290,7 @@
           <EntitySetMapping Name="ViewReprimands">
             <EntityTypeMapping TypeName="FootDevModel.ViewReprimands">
               <MappingFragment StoreEntitySet="ViewReprimands">
+                <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
                 <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="ReprimandName" ColumnName="ReprimandName" />
                 <ScalarProperty Name="PunishmentName" ColumnName="PunishmentName" />
@@ -4175,6 +4303,10 @@
           <EntitySetMapping Name="ViewResponsiblePerson">
             <EntityTypeMapping TypeName="FootDevModel.ViewResponsiblePerson">
               <MappingFragment StoreEntitySet="ViewResponsiblePerson">
+                <ScalarProperty Name="IdRespPerson" ColumnName="IdRespPerson" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="NameGender" ColumnName="NameGender" />
                 <ScalarProperty Name="Resp_Person_s_phone" ColumnName="Resp Person's phone" />
                 <ScalarProperty Name="Pesponsible_Person" ColumnName="Pesponsible Person" />
@@ -4187,6 +4319,7 @@
           <EntitySetMapping Name="ViewShowPositions">
             <EntityTypeMapping TypeName="FootDevModel.ViewShowPositions">
               <MappingFragment StoreEntitySet="ViewShowPositions">
+                <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
                 <ScalarProperty Name="Positions" ColumnName="Positions" />
                 <ScalarProperty Name="DominantLeg" ColumnName="DominantLeg" />
                 <ScalarProperty Name="Fullname" ColumnName="Fullname" />

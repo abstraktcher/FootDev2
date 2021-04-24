@@ -17,5 +17,6 @@ namespace FootDev2.AppData
         public string Fullname { get; set; }
         public Nullable<byte> Age { get; set; }
         public string Traits { get; set; }
+        public byte[] PlayerImage { get; set; }
     }
 }

@@ -20,5 +20,6 @@ namespace FootDev2.AppData
         public string PredispositionName { get; set; }
         public string Description { get; set; }
         public string Treatment { get; set; }
+        public byte[] PlayerImage { get; set; }
     }
 }

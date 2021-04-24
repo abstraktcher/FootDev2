@@ -1,0 +1,60 @@
+﻿<Window x:Class="FootDev2.Windows.AddEditRespPers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FootDev2.Windows"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        MinHeight="600" MinWidth="900" Icon="/Images/favicon.png" 
+        Title="Add Responsible Person | FootDev" Height="800" Width="500">
+    <Grid>
+
+        <TextBox x:Name="TxtFirstName" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"
+                     Margin="278,35,277,0" Height="49" VerticalAlignment="Top" PreviewTextInput="TxtFirstName_PreviewTextInput" CommandManager.PreviewExecuted="TxtFirstName_PreviewExecuted" PreviewKeyDown="TxtFirstName_PreviewKeyDown" >
+
+        </TextBox>
+        <TextBox x:Name="TxtLastName" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      FontWeight="Bold" FontSize="20" CommandManager.Executed="TxtLastName_Executed" FontFamily="Comic Sans MS" Foreground="Black" Margin="277,115,277,0" Height="46" VerticalAlignment="Top" PreviewTextInput="TxtLastName_PreviewTextInput" PreviewKeyDown="TxtLastName_PreviewKeyDown"/>
+        <TextBox x:Name="TxtMiddleName" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      FontWeight="Bold" CommandManager.Executed="TxtMiddleName_Executed" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="278,192,277,0" Height="46" VerticalAlignment="Top" PreviewTextInput="TxtMiddleName_PreviewTextInput" PreviewKeyDown="TxtMiddleName_PreviewKeyDown"/>
+        <TextBox x:Name="TxtPhone" CommandManager.Executed="TxtPhone_Executed" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="278,263,277,0" Height="44" VerticalAlignment="Top" PreviewTextInput="TxtPhone_PreviewTextInput" PreviewKeyDown="TxtPhone_PreviewKeyDown"/>
+        <TextBlock Text="First Name" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,35,666,685" Width="175" Height="49" RenderTransformOrigin="0.488,-0.176"/>
+        <TextBlock Text="Last Name" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,115,666,608" Width="175" Height="46"/>
+        <TextBlock Text="Middle Name" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,192,666,531" RenderTransformOrigin="0.703,4.314" Height="46" Width="195" />
+        <TextBlock Text="Phone Number" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,263,634,451" RenderTransformOrigin="0.267,1.515" Height="55" Width="227" />
+        <TextBlock Text="Gender" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,328,634,386" RenderTransformOrigin="0.267,1.515" Height="55" Width="227" />
+        <TextBlock Text="Player" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,412,634,302" RenderTransformOrigin="0.267,1.515" Height="55" Width="227" />
+        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="CmbGender"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,328,401,393" RenderTransformOrigin="0.267,1.515" Width="214"/>
+        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="CmbPlayer"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,412,300,309" RenderTransformOrigin="0.267,1.515" Width="315"/>
+        <Button x:Name="BtnConfirm"
+                        Content="Confirm"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnConfirm_Click" Margin="31,652,600,50"
+                       />
+
+        <Button x:Name="BtnCancel"
+                        Content="Cancel"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnCancel_Click" Height="67" VerticalAlignment="Top" Margin="617,652,52,0"
+                       />
+
+        <Button x:Name="BtnClear"
+                        Content="Clear All"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnClear_Click" Margin="325,652,315,50"
+                       />
+    </Grid>
+</Window>

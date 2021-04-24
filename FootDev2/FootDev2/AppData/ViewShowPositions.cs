@@ -17,5 +17,6 @@ namespace FootDev2.AppData
         public string Fullname { get; set; }
         public string DominantLeg { get; set; }
         public string Positions { get; set; }
+        public byte[] PlayerImage { get; set; }
     }
 }

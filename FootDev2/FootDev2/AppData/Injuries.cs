@@ -14,12 +14,16 @@ namespace FootDev2.AppData
     
     public partial class Injuries
     {
+        public string FullName { get; set; }
         public int IdPlayer { get; set; }
-        public string Fullname { get; set; }
-        public Nullable<byte> Age { get; set; }
+        public string PhoneNumber { get; set; }
+        public byte[] PlayerImage { get; set; }
         public string InjuryName { get; set; }
+        public int IdInjury { get; set; }
+        public string Description { get; set; }
         public Nullable<System.DateTime> DateOfInjury { get; set; }
         public Nullable<System.DateTime> DateOfRecovery { get; set; }
         public string Treatment { get; set; }
+        public Nullable<byte> Age { get; set; }
     }
 }

@@ -320,6 +320,9 @@
     <Compile Include="Windows\AddEditPlayer.xaml.cs">
       <DependentUpon>AddEditPlayer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddEditRespPers.xaml.cs">
+      <DependentUpon>AddEditRespPers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow2.xaml.cs">
       <DependentUpon>MainWindow2.xaml</DependentUpon>
     </Compile>
@@ -408,6 +411,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AddEditPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddEditRespPers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

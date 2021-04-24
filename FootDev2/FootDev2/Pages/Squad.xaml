@@ -39,9 +39,9 @@
             <Button x:Name="BtnEditPlayer" Content="Edit Player" VerticalAlignment="Center"
              Background="Aquamarine"    FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
                      Margin="40,10,150,10" Width="270" Height="40" Click="BtnEditPlayer_Click"/>
-            <Button x:Name="BtnDeletePlayer" Content="Delete Player" VerticalAlignment="Center"
+            <Button x:Name="BtnDeletePlayer" Content="Delete Player" VerticalAlignment="Top"
              Background="Black"   Foreground="Aquamarine" FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
-                    RenderTransformOrigin="0.751,0.687" Margin="40,10,5,10" Width="256" Height="40" Click="BtnDeletePlayer_Click"/>
+                    RenderTransformOrigin="0.751,0.687" Margin="40,10,5,0" Width="256" Height="40" Click="BtnDeletePlayer_Click"/>
         </StackPanel>
         <ListView Name="ListViewSquad" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
             <ListView.ItemsPanel>

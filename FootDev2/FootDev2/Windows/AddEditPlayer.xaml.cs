@@ -40,6 +40,7 @@ namespace FootDev2.Windows
             CmbLeg.DisplayMemberPath = "Name";
 
 
+
             //           CmbPositions.ItemsSource = context.Position.ToList();
             //CmbPositions.DisplayMemberPath = "NamePosition";
             //CmbPositions.SelectedIndex = 0;

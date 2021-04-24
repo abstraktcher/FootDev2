@@ -17,9 +17,8 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Height="650" Width="550" Margin="30">
+                    <Grid Height="400" Width="550" Margin="30">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="250"/>
                             <RowDefinition Height="50"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
@@ -29,18 +28,13 @@
                             <ColumnDefinition Width="225"/>
                         </Grid.ColumnDefinitions>
 
-                        <Border BorderBrush="Aquamarine" BorderThickness="4" Grid.ColumnSpan="2">
-                            <Image x:Name="ImageFootballer" Source="/Images/DefaultPicture.jpg"
-                       Margin="20"/>
-                        </Border>
-
-                        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBlock Text="{Binding FullName}" FontSize="20" TextWrapping="Wrap" Margin="0 0 10 10"
                                        FontFamily="Comic Sans Ms" FontWeight="Bold" Background="White" Foreground="Black"/>
                         </StackPanel>
 
                         <WrapPanel Orientation="Vertical" VerticalAlignment="Top"
-                   HorizontalAlignment="Left" Margin="5" Grid.Row="2" Grid.Column="0">
+                   HorizontalAlignment="Left" Margin="5" Grid.Row="0" Grid.Column="0">
 
                             <TextBlock Text="{Binding Dribbling1}" FontSize="20" TextWrapping="Wrap" Margin="0 0 0 5"
                                        FontFamily="Comic Sans Ms" FontWeight="Bold" Background="Aquamarine" Foreground="Black"/>
