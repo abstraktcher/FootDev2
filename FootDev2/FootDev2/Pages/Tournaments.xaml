@@ -8,8 +8,43 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Tournaments">
 
-    <Grid>
-        <ListView Name="ListViewTournaments" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+    <Grid Background="White" Margin="0,0,-204,-128">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0">
+            <TextBlock Text="Search"  Width="105" VerticalAlignment="Center"
+                       FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" Foreground="Black"/>
+            <TextBox x:Name="TxtSearch" Width="149"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" TextChanged="TxtSearch_TextChanged" Margin="0,20,0,12"/>
+            <TextBlock Text="Sort" Margin="4,8,0,8" Width="64" VerticalAlignment="Center"
+                       FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" Foreground="Black"/>
+            <ComboBox Name="CmbSort"  Width="148" VerticalAlignment="Center" Background="Aquamarine"
+                       FontWeight="Bold" FontSize="15" FontFamily="Comic Sans MS" Height="34" SelectionChanged="CmbSort_SelectionChanged" Margin="0,13"/>
+            <TextBlock Text="Country" Margin="4,12,0,12" Width="97" VerticalAlignment="Center"
+                       FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" Foreground="Black"/>
+            <ComboBox Name="CmbCountry"  Width="148" VerticalAlignment="Center" Background="Aquamarine"
+                       FontWeight="Bold" FontSize="15" FontFamily="Comic Sans MS" Height="34" SelectionChanged="CmbSort_SelectionChanged" Margin="15,13"/>
+            <Button x:Name="BtnResetFilters" Content="Reset Filters" VerticalAlignment="Bottom"
+             Background="Aquamarine"    FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
+                      Width="192" Height="35" Click="BtnResetFilters_Click" Margin="10,0,0,13"/>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+            <Button x:Name="BtnAddTournament" Content="Add Tournament" VerticalAlignment="Center"
+             Background="Aquamarine"    FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
+                      Width="224" Height="40" Click="BtnAddTournament_Click" Margin="0,10 10 10"/>
+            <Button x:Name="BtnEditTournament" Content="Edit Tournament" VerticalAlignment="Center"
+             Background="Aquamarine"    FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
+                      Width="248" Height="40" Click="BtnEditTournament_Click" Margin="20,10"/>
+            <Button x:Name="BtnDeleteTournament" Content="Delete Tournament" VerticalAlignment="Top"
+             Background="Black"   Foreground="Aquamarine" FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
+                     Width="268" Height="40" Click="BtnDeleteTournament_Click_1" Margin="20,10,0,0"/>
+        </StackPanel>
+        <ListView Name="ListViewTournaments" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>

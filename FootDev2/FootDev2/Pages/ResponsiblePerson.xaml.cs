@@ -106,13 +106,14 @@ namespace FootDev2.Pages
                         context.ResponsiblePerson.Remove(context.ResponsiblePerson.Where(i => i.IdRespPerson == person.IdRespPerson).FirstOrDefault());
                         context.SaveChanges();
                         MessageBox.Show("Removing ", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-
+                        ListViewRespPerson.ItemsSource = context.ViewResponsiblePerson.ToList();
 
                     }
                 }
                 else
                 {
                     MessageBox.Show("Select person!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ListViewRespPerson.ItemsSource = context.ViewResponsiblePerson.ToList();
                 }
 
             }

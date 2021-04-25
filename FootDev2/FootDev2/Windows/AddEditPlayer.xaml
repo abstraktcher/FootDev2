@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FootDev2.Windows"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
         Title="Add/Edit Player" Height="880.5" Width="1200"
         MinHeight="600" MinWidth="900" Icon="/Images/favicon.png" >
     <Grid >
@@ -75,28 +75,28 @@
                     HorizontalAlignment="Center"
                     Background="Aquamarine"
                     FontWeight="Bold" FontSize="25"
-                     FontFamily="Comic Sans MS" Foreground="Black" Margin="116,408,106,355" Width="224"/>
+                     FontFamily="Comic Sans MS" Foreground="Black" Margin="141,408,131,374" Width="224"/>
 
 
             <Button x:Name="BtnConfirm"
                         Content="Confirm"
                         FontWeight="Bold" FontSize="25" 
                         FontFamily="Comic Sans MS" Foreground="Black"
-                        Background="Aquamarine" Margin="-530,733,785,46" Click="BtnConfirm_Click"
+                        Background="Aquamarine" Margin="-596,759,851,40" Click="BtnConfirm_Click"
                        />
 
             <Button x:Name="BtnCancel"
                         Content="Cancel"
                         FontWeight="Bold" FontSize="25" 
                         FontFamily="Comic Sans MS" Foreground="Black"
-                        Background="Aquamarine" Margin="203,733,24,46" Click="BtnCancel_Click"
+                        Background="Aquamarine" Margin="203,759,24,40" Click="BtnCancel_Click"
                        />
 
             <Button x:Name="BtnClear"
                         Content="Clear All"
                         FontWeight="Bold" FontSize="25" 
                         FontFamily="Comic Sans MS" Foreground="Black"
-                        Background="Aquamarine" Margin="-170,733,422,46" Click="BtnClear_Click"
+                        Background="Aquamarine" Margin="-196,759,448,40" Click="BtnClear_Click"
                        />
         </Grid>
     </Grid>

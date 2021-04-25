@@ -147,23 +147,6 @@ namespace FootDev2.Windows
                                                     if (resultClick == MessageBoxResult.Yes)
                                                     {
 
-                                                        //if (pathPhoto != null)
-                                                        //{
-                                                        //    var format = pathPhoto.Split('.')[pathPhoto.Split('.').Length - 1];
-
-                                                        //    string namePhoto = $@"\materials\{random.Next()}.{format}";
-
-                                                        //    File.Copy(pathPhoto, $@"..\..\{namePhoto}");
-                                                        //    addPlayer.PlayerImage = namePhoto;
-                                                        //}
-
-                                                        //var clientVAR = context.Client.Where(i => i.ID == IdClientVar).FirstOrDefault();
-
-                                                        //context.SaveChanges();
-
-                                                        //MessageBox.Show("Пользователь изменен!", "Успех", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                                        //IdClientVar = 0;
-                                                        //this.Close();
                                                         var PlayerVar = context.Player.Where(i => i.IdPlayer == VarIdPlayer).FirstOrDefault();
 
                                                         PlayerVar.FirstName = TxtFirstName.Text;
@@ -179,16 +162,7 @@ namespace FootDev2.Windows
                                                         PlayerVar.DateJoining = DateTime.Now;
                                                         PlayerVar.IdDominantLeg = (byte)(CmbLeg.SelectedIndex + 1);
 
-                                                        //var clientVAR = context.Client.Where(i => i.ID == IdClientVar).FirstOrDefault();
-                                                        //clientVAR.LastName = TBLName.Text;
-                                                        //clientVAR.FirstName = TBFName.Text;
-                                                        //clientVAR.Patronymic = TBMName.Text;
-                                                        //clientVAR.Email = TBEmail.Text;
-                                                        //clientVAR.Phone = TBPhone.Text;
-                                                        //clientVAR.Birthday = DatePickerBD.SelectedDate;
-                                                        //clientVAR.GenderCode = CBGender.Text;
-                                                        //context.SaveChanges();
-
+                                                      
 
                                                         context.SaveChanges();
                                                         MessageBox.Show("Information was successfully changed", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
@@ -218,13 +192,6 @@ namespace FootDev2.Windows
                                                     addPlayer.IdDominantLeg = (byte)(CmbLeg.SelectedIndex + 1);
 
 
-                                                    //context.LanguageToPlayer.Add(new LanguageToPlayer
-                                                    //{
-                                                    //    IdLanguage = 1,
-                                                    //    IdPlayer = addPlayer.IdPlayer
-                                                    //});
-
-
                                                     context.Player.Add(addPlayer);
                                                     context.SaveChanges();
                                                     MessageBox.Show("Player was successfully added", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
@@ -237,22 +204,6 @@ namespace FootDev2.Windows
                                                 MessageBox.Show("Error", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                                             }
 
-
-
-                                            //addMaterial.Size = "1*1";
-                                            //addMaterial.TypeId = cmbTypeMAterial.SelectedIndex + 1;
-                                            //addMaterial.Price = Convert.ToDecimal(txtPrice.Text);
-                                            //addMaterial.Count = Convert.ToInt32(txtCount.Text);
-                                            //addMaterial.MinCount = Convert.ToInt32(txtMinCount.Text);
-                                            //addMaterial.CountInBox = Convert.ToInt32(txtCountInBox.Text);
-                                            //addMaterial.TypeDimension = cmbUnitMaterial.SelectedIndex + 1;
-
-                                            /*Context.Material.Add(addMaterial);*/ // добавление материала
-
-                                            //добавление поставщиков для материала
-
-
-                                            //    Context.SaveChanges();
                                         }
                                         else
                                         {

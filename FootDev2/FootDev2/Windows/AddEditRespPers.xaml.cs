@@ -36,11 +36,12 @@ namespace FootDev2.Windows
         public AddEditRespPers(ViewResponsiblePerson person)
         {
             InitializeComponent();
-            TxtFirstName.Text = person.FirstName.ToString();
-            TxtLastName.Text = person.LastName.ToString();
-            TxtMiddleName.Text = person.MiddleName.ToString();
-            TxtPhone.Text = person.Resp_Person_s_phone.ToString();
-            CmbGender.SelectedItem = person.NameGender;
+
+           
+                TxtFirstName.Text = person.FirstName.ToString();
+                TxtLastName.Text = person.LastName.ToString();
+                TxtMiddleName.Text = person.MiddleName2.ToString();
+                TxtPhone.Text = person.Resp_Person_s_phone.ToString();
 
             CmbGender.ItemsSource = context.Gender.ToList();
             CmbGender.DisplayMemberPath = "NameGender";
@@ -187,137 +188,91 @@ namespace FootDev2.Windows
                             }
                             else
                             {
-                                if (TxtPhone.Text.Length > 11 || TxtPhone.Text.Length < 10)
+                            if (TxtPhone.Text.Length > 11 || TxtPhone.Text.Length < 10)
+                            {
+                                MessageBox.Show("Phone must have  10 characters ", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                return;
+                            }
+                            else
+                            {
+                                //try
+                                //{
+
+                                if (VarIdPlayer != 0)
+
                                 {
-                                    MessageBox.Show("Phone must have  10 characters ", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                                    return;
-                                }
-                                else
-                                {
-                                            try
-                                            {
 
-                                                if (VarIdPlayer != 0)
+                                    Random random = new Random();
+                                    var resultClick = MessageBox.Show("Do you want to edit the information?", "Adding new player", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                                    if (resultClick == MessageBoxResult.Yes)
+                                    {
+                                        var PersonVar = context.ResponsiblePerson.Where(i => i.IdRespPerson == VarIdPlayer).FirstOrDefault();
 
-                                                {
+                                        PersonVar.FirstName = TxtFirstName.Text;
+                                        PersonVar.LastName = TxtLastName.Text;
+                                        PersonVar.MiddleName = TxtMiddleName.Text;
+                                        PersonVar.PhoneNumber = TxtPhone.Text;
+                                        PersonVar.IdGender = (byte)(CmbGender.SelectedIndex + 1);
 
-                                                    Random random = new Random();
-                                                    var resultClick = MessageBox.Show("Do you want to edit the information?", "Adding new player", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                                                    if (resultClick == MessageBoxResult.Yes)
-                                                    {
+                                        //context.Player.Remove(context.Player.Where(i => i.IdPlayer == player.IdPlayer).FirstOrDefault());
 
-                                                        //if (pathPhoto != null)
-                                                        //{
-                                                        //    var format = pathPhoto.Split('.')[pathPhoto.Split('.').Length - 1];
-
-                                                        //    string namePhoto = $@"\materials\{random.Next()}.{format}";
-
-                                                        //    File.Copy(pathPhoto, $@"..\..\{namePhoto}");
-                                                        //    addPlayer.PlayerImage = namePhoto;
-                                                        //}
-
-                                                        //var clientVAR = context.Client.Where(i => i.ID == IdClientVar).FirstOrDefault();
-
-                                                        //context.SaveChanges();
-
-                                                        //MessageBox.Show("Пользователь изменен!", "Успех", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                                        //IdClientVar = 0;
-                                                        //this.Close();
-                                                        var PersonVar = context.ResponsiblePerson.Where(i => i.IdRespPerson == VarIdPlayer).FirstOrDefault();
-
-                                                        PersonVar.FirstName = TxtFirstName.Text;
-                                                        PersonVar.LastName = TxtLastName.Text;
-                                                        PersonVar.MiddleName = TxtMiddleName.Text;
-                                                        PersonVar.PhoneNumber = TxtPhone.Text;
-                                                        PersonVar.IdGender = (byte)(CmbGender.SelectedIndex + 1);
-
-                                            //context.Player.Remove(context.Player.Where(i => i.IdPlayer == player.IdPlayer).FirstOrDefault());
-
-                                            context.PlayerToRespReson.Remove(context.PlayerToRespReson.Where(i => i.IdRespPers == PersonVar.IdRespPerson).FirstOrDefault());
-
-                                            context.PlayerToRespReson.Add(new PlayerToRespReson
-                                            {
-                                                IdPlayer = CmbPlayer.SelectedIndex + 1,
-                                                IdRespPers = PersonVar.IdRespPerson
-                                            });
-
-
-                                            //var clientVAR = context.Client.Where(i => i.ID == IdClientVar).FirstOrDefault();
-                                            //clientVAR.LastName = TBLName.Text;
-                                            //clientVAR.FirstName = TBFName.Text;
-                                            //clientVAR.Patronymic = TBMName.Text;
-                                            //clientVAR.Email = TBEmail.Text;
-                                            //clientVAR.Phone = TBPhone.Text;
-                                            //clientVAR.Birthday = DatePickerBD.SelectedDate;
-                                            //clientVAR.GenderCode = CBGender.Text;
-                                            //context.SaveChanges();
-
-
-                                            context.SaveChanges();
-                                                        MessageBox.Show("Information was successfully changed", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                                        VarIdPlayer = 0;
-                                                        Close();
-                                                    }
-                                                    else
-                                                    {
-                                                        return;
-                                                    }
-                                                }
-                                                else
-
-                                                {
-                                                    ResponsiblePerson addResp = new ResponsiblePerson();
-                                                    addResp.FirstName = TxtFirstName.Text;
-                                                    addResp.LastName = TxtLastName.Text;
-                                                    addResp.MiddleName = TxtMiddleName.Text;
-                                                    addResp.PhoneNumber = TxtPhone.Text;
-                                                    addResp.IdGender = (byte)(CmbGender.SelectedIndex + 1);
-
+                                        context.PlayerToRespReson.Remove(context.PlayerToRespReson.Where(i => i.IdRespPers == PersonVar.IdRespPerson).FirstOrDefault());
 
                                         context.PlayerToRespReson.Add(new PlayerToRespReson
                                         {
                                             IdPlayer = CmbPlayer.SelectedIndex + 1,
-                                            IdRespPers = addResp.IdRespPerson
+                                            IdRespPers = PersonVar.IdRespPerson
                                         });
-                                                   
 
 
-                                                    //context.LanguageToPlayer.Add(new LanguageToPlayer
-                                                    //{
-                                                    //    IdLanguage = 1,
-                                                    //    IdPlayer = addPlayer.IdPlayer
-                                                    //});
-
-
-                                                    context.ResponsiblePerson.Add(addResp);
-                                                    context.SaveChanges();
-                                                    MessageBox.Show("Person was successfully added", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                                    Close();
-                                                }
-
-                                            }
-                                            catch
-                                            {
-                                                MessageBox.Show("Error", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                                            }
-
-
-
-                                            //addMaterial.Size = "1*1";
-                                            //addMaterial.TypeId = cmbTypeMAterial.SelectedIndex + 1;
-                                            //addMaterial.Price = Convert.ToDecimal(txtPrice.Text);
-                                            //addMaterial.Count = Convert.ToInt32(txtCount.Text);
-                                            //addMaterial.MinCount = Convert.ToInt32(txtMinCount.Text);
-                                            //addMaterial.CountInBox = Convert.ToInt32(txtCountInBox.Text);
-                                            //addMaterial.TypeDimension = cmbUnitMaterial.SelectedIndex + 1;
-
-                                            /*Context.Material.Add(addMaterial);*/ // добавление материала
-
-                                            //добавление поставщиков для материала
-
-
-                                            //    Context.SaveChanges();
+                                        context.SaveChanges();
+                                        MessageBox.Show("Information was successfully changed", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                                        VarIdPlayer = 0;
+                                        Close();
+                                    }
+                                    else
+                                    {
+                                        return;
+                                    }
                                 }
+                                else
+
+                                {
+                                    ResponsiblePerson addResp = new ResponsiblePerson();
+                                    addResp.FirstName = TxtFirstName.Text;
+                                    addResp.LastName = TxtLastName.Text;
+                                    addResp.MiddleName = TxtMiddleName.Text;
+                                    addResp.PhoneNumber = TxtPhone.Text;
+                                    addResp.IdGender = (byte)(CmbGender.SelectedIndex + 1);
+
+
+
+
+
+
+                                    //context.LanguageToPlayer.Add(new LanguageToPlayer
+                                    //{
+                                    //    IdLanguage = 1,
+                                    //    IdPlayer = addPlayer.IdPlayer
+                                    //});
+
+
+                                    context.ResponsiblePerson.Add(addResp);
+                                    context.SaveChanges();
+
+
+                                    context.PlayerToRespReson.Add(new PlayerToRespReson
+                                    {
+
+
+                                        IdPlayer = CmbPlayer.SelectedIndex + 1,
+                                        IdRespPers = addResp.IdRespPerson
+                                    });
+                                    context.SaveChanges();
+                                    MessageBox.Show("Person was successfully added", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                                    Close();
+                                }
+                            }
                             }
                         }
                 

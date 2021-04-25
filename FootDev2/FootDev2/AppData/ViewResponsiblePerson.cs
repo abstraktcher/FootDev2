@@ -20,9 +20,10 @@ namespace FootDev2.AppData
         public string Pesponsible_Person { get; set; }
         public string Resp_Person_s_phone { get; set; }
         public string NameGender { get; set; }
+        public Nullable<int> IdRespPerson { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
-        public Nullable<int> IdRespPerson { get; set; }
+        public string MiddleName2 { get; set; }
     }
 }

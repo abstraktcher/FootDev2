@@ -743,6 +743,7 @@
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
           <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MiddleName2" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewShowPositions" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -1218,9 +1219,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToRespReson_Player">
-          <End Role="Player" Type="Self.Player" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
           <End Role="PlayerToRespReson" Type="Self.PlayerToRespReson" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -1660,7 +1659,8 @@
     [ViewResponsiblePerson].[IdRespPerson] AS [IdRespPerson], 
     [ViewResponsiblePerson].[FirstName] AS [FirstName], 
     [ViewResponsiblePerson].[LastName] AS [LastName], 
-    [ViewResponsiblePerson].[MiddleName] AS [MiddleName]
+    [ViewResponsiblePerson].[MiddleName] AS [MiddleName], 
+    [ViewResponsiblePerson].[MiddleName2] AS [MiddleName2]
     FROM [dbo].[ViewResponsiblePerson] AS [ViewResponsiblePerson]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewShowPositions" EntityType="Self.ViewShowPositions" store:Type="Views" store:Schema="dbo">
@@ -2958,10 +2958,11 @@
           <Property Name="Pesponsible_Person" Type="String" Nullable="false" MaxLength="152" FixedLength="false" Unicode="true" />
           <Property Name="Resp_Person_s_phone" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
           <Property Name="NameGender" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="IdRespPerson" Type="Int32" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IdRespPerson" Type="Int32" />
+          <Property Name="MiddleName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ViewShowPositions">
           <Key>
@@ -3455,9 +3456,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PlayerToRespReson_Player">
-          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Type="FootDevModel.Player" Role="Player" Multiplicity="1" />
           <End Type="FootDevModel.PlayerToRespReson" Role="PlayerToRespReson" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Player">
@@ -4303,10 +4302,11 @@
           <EntitySetMapping Name="ViewResponsiblePerson">
             <EntityTypeMapping TypeName="FootDevModel.ViewResponsiblePerson">
               <MappingFragment StoreEntitySet="ViewResponsiblePerson">
-                <ScalarProperty Name="IdRespPerson" ColumnName="IdRespPerson" />
+                <ScalarProperty Name="MiddleName2" ColumnName="MiddleName2" />
                 <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="IdRespPerson" ColumnName="IdRespPerson" />
                 <ScalarProperty Name="NameGender" ColumnName="NameGender" />
                 <ScalarProperty Name="Resp_Person_s_phone" ColumnName="Resp Person's phone" />
                 <ScalarProperty Name="Pesponsible_Person" ColumnName="Pesponsible Person" />
