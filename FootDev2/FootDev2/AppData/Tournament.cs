@@ -17,7 +17,7 @@ namespace FootDev2.AppData
         public int IdTournament { get; set; }
         public string TournamentName { get; set; }
         public string PrizePool { get; set; }
-        public int IdSponsor { get; set; }
+        public Nullable<int> IdSponsor { get; set; }
         public string Description { get; set; }
         public Nullable<byte> NumberOfParticipants { get; set; }
         public byte[] TournamentLogo { get; set; }

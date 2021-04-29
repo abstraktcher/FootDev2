@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static FootDev2.AppData.AppDataClass;
+using FootDev2.Windows;
+using FootDev2.AppData;
+using static FootDev2.HelperClass.CheckRole;
+
 
 namespace FootDev2.Pages
 {
@@ -25,20 +29,27 @@ namespace FootDev2.Pages
         {
             InitializeComponent();
             ListViewTournaments.ItemsSource = context.ViewInfoTournament.ToList();
+            
             CmbSort.ItemsSource = new List<string>()
             {
                 "By default", "By  Date", "By Prize Pool"
             };
 
+            List<string> listCountry = new List<string>();
+
             var Country = context.Country.ToList();
             foreach (var i in Country)
             {
-                CmbCountry.Add(i.CountryName);
+                listCountry.Add(i.CountryName);
             }
 
-            listFiltr.Insert(0, "All Countries");
-            cmbFiltr.ItemsSource = listFiltr;
-            cmbFiltr.SelectedIndex = 0;
+            listCountry.Insert(0, "All Countries");
+            CmbCountry.ItemsSource = listCountry;
+            CmbCountry.SelectedIndex = 0;
+
+            CmbSort.SelectedIndex = 0;
+
+           
         }
 
 
@@ -59,7 +70,18 @@ namespace FootDev2.Pages
         {
             var list = context.ViewInfoTournament.Where(i => i.TournamentName.Contains(TxtSearch.Text)).ToList();
 
-         
+            var selectFilter = CmbCountry.SelectedItem;
+
+            if (CmbCountry.SelectedIndex != 0)
+            {
+                list = list.Where(i => i.CountryName == selectFilter.ToString()).ToList();
+                ListViewTournaments.ItemsSource = list;
+            }
+            else
+            {
+                ListViewTournaments.ItemsSource = list;
+            }
+
             switch (CmbSort.SelectedIndex)
             {
 
@@ -71,6 +93,24 @@ namespace FootDev2.Pages
                     break;
             }
             ListViewTournaments.ItemsSource = list;
+
+
+
+            if (CBDate.IsChecked == true)
+            {
+                list = list.Where(i => i.DateStart.HasValue && i.DateStart.Value.Month == DateTime.Now.Month).ToList();
+                ListViewTournaments.ItemsSource = list;
+            }
+            else
+            {
+                list = context.ViewInfoTournament.ToList();
+            }
+            
+
+
+
+
+
 
         }
 
@@ -94,6 +134,8 @@ namespace FootDev2.Pages
           
             CmbSort.SelectedIndex = 0;
             TxtSearch.Text = "";
+            CmbCountry.SelectedIndex = 0;
+            CBDate.IsChecked = false;
         }
 
     //    private void BtnEditPlayer_Click(object sender, RoutedEventArgs e)
@@ -171,22 +213,88 @@ namespace FootDev2.Pages
 
         private void BtnDeleteTournament_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
 
+                if (ListViewTournaments.SelectedItem is ViewInfoTournament tournament)
+                {
+                    var result = MessageBox.Show($@"Are you sure you want to delete this tournament? {tournament.TournamentName}, All related data will be permanently deleted", "Remove Tournament",
+                        MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        context.Tournament.Remove(context.Tournament.Where(i => i.IdTournament == tournament.IdTournament).FirstOrDefault());
+                        context.SaveChanges();
+                        MessageBox.Show("Removing ", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        ListViewTournaments.ItemsSource = context.ViewInfoTournament.ToList();
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Select tournament!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ListViewTournaments.ItemsSource = context.ViewInfoTournament.ToList();
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Error ", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
-        private void BtnDeleteTournament_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
         private void BtnEditTournament_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+
+                if (ListViewTournaments.SelectedItem is ViewInfoTournament tournament)
+                {
+                    VarIdTournament = (int)tournament.IdTournament;
+                    AddTournament addtournament = new AddTournament(ListViewTournaments.SelectedItem as ViewInfoTournament);
+                    this.Opacity = 0.3;
+                    Filter();
+                    addtournament.ShowDialog();
+                    Filter();
+                    this.Opacity = 1;
+                }
+                else
+                {
+                    MessageBox.Show("You did not select person", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Error", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
 
         private void BtnAddTournament_Click(object sender, RoutedEventArgs e)
         {
+            AddTournament addtournament = new AddTournament();
+            this.Opacity = 0.3;
+            Filter();
+            addtournament.ShowDialog();
+            Filter();
+            this.Opacity = 1;
+        }
 
+        private void CmbCountry_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Filter();
+        }
+
+        private void CBDate_Checked(object sender, RoutedEventArgs e)
+        {
+            Filter();
+        }
+
+        private void CBDate_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Filter();
         }
     }
 }

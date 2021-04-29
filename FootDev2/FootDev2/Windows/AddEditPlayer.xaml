@@ -60,7 +60,7 @@
             <ComboBox x:Name="CmbGender"  Margin="0,27,10,-7" Height="39" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"/>
             <TextBox x:Name="TxtPassword"  CommandManager.Executed="TxtPassword_Executed" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                       FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,27,10,-7" Height="32" VerticalAlignment="Top" PreviewTextInput="TxtPassword_PreviewTextInput" PreviewKeyDown="TxtPassword_PreviewKeyDown"/>
-            <ComboBox x:Name="CmbNationality"  Margin="0,27,10,-7" Height="34" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"/>
+            <ComboBox x:Name="CmbNationality"  Margin="0,27,10,-7" Height="34" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" IsEditable="True"/>
             <ComboBox x:Name="CmbLeg"  Margin="0,27,10,-7" Height="34" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"/>
         </StackPanel>
 

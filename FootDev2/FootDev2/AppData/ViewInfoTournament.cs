@@ -23,5 +23,6 @@ namespace FootDev2.AppData
         public string City { get; set; }
         public string CountryName { get; set; }
         public string SponsorName { get; set; }
+        public Nullable<int> IdCountry { get; set; }
     }
 }

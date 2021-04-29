@@ -37,11 +37,11 @@ namespace FootDev2.Windows
         {
             InitializeComponent();
 
-           
-                TxtFirstName.Text = person.FirstName.ToString();
-                TxtLastName.Text = person.LastName.ToString();
-                TxtMiddleName.Text = person.MiddleName2.ToString();
-                TxtPhone.Text = person.Resp_Person_s_phone.ToString();
+
+            TxtFirstName.Text = person.FirstName.ToString();
+            TxtLastName.Text = person.LastName.ToString();
+            TxtMiddleName.Text = person.MiddleName2.ToString();
+            TxtPhone.Text = person.Resp_Person_s_phone.ToString();
 
             CmbGender.ItemsSource = context.Gender.ToList();
             CmbGender.DisplayMemberPath = "NameGender";
@@ -152,7 +152,7 @@ namespace FootDev2.Windows
 
             TxtFirstName.Clear();
             TxtLastName.Clear();
-            TxtMiddleName.Clear();          
+            TxtMiddleName.Clear();
             CmbGender.SelectedItem = null;
             CmbPlayer.SelectedItem = null;
         }
@@ -173,21 +173,21 @@ namespace FootDev2.Windows
                 }
                 else
                 {
-                   
-                        if (CmbGender.SelectedItem == null)
+
+                    if (CmbGender.SelectedItem == null)
+                    {
+                        MessageBox.Show("Choose gender", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                    else
+                    {
+                        if (CmbPlayer.SelectedItem == null)
                         {
-                            MessageBox.Show("Choose gender", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show("Choose player", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                             return;
                         }
                         else
                         {
-                            if (CmbPlayer.SelectedItem == null)
-                            {
-                                MessageBox.Show("Choose player", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                                return;
-                            }
-                            else
-                            {
                             if (TxtPhone.Text.Length > 11 || TxtPhone.Text.Length < 10)
                             {
                                 MessageBox.Show("Phone must have  10 characters ", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -195,89 +195,87 @@ namespace FootDev2.Windows
                             }
                             else
                             {
-                                //try
-                                //{
-
-                                if (VarIdPlayer != 0)
-
+                                try
                                 {
 
-                                    Random random = new Random();
-                                    var resultClick = MessageBox.Show("Do you want to edit the information?", "Adding new player", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                                    if (resultClick == MessageBoxResult.Yes)
+                                    if (VarIdPlayer != 0)
+
                                     {
-                                        var PersonVar = context.ResponsiblePerson.Where(i => i.IdRespPerson == VarIdPlayer).FirstOrDefault();
 
-                                        PersonVar.FirstName = TxtFirstName.Text;
-                                        PersonVar.LastName = TxtLastName.Text;
-                                        PersonVar.MiddleName = TxtMiddleName.Text;
-                                        PersonVar.PhoneNumber = TxtPhone.Text;
-                                        PersonVar.IdGender = (byte)(CmbGender.SelectedIndex + 1);
+                                        Random random = new Random();
+                                        var resultClick = MessageBox.Show("Do you want to edit the information?", "Adding new player", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                                        if (resultClick == MessageBoxResult.Yes)
+                                        {
+                                            var PersonVar = context.ResponsiblePerson.Where(i => i.IdRespPerson == VarIdPlayer).FirstOrDefault();
 
-                                        //context.Player.Remove(context.Player.Where(i => i.IdPlayer == player.IdPlayer).FirstOrDefault());
+                                            PersonVar.FirstName = TxtFirstName.Text;
+                                            PersonVar.LastName = TxtLastName.Text;
+                                            PersonVar.MiddleName = TxtMiddleName.Text;
+                                            PersonVar.PhoneNumber = TxtPhone.Text;
+                                            PersonVar.IdGender = (byte)(CmbGender.SelectedIndex + 1);
 
-                                        context.PlayerToRespReson.Remove(context.PlayerToRespReson.Where(i => i.IdRespPers == PersonVar.IdRespPerson).FirstOrDefault());
+                                            //context.Player.Remove(context.Player.Where(i => i.IdPlayer == player.IdPlayer).FirstOrDefault());
+
+                                            context.PlayerToRespReson.Remove(context.PlayerToRespReson.Where(i => i.IdRespPers == PersonVar.IdRespPerson).FirstOrDefault());
+
+                                            context.PlayerToRespReson.Add(new PlayerToRespReson
+                                            {
+                                                IdPlayer = CmbPlayer.SelectedIndex + 1,
+                                                IdRespPers = PersonVar.IdRespPerson
+                                            });
+
+
+                                            context.SaveChanges();
+                                            MessageBox.Show("Information was successfully changed", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                                            VarIdPlayer = 0;
+                                            Close();
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                    else
+
+                                    {
+                                        ResponsiblePerson addResp = new ResponsiblePerson();
+                                        addResp.FirstName = TxtFirstName.Text;
+                                        addResp.LastName = TxtLastName.Text;
+                                        addResp.MiddleName = TxtMiddleName.Text;
+                                        addResp.PhoneNumber = TxtPhone.Text;
+                                        addResp.IdGender = (byte)(CmbGender.SelectedIndex + 1);
+
+
+
+
+
+                                        context.ResponsiblePerson.Add(addResp);
+                                        context.SaveChanges();
+
 
                                         context.PlayerToRespReson.Add(new PlayerToRespReson
                                         {
+
+
                                             IdPlayer = CmbPlayer.SelectedIndex + 1,
-                                            IdRespPers = PersonVar.IdRespPerson
+                                            IdRespPers = addResp.IdRespPerson
                                         });
-
-
                                         context.SaveChanges();
-                                        MessageBox.Show("Information was successfully changed", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                        VarIdPlayer = 0;
+                                        MessageBox.Show("Person was successfully added", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                                         Close();
                                     }
-                                    else
-                                    {
-                                        return;
-                                    }
                                 }
-                                else
-
+                                catch
                                 {
-                                    ResponsiblePerson addResp = new ResponsiblePerson();
-                                    addResp.FirstName = TxtFirstName.Text;
-                                    addResp.LastName = TxtLastName.Text;
-                                    addResp.MiddleName = TxtMiddleName.Text;
-                                    addResp.PhoneNumber = TxtPhone.Text;
-                                    addResp.IdGender = (byte)(CmbGender.SelectedIndex + 1);
-
-
-
-
-
-
-                                    //context.LanguageToPlayer.Add(new LanguageToPlayer
-                                    //{
-                                    //    IdLanguage = 1,
-                                    //    IdPlayer = addPlayer.IdPlayer
-                                    //});
-
-
-                                    context.ResponsiblePerson.Add(addResp);
-                                    context.SaveChanges();
-
-
-                                    context.PlayerToRespReson.Add(new PlayerToRespReson
-                                    {
-
-
-                                        IdPlayer = CmbPlayer.SelectedIndex + 1,
-                                        IdRespPers = addResp.IdRespPerson
-                                    });
-                                    context.SaveChanges();
-                                    MessageBox.Show("Person was successfully added", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                    Close();
+                                    MessageBox.Show("Error", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                                 }
-                            }
                             }
                         }
-                
+
+                    }
                 }
             }
         }
     }
-    }
+}
+

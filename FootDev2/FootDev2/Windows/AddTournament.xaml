@@ -1,0 +1,70 @@
+﻿<Window x:Class="FootDev2.Windows.AddTournament"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FootDev2.Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="600" MinWidth="900" Icon="/Images/favicon.png" 
+        ResizeMode="NoResize" WindowStyle="None"
+        Title="Add Tournament| FootDev" FontSize="40" FontFamily="Comic Sans MS" Height="800" Width="500">
+    <Grid>
+
+        <TextBox x:Name="TxtTournamentName" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"
+                     Margin="278,50,277,0" Height="50" VerticalAlignment="Top" CommandManager.PreviewExecuted="TxtTournamentName_PreviewExecuted" PreviewTextInput="TxtTournamentName_PreviewTextInput">
+
+        </TextBox>
+        <TextBlock Text="Tournament" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,35,666,685" Width="175" Height="49" RenderTransformOrigin="0.488,-0.176"/>
+        <TextBlock Text="Country" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,115,666,608" Width="175" Height="46"/>
+        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="CmbCountry" IsEditable="True"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,128,401,624" RenderTransformOrigin="0.267,1.515" Width="214"/>
+
+        <TextBox VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TxtCity"  PreviewKeyDown="CmbCity_PreviewKeyDown" CommandManager.PreviewExecuted="CmbCity_PreviewExecuted" PreviewTextInput="CmbCity_PreviewTextInput"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,194,317,562" RenderTransformOrigin="0.267,1.515" Width="298"/>
+        <TextBlock Text="City" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,192,646,562" RenderTransformOrigin="0.703,4.314" Height="46" Width="195" />
+        <TextBlock Text="Date start" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,264,634,480" RenderTransformOrigin="0.267,1.515" Height="56" Width="207" />
+        <TextBlock Text="Date end" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,344,634,400" RenderTransformOrigin="0.267,1.515" Height="56" Width="208" />
+        <DatePicker Name="DPStart" Margin="285,264,317,480" Text="Date"/>
+        <DatePicker Name="DPEnd" Margin="285,344,317,400" Text="Date"/>
+        <TextBlock Text="Participants" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,428,634,316" RenderTransformOrigin="0.267,1.515" Height="56" Width="207" />
+        <TextBlock Text="Prize Pool" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,509,627,236" RenderTransformOrigin="0.267,1.515" Height="55" Width="215" />
+        <TextBlock Text="Sponsor" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,580,647,165" RenderTransformOrigin="0.267,1.515" Height="55" Width="195" />
+
+        <TextBox  VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TXTPArticipants" PreviewKeyDown="TBPArticipants_PreviewKeyDown" CommandManager.PreviewExecuted="TBPArticipants_PreviewExecuted" PreviewTextInput="TBPArticipants_PreviewTextInput"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,428,401,328" RenderTransformOrigin="0.267,1.515" Width="221"/>
+        <TextBox x:Name="TxtPrizePool" PreviewKeyDown="TxtPrizePool_PreviewKeyDown" CommandManager.PreviewExecuted="TxtPrizePool_PreviewExecuted"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="TxtPrizePool_PreviewTextInput" CommandManager.Executed="TxtPrizePool_Executed"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="278,509,401,0" Height="44" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtSponsor"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CommandManager.PreviewExecuted="TxtSponsor_PreviewExecuted" PreviewTextInput="TxtSponsor_PreviewTextInput"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="271,580,277,0" Height="44" VerticalAlignment="Top"/>
+        <Button x:Name="BtnConfirm" Click="BtnConfirm_Click"
+                        Content="Confirm"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine"  Margin="39,701,592,32"
+                       />
+
+        <Button x:Name="BtnCancel"
+                        Content="Cancel"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnCancel_Click" Height="67" VerticalAlignment="Top" Margin="619,701,50,0"
+                       />
+
+        <Button x:Name="BtnClear"
+                        Content="Clear All"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnClear_Click" Margin="323,701,317,32"
+                       />
+    </Grid>
+</Window>

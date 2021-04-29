@@ -33,14 +33,10 @@
                        FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,328,634,386" RenderTransformOrigin="0.267,1.515" Height="55" Width="227" />
         <TextBlock Text="Player" VerticalAlignment="Center" HorizontalAlignment="Right"
                        FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,412,634,302" RenderTransformOrigin="0.267,1.515" Height="55" Width="227" />
-        <TextBlock Text="Player id" VerticalAlignment="Center" HorizontalAlignment="Right"
-                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,509,634,236" RenderTransformOrigin="0.267,1.515" Height="55" Width="227" />
         <ComboBox VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="CmbGender"
                        FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,328,401,393" RenderTransformOrigin="0.267,1.515" Width="214"/>
-        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="CmbPlayer"
+        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="CmbPlayer" IsEditable="True"
                        FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,412,300,309" RenderTransformOrigin="0.267,1.515" Width="315"/>
-        <TextBox x:Name="TxtIdPlayer" IsReadOnly="True"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="266,509,289,0" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="BtnConfirm"
                         Content="Confirm"
                         FontWeight="Bold" FontSize="25" 
