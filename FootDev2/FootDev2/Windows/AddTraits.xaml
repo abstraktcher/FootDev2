@@ -1,0 +1,50 @@
+﻿<Window x:Class="FootDev2.Windows.AddTraits"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FootDev2.Windows"
+        mc:Ignorable="d"
+       WindowStartupLocation="CenterScreen"
+        MinHeight="500" MinWidth="900" Icon="/Images/favicon.png" 
+        ResizeMode="NoResize" WindowStyle="None"
+        Title="Add Tournament| FootDev" FontSize="40" FontFamily="Comic Sans MS" Height="800" Width="500">
+    <Grid>
+        <TextBlock Text="Player" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="175" Height="49" Margin="0,31,676,720"/>
+        <TextBlock Text="Trait" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="175" Height="49" Margin="0,113,676,638"/>
+        <ComboBox Margin="0,31,154,719"  VerticalAlignment="Center" HorizontalAlignment="Right" Name="CmbPlayer" IsEditable="True"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="445" Height="50"/>
+        <ComboBox Margin="0,113,154,637"  VerticalAlignment="Center" HorizontalAlignment="Right" Name="CmbTrait" IsEditable="True"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="445" Height="50"/>
+        <ListView x:Name="ListViewTraits" Margin="49,196,41,159">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Trait" Width="800" DisplayMemberBinding="{Binding Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button x:Name="BtnConfirm"
+                        Content="Confirm"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Margin="29,711,631,23" Click="BtnConfirm_Click"
+                       />
+
+        <Button x:Name="BtnCancel"
+                        Content="Cancel"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnCancel_Click" Height="66" VerticalAlignment="Top" Margin="629,711,10,0" RenderTransformOrigin="0.714,0.851"
+                       />
+
+        <Button x:Name="AddTrait"
+                        Content="Add Trait"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnAddTrait_Click" Margin="301,646,329,98" RenderTransformOrigin="0.586,-0.915" 
+                       />
+    </Grid>
+</Window>

@@ -25,5 +25,6 @@ namespace FootDev2.AppData
         public Nullable<System.DateTime> DateOfRecovery { get; set; }
         public string Treatment { get; set; }
         public Nullable<byte> Age { get; set; }
+        public int IdInjToPla { get; set; }
     }
 }

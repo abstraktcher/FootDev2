@@ -237,9 +237,6 @@
     <Compile Include="AppData\ViewIndTrainings.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppData\ViewInfoTournament.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="AppData\ViewMFCharacteristics.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -323,8 +320,17 @@
     <Compile Include="Windows\AddEditRespPers.xaml.cs">
       <DependentUpon>AddEditRespPers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddInjury.xaml.cs">
+      <DependentUpon>AddInjury.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddPosition.xaml.cs">
+      <DependentUpon>AddPosition.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AddTournament.xaml.cs">
       <DependentUpon>AddTournament.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddTraits.xaml.cs">
+      <DependentUpon>AddTraits.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MainWindow2.xaml.cs">
       <DependentUpon>MainWindow2.xaml</DependentUpon>
@@ -421,7 +427,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\AddInjury.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddPosition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AddTournament.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddTraits.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

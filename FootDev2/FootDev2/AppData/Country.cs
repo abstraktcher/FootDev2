@@ -14,17 +14,8 @@ namespace FootDev2.AppData
     
     public partial class Country
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Country()
-        {
-            this.Location = new HashSet<Location>();
-        }
-    
         public int IdCountry { get; set; }
         public string CountryName { get; set; }
         public byte[] Flag { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Location> Location { get; set; }
     }
 }

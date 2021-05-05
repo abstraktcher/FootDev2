@@ -23,10 +23,8 @@ namespace FootDev2.AppData
         public int IdClub { get; set; }
         public string ClubName { get; set; }
         public byte[] LogoClub { get; set; }
-        public int IdLocation { get; set; }
         public Nullable<int> IdCoach { get; set; }
     
-        public virtual Location Location { get; set; }
         public virtual Personnel Personnel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TrainToTeam> TrainToTeam { get; set; }

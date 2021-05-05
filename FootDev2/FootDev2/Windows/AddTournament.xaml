@@ -20,11 +20,11 @@
                        FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,35,666,685" Width="175" Height="49" RenderTransformOrigin="0.488,-0.176"/>
         <TextBlock Text="Country" VerticalAlignment="Center" HorizontalAlignment="Right"
                        FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,115,666,608" Width="175" Height="46"/>
-        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="CmbCountry" IsEditable="True"
-                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,128,401,624" RenderTransformOrigin="0.267,1.515" Width="214"/>
+        <TextBox VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TxtCountry"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,130,277,626" RenderTransformOrigin="0.267,1.515" Width="345"/>
 
         <TextBox VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TxtCity"  PreviewKeyDown="CmbCity_PreviewKeyDown" CommandManager.PreviewExecuted="CmbCity_PreviewExecuted" PreviewTextInput="CmbCity_PreviewTextInput"
-                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,194,317,562" RenderTransformOrigin="0.267,1.515" Width="298"/>
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,194,277,562" RenderTransformOrigin="0.267,1.515" Width="338"/>
         <TextBlock Text="City" VerticalAlignment="Center" HorizontalAlignment="Right"
                        FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,192,646,562" RenderTransformOrigin="0.703,4.314" Height="46" Width="195" />
         <TextBlock Text="Date start" VerticalAlignment="Center" HorizontalAlignment="Right"
@@ -41,9 +41,9 @@
                        FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,580,647,165" RenderTransformOrigin="0.267,1.515" Height="55" Width="195" />
 
         <TextBox  VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TXTPArticipants" PreviewKeyDown="TBPArticipants_PreviewKeyDown" CommandManager.PreviewExecuted="TBPArticipants_PreviewExecuted" PreviewTextInput="TBPArticipants_PreviewTextInput"
-                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,428,401,328" RenderTransformOrigin="0.267,1.515" Width="221"/>
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,428,437,328" RenderTransformOrigin="0.267,1.515" Width="185"/>
         <TextBox x:Name="TxtPrizePool" PreviewKeyDown="TxtPrizePool_PreviewKeyDown" CommandManager.PreviewExecuted="TxtPrizePool_PreviewExecuted"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="TxtPrizePool_PreviewTextInput" CommandManager.Executed="TxtPrizePool_Executed"
-                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="278,509,401,0" Height="44" VerticalAlignment="Top"/>
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="278,509,437,0" Height="44" VerticalAlignment="Top"/>
         <TextBox x:Name="TxtSponsor"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CommandManager.PreviewExecuted="TxtSponsor_PreviewExecuted" PreviewTextInput="TxtSponsor_PreviewTextInput"
                       FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" Margin="271,580,277,0" Height="44" VerticalAlignment="Top"/>
         <Button x:Name="BtnConfirm" Click="BtnConfirm_Click"

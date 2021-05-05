@@ -14,21 +14,8 @@ namespace FootDev2.AppData
     
     public partial class Location
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Location()
-        {
-            this.Club = new HashSet<Club>();
-            this.Tournament = new HashSet<Tournament>();
-        }
-    
-        public int IdLocation { get; set; }
+        public string IdLocation { get; set; }
         public string City { get; set; }
         public Nullable<int> IdCountry { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Club> Club { get; set; }
-        public virtual Country Country { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tournament> Tournament { get; set; }
     }
 }

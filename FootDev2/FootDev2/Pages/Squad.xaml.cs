@@ -33,8 +33,9 @@ namespace FootDev2.Pages
             CmbGender.ItemsSource = genders;
             CmbGender.DisplayMemberPath = "NameGender";
             CmbGender.SelectedIndex = 0;
+            CmbSort.SelectedIndex = 0;
 
-            
+
 
             CmbSort.ItemsSource = new List<string>()
             {

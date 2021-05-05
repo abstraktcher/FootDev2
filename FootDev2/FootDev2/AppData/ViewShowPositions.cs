@@ -18,5 +18,6 @@ namespace FootDev2.AppData
         public string DominantLeg { get; set; }
         public string Positions { get; set; }
         public byte[] PlayerImage { get; set; }
+        public int IdPlayer { get; set; }
     }
 }

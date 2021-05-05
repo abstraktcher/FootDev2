@@ -28,7 +28,7 @@ namespace FootDev2.Pages
         public Tournaments()
         {
             InitializeComponent();
-            ListViewTournaments.ItemsSource = context.ViewInfoTournament.ToList();
+            ListViewTournaments.ItemsSource = context.Tournament.ToList();
             
             CmbSort.ItemsSource = new List<string>()
             {
@@ -53,28 +53,15 @@ namespace FootDev2.Pages
         }
 
 
-
-        //    
-        //   
-
-        //    if (CheckThisMonth.IsChecked == true)
-        //    {
-        //        list = list.Where(i => i.Birthday.HasValue && i.Birthday.Value.Month == DateTime.Now.Month).ToList();
-        //    }
-        //    listViewClients.ItemsSource = list;
-
-        //    
-        //}
-
         public void Filter()
         {
-            var list = context.ViewInfoTournament.Where(i => i.TournamentName.Contains(TxtSearch.Text)).ToList();
+            var list = context.Tournament.Where(i => i.TournamentName.Contains(TxtSearch.Text)).ToList();
 
             var selectFilter = CmbCountry.SelectedItem;
 
             if (CmbCountry.SelectedIndex != 0)
             {
-                list = list.Where(i => i.CountryName == selectFilter.ToString()).ToList();
+                list = list.Where(i => i.Country == selectFilter.ToString()).ToList();
                 ListViewTournaments.ItemsSource = list;
             }
             else
@@ -103,7 +90,7 @@ namespace FootDev2.Pages
             }
             else
             {
-                list = context.ViewInfoTournament.ToList();
+                list = context.Tournament.ToList();
             }
             
 
@@ -138,85 +125,13 @@ namespace FootDev2.Pages
             CBDate.IsChecked = false;
         }
 
-    //    private void BtnEditPlayer_Click(object sender, RoutedEventArgs e)
-    //    {
-    //        try
-    //        {
-
-    //            if (ListViewSquad.SelectedItem is ViewAllInfo player)
-    //            {
-    //                VarIdPlayer = player.IdPlayer;
-    //                AddEditPlayer addEditMateralWindow = new AddEditPlayer(ListViewSquad.SelectedItem as ViewAllInfo);
-    //                this.Opacity = 0.3;
-    //                Filter();
-    //                addEditMateralWindow.ShowDialog();
-    //                Filter();
-    //                this.Opacity = 1;
-    //            }
-    //            else
-    //            {
-    //                MessageBox.Show("You did not select player", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-
-    //            }
-
-    //        }
-    //        catch
-    //        {
-    //            MessageBox.Show("Error", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-    //        }
-
-
-
-    //    }
-
-    //    private void BtnAddPlayer_Click(object sender, RoutedEventArgs e)
-    //    {
-    //        AddEditPlayer addEditMateralWindow = new AddEditPlayer();
-    //        this.Opacity = 0.3;
-    //        Filter();
-    //        addEditMateralWindow.ShowDialog();
-    //        Filter();
-    //        this.Opacity = 1;
-    //    }
-
-    //    private void BtnDeletePlayer_Click(object sender, RoutedEventArgs e)
-    //    {
-    //        try
-    //        {
-
-    //            if (ListViewSquad.SelectedItem is ViewAllInfo player)
-    //            {
-    //                var result = MessageBox.Show($@"Are you sure you want to delete this player?{player.FullName}, All related data will be permanently deleted", "Remove Player",
-    //                    MessageBoxButton.YesNo, MessageBoxImage.Question);
-    //                if (result == MessageBoxResult.Yes)
-    //                {
-    //                    context.Player.Remove(context.Player.Where(i => i.IdPlayer == player.IdPlayer).FirstOrDefault());
-    //                    context.SaveChanges();
-    //                    MessageBox.Show("Removing ", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-    //                    Filter();
-
-
-    //                }
-    //            }
-    //            else
-    //            {
-    //                MessageBox.Show("Select player!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-    //            }
-
-    //        }
-    //        catch
-    //        {
-    //            MessageBox.Show("Error ", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-    //        }
-    //    }
-    //}
 
         private void BtnDeleteTournament_Click(object sender, RoutedEventArgs e)
         {
             try
             {
 
-                if (ListViewTournaments.SelectedItem is ViewInfoTournament tournament)
+                if (ListViewTournaments.SelectedItem is Tournament tournament)
                 {
                     var result = MessageBox.Show($@"Are you sure you want to delete this tournament? {tournament.TournamentName}, All related data will be permanently deleted", "Remove Tournament",
                         MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -225,14 +140,14 @@ namespace FootDev2.Pages
                         context.Tournament.Remove(context.Tournament.Where(i => i.IdTournament == tournament.IdTournament).FirstOrDefault());
                         context.SaveChanges();
                         MessageBox.Show("Removing ", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                        ListViewTournaments.ItemsSource = context.ViewInfoTournament.ToList();
+                        ListViewTournaments.ItemsSource = context.Tournament.ToList();
 
                     }
                 }
                 else
                 {
                     MessageBox.Show("Select tournament!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    ListViewTournaments.ItemsSource = context.ViewInfoTournament.ToList();
+                    ListViewTournaments.ItemsSource = context.Tournament.ToList();
                 }
 
             }
@@ -248,10 +163,10 @@ namespace FootDev2.Pages
             try
             {
 
-                if (ListViewTournaments.SelectedItem is ViewInfoTournament tournament)
+                if (ListViewTournaments.SelectedItem is Tournament tournament)
                 {
                     VarIdTournament = (int)tournament.IdTournament;
-                    AddTournament addtournament = new AddTournament(ListViewTournaments.SelectedItem as ViewInfoTournament);
+                    AddTournament addtournament = new AddTournament(ListViewTournaments.SelectedItem as Tournament);
                     this.Opacity = 0.3;
                     Filter();
                     addtournament.ShowDialog();
@@ -260,7 +175,7 @@ namespace FootDev2.Pages
                 }
                 else
                 {
-                    MessageBox.Show("You did not select person", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("You did not select tournament", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
 

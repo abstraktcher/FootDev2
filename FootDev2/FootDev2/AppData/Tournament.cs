@@ -17,15 +17,12 @@ namespace FootDev2.AppData
         public int IdTournament { get; set; }
         public string TournamentName { get; set; }
         public string PrizePool { get; set; }
-        public Nullable<int> IdSponsor { get; set; }
-        public string Description { get; set; }
+        public string Sponsor { get; set; }
         public Nullable<byte> NumberOfParticipants { get; set; }
         public byte[] TournamentLogo { get; set; }
-        public int IdLocation { get; set; }
+        public string Country { get; set; }
         public Nullable<System.DateTime> DateStart { get; set; }
         public Nullable<System.DateTime> DateEnd { get; set; }
-    
-        public virtual Location Location { get; set; }
-        public virtual Sponsor Sponsor { get; set; }
+        public string City { get; set; }
     }
 }

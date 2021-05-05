@@ -35,7 +35,7 @@ namespace FootDev2.AppData
 
     }
 
-    public partial class ViewInfoTournament
+    public partial class Tournament
     {
         public string Tournamentname1 { get => $"Name Of Tournament: {TournamentName}"; }
 
@@ -45,9 +45,9 @@ namespace FootDev2.AppData
 
         public string City1 { get => $"City: {City}"; }
 
-        public string Country1 { get => $"Country: {CountryName}"; }
+        public string Country1 { get => $"Country: {Country}"; }
 
-        public string Sponsor1 { get => $"Sponsor Of Tournament: {SponsorName}"; }
+        public string Sponsor1 { get => $"Sponsor Of Tournament: {Sponsor}"; }
     }
     //public string SponsorName { get; set; }
 

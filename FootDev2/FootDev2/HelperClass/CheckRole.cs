@@ -13,5 +13,9 @@ namespace FootDev2.HelperClass
         public static int VarIdPlayer { get; set; } = 0;
 
         public static int VarIdTournament { get; set; } = 0;
+
+        public static int VarIdInjury { get; set; } = 0;
+
+        public static int VarIdTrait { get; set; } = 0;
     }
 }

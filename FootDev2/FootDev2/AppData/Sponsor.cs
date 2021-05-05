@@ -14,16 +14,7 @@ namespace FootDev2.AppData
     
     public partial class Sponsor
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Sponsor()
-        {
-            this.Tournament = new HashSet<Tournament>();
-        }
-    
-        public int IdSponsor { get; set; }
+        public string IdSponsor { get; set; }
         public string SponsorName { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tournament> Tournament { get; set; }
     }
 }
