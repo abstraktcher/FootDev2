@@ -32,5 +32,8 @@ namespace FootDev2.AppData
         public byte JumpingDF { get; set; }
         public byte StrengthDF { get; set; }
         public byte PositioningDF { get; set; }
+        public int IdPlaToDF { get; set; }
+        public int IdPlayer { get; set; }
+        public int IdDFChar { get; set; }
     }
 }

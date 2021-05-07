@@ -537,6 +537,9 @@
             <PropertyRef Name="JumpingDF" />
             <PropertyRef Name="StrengthDF" />
             <PropertyRef Name="PositioningDF" />
+            <PropertyRef Name="IdPlaToDF" />
+            <PropertyRef Name="IdPlayer" />
+            <PropertyRef Name="IdDFChar" />
           </Key>
           <Property Name="FullName" Type="nvarchar" MaxLength="452" Nullable="false" />
           <Property Name="DribblingDF" Type="tinyint" Nullable="false" />
@@ -556,6 +559,9 @@
           <Property Name="JumpingDF" Type="tinyint" Nullable="false" />
           <Property Name="StrengthDF" Type="tinyint" Nullable="false" />
           <Property Name="PositioningDF" Type="tinyint" Nullable="false" />
+          <Property Name="IdPlaToDF" Type="int" Nullable="false" />
+          <Property Name="IdPlayer" Type="int" Nullable="false" />
+          <Property Name="IdDFChar" Type="int" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewExcForTest" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -590,6 +596,9 @@
             <PropertyRef Name="KickingGK" />
             <PropertyRef Name="CommunicationGK" />
             <PropertyRef Name="OneOnOnesGK" />
+            <PropertyRef Name="IdPlaToGK" />
+            <PropertyRef Name="IdPlayer" />
+            <PropertyRef Name="IdGKChar" />
           </Key>
           <Property Name="FullName" Type="nvarchar" MaxLength="452" Nullable="false" />
           <Property Name="AgilityGK" Type="tinyint" Nullable="false" />
@@ -606,6 +615,9 @@
           <Property Name="KickingGK" Type="tinyint" Nullable="false" />
           <Property Name="CommunicationGK" Type="tinyint" Nullable="false" />
           <Property Name="OneOnOnesGK" Type="tinyint" Nullable="false" />
+          <Property Name="IdPlaToGK" Type="int" Nullable="false" />
+          <Property Name="IdPlayer" Type="int" Nullable="false" />
+          <Property Name="IdGKChar" Type="int" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewIndTrainings" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -642,6 +654,9 @@
             <PropertyRef Name="StrengthMF" />
             <PropertyRef Name="TechniqueMF" />
             <PropertyRef Name="TeamWorkMF" />
+            <PropertyRef Name="IdPlToChar" />
+            <PropertyRef Name="IdPlayer" />
+            <PropertyRef Name="IdCharacteristics" />
           </Key>
           <Property Name="FullName" Type="nvarchar" MaxLength="452" Nullable="false" />
           <Property Name="DribblingMF" Type="tinyint" Nullable="false" />
@@ -662,6 +677,9 @@
           <Property Name="StrengthMF" Type="tinyint" Nullable="false" />
           <Property Name="TechniqueMF" Type="tinyint" Nullable="false" />
           <Property Name="TeamWorkMF" Type="tinyint" Nullable="false" />
+          <Property Name="IdPlToChar" Type="int" Nullable="false" />
+          <Property Name="IdPlayer" Type="int" Nullable="false" />
+          <Property Name="IdCharacteristics" Type="int" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewPlayerTraits" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -682,6 +700,10 @@
           <Key>
             <PropertyRef Name="Fullname" />
             <PropertyRef Name="PredispositionName" />
+            <PropertyRef Name="IdPlayer" />
+            <PropertyRef Name="IdPredisposition" />
+            <PropertyRef Name="idGender" />
+            <PropertyRef Name="IdPredToPla" />
           </Key>
           <Property Name="Fullname" Type="nvarchar" MaxLength="452" Nullable="false" />
           <Property Name="Age" Type="tinyint" />
@@ -690,6 +712,10 @@
           <Property Name="Description" Type="nvarchar" MaxLength="150" />
           <Property Name="Treatment" Type="nvarchar" MaxLength="175" />
           <Property Name="PlayerImage" Type="varbinary(max)" />
+          <Property Name="IdPlayer" Type="int" Nullable="false" />
+          <Property Name="IdPredisposition" Type="int" Nullable="false" />
+          <Property Name="idGender" Type="tinyint" Nullable="false" />
+          <Property Name="IdPredToPla" Type="int" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewReprimands" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -765,6 +791,9 @@
             <PropertyRef Name="StrengthFW" />
             <PropertyRef Name="TechniqueFW" />
             <PropertyRef Name="TeamWorkFW" />
+            <PropertyRef Name="IdPlaToFW" />
+            <PropertyRef Name="IdPlayer" />
+            <PropertyRef Name="IdFWChar" />
           </Key>
           <Property Name="FullName" Type="nvarchar" MaxLength="452" Nullable="false" />
           <Property Name="DribblingFW" Type="tinyint" Nullable="false" />
@@ -785,6 +814,9 @@
           <Property Name="StrengthFW" Type="tinyint" Nullable="false" />
           <Property Name="TechniqueFW" Type="tinyint" Nullable="false" />
           <Property Name="TeamWorkFW" Type="tinyint" Nullable="false" />
+          <Property Name="IdPlaToFW" Type="int" Nullable="false" />
+          <Property Name="IdPlayer" Type="int" Nullable="false" />
+          <Property Name="IdFWChar" Type="int" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewTeamTrainings" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -1484,7 +1516,10 @@
     [ViewDFCharacteristics].[StaminaDF] AS [StaminaDF], 
     [ViewDFCharacteristics].[JumpingDF] AS [JumpingDF], 
     [ViewDFCharacteristics].[StrengthDF] AS [StrengthDF], 
-    [ViewDFCharacteristics].[PositioningDF] AS [PositioningDF]
+    [ViewDFCharacteristics].[PositioningDF] AS [PositioningDF], 
+    [ViewDFCharacteristics].[IdPlaToDF] AS [IdPlaToDF], 
+    [ViewDFCharacteristics].[IdPlayer] AS [IdPlayer], 
+    [ViewDFCharacteristics].[IdDFChar] AS [IdDFChar]
     FROM [dbo].[ViewDFCharacteristics] AS [ViewDFCharacteristics]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewExcForTest" EntityType="Self.ViewExcForTest" store:Type="Views" store:Schema="dbo">
@@ -1512,7 +1547,10 @@
     [ViewGkCharacteristics].[ThrowingGK] AS [ThrowingGK], 
     [ViewGkCharacteristics].[KickingGK] AS [KickingGK], 
     [ViewGkCharacteristics].[CommunicationGK] AS [CommunicationGK], 
-    [ViewGkCharacteristics].[OneOnOnesGK] AS [OneOnOnesGK]
+    [ViewGkCharacteristics].[OneOnOnesGK] AS [OneOnOnesGK], 
+    [ViewGkCharacteristics].[IdPlaToGK] AS [IdPlaToGK], 
+    [ViewGkCharacteristics].[IdPlayer] AS [IdPlayer], 
+    [ViewGkCharacteristics].[IdGKChar] AS [IdGKChar]
     FROM [dbo].[ViewGkCharacteristics] AS [ViewGkCharacteristics]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewIndTrainings" EntityType="Self.ViewIndTrainings" store:Type="Views" store:Schema="dbo">
@@ -1542,7 +1580,10 @@
     [ViewMFCharacteristics].[FreeKickMF] AS [FreeKickMF], 
     [ViewMFCharacteristics].[StrengthMF] AS [StrengthMF], 
     [ViewMFCharacteristics].[TechniqueMF] AS [TechniqueMF], 
-    [ViewMFCharacteristics].[TeamWorkMF] AS [TeamWorkMF]
+    [ViewMFCharacteristics].[TeamWorkMF] AS [TeamWorkMF], 
+    [ViewMFCharacteristics].[IdPlToChar] AS [IdPlToChar], 
+    [ViewMFCharacteristics].[IdPlayer] AS [IdPlayer], 
+    [ViewMFCharacteristics].[IdCharacteristics] AS [IdCharacteristics]
     FROM [dbo].[ViewMFCharacteristics] AS [ViewMFCharacteristics]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewPlayerTraits" EntityType="Self.ViewPlayerTraits" store:Type="Views" store:Schema="dbo">
@@ -1562,7 +1603,11 @@
     [ViewPredispositions].[PredispositionName] AS [PredispositionName], 
     [ViewPredispositions].[Description] AS [Description], 
     [ViewPredispositions].[Treatment] AS [Treatment], 
-    [ViewPredispositions].[PlayerImage] AS [PlayerImage]
+    [ViewPredispositions].[PlayerImage] AS [PlayerImage], 
+    [ViewPredispositions].[IdPlayer] AS [IdPlayer], 
+    [ViewPredispositions].[IdPredisposition] AS [IdPredisposition], 
+    [ViewPredispositions].[idGender] AS [idGender], 
+    [ViewPredispositions].[IdPredToPla] AS [IdPredToPla]
     FROM [dbo].[ViewPredispositions] AS [ViewPredispositions]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewReprimands" EntityType="Self.ViewReprimands" store:Type="Views" store:Schema="dbo">
@@ -1620,7 +1665,10 @@
     [ViewStrikerCharacteristics].[AccelerationFW] AS [AccelerationFW], 
     [ViewStrikerCharacteristics].[StrengthFW] AS [StrengthFW], 
     [ViewStrikerCharacteristics].[TechniqueFW] AS [TechniqueFW], 
-    [ViewStrikerCharacteristics].[TeamWorkFW] AS [TeamWorkFW]
+    [ViewStrikerCharacteristics].[TeamWorkFW] AS [TeamWorkFW], 
+    [ViewStrikerCharacteristics].[IdPlaToFW] AS [IdPlaToFW], 
+    [ViewStrikerCharacteristics].[IdPlayer] AS [IdPlayer], 
+    [ViewStrikerCharacteristics].[IdFWChar] AS [IdFWChar]
     FROM [dbo].[ViewStrikerCharacteristics] AS [ViewStrikerCharacteristics]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewTeamTrainings" EntityType="Self.ViewTeamTrainings" store:Type="Views" store:Schema="dbo">
@@ -1879,6 +1927,7 @@
           <EntitySet Name="ViewGkCharacteristics" EntityType="FootDevModel.ViewGkCharacteristics" />
           <EntitySet Name="ViewIndTrainings" EntityType="FootDevModel.ViewIndTrainings" />
           <EntitySet Name="ViewMFCharacteristics" EntityType="FootDevModel.ViewMFCharacteristics" />
+          <EntitySet Name="ViewPlayerTraits" EntityType="FootDevModel.ViewPlayerTraits" />
           <EntitySet Name="ViewPredispositions" EntityType="FootDevModel.ViewPredispositions" />
           <EntitySet Name="ViewReprimands" EntityType="FootDevModel.ViewReprimands" />
           <EntitySet Name="ViewResponsiblePerson" EntityType="FootDevModel.ViewResponsiblePerson" />
@@ -2045,7 +2094,6 @@
             <End Role="Training" EntitySet="Training" />
             <End Role="TrainToTeam" EntitySet="TrainToTeam" />
           </AssociationSet>
-          <EntitySet Name="ViewPlayerTraits" EntityType="FootDevModel.ViewPlayerTraits" />
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -2662,6 +2710,9 @@
             <PropertyRef Name="JumpingDF" />
             <PropertyRef Name="StrengthDF" />
             <PropertyRef Name="PositioningDF" />
+            <PropertyRef Name="IdPlaToDF" />
+            <PropertyRef Name="IdPlayer" />
+            <PropertyRef Name="IdDFChar" />
           </Key>
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
           <Property Name="DribblingDF" Type="Byte" Nullable="false" />
@@ -2681,6 +2732,9 @@
           <Property Name="JumpingDF" Type="Byte" Nullable="false" />
           <Property Name="StrengthDF" Type="Byte" Nullable="false" />
           <Property Name="PositioningDF" Type="Byte" Nullable="false" />
+          <Property Name="IdPlaToDF" Type="Int32" Nullable="false" />
+          <Property Name="IdPlayer" Type="Int32" Nullable="false" />
+          <Property Name="IdDFChar" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ViewExcForTest">
           <Key>
@@ -2711,6 +2765,9 @@
             <PropertyRef Name="KickingGK" />
             <PropertyRef Name="CommunicationGK" />
             <PropertyRef Name="OneOnOnesGK" />
+            <PropertyRef Name="IdPlaToGK" />
+            <PropertyRef Name="IdPlayer" />
+            <PropertyRef Name="IdGKChar" />
           </Key>
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
           <Property Name="AgilityGK" Type="Byte" Nullable="false" />
@@ -2727,6 +2784,9 @@
           <Property Name="KickingGK" Type="Byte" Nullable="false" />
           <Property Name="CommunicationGK" Type="Byte" Nullable="false" />
           <Property Name="OneOnOnesGK" Type="Byte" Nullable="false" />
+          <Property Name="IdPlaToGK" Type="Int32" Nullable="false" />
+          <Property Name="IdPlayer" Type="Int32" Nullable="false" />
+          <Property Name="IdGKChar" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ViewIndTrainings">
           <Key>
@@ -2759,6 +2819,9 @@
             <PropertyRef Name="StrengthMF" />
             <PropertyRef Name="TechniqueMF" />
             <PropertyRef Name="TeamWorkMF" />
+            <PropertyRef Name="IdPlToChar" />
+            <PropertyRef Name="IdPlayer" />
+            <PropertyRef Name="IdCharacteristics" />
           </Key>
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
           <Property Name="DribblingMF" Type="Byte" Nullable="false" />
@@ -2779,11 +2842,29 @@
           <Property Name="StrengthMF" Type="Byte" Nullable="false" />
           <Property Name="TechniqueMF" Type="Byte" Nullable="false" />
           <Property Name="TeamWorkMF" Type="Byte" Nullable="false" />
+          <Property Name="IdPlToChar" Type="Int32" Nullable="false" />
+          <Property Name="IdPlayer" Type="Int32" Nullable="false" />
+          <Property Name="IdCharacteristics" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ViewPlayerTraits">
+          <Key>
+            <PropertyRef Name="Fullname" />
+            <PropertyRef Name="IdPlayer" />
+          </Key>
+          <Property Name="Fullname" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Byte" />
+          <Property Name="Traits" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IdPlayer" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ViewPredispositions">
           <Key>
             <PropertyRef Name="Fullname" />
             <PropertyRef Name="PredispositionName" />
+            <PropertyRef Name="IdPlayer" />
+            <PropertyRef Name="IdPredisposition" />
+            <PropertyRef Name="idGender" />
+            <PropertyRef Name="IdPredToPla" />
           </Key>
           <Property Name="Fullname" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="Byte" />
@@ -2792,6 +2873,10 @@
           <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Treatment" Type="String" MaxLength="175" FixedLength="false" Unicode="true" />
           <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IdPlayer" Type="Int32" Nullable="false" />
+          <Property Name="IdPredisposition" Type="Int32" Nullable="false" />
+          <Property Name="idGender" Type="Byte" Nullable="false" />
+          <Property Name="IdPredToPla" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ViewReprimands">
           <Key>
@@ -2859,6 +2944,9 @@
             <PropertyRef Name="StrengthFW" />
             <PropertyRef Name="TechniqueFW" />
             <PropertyRef Name="TeamWorkFW" />
+            <PropertyRef Name="IdPlaToFW" />
+            <PropertyRef Name="IdPlayer" />
+            <PropertyRef Name="IdFWChar" />
           </Key>
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
           <Property Name="DribblingFW" Type="Byte" Nullable="false" />
@@ -2879,6 +2967,9 @@
           <Property Name="StrengthFW" Type="Byte" Nullable="false" />
           <Property Name="TechniqueFW" Type="Byte" Nullable="false" />
           <Property Name="TeamWorkFW" Type="Byte" Nullable="false" />
+          <Property Name="IdPlaToFW" Type="Int32" Nullable="false" />
+          <Property Name="IdPlayer" Type="Int32" Nullable="false" />
+          <Property Name="IdFWChar" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ViewTeamTrainings">
           <Key>
@@ -3415,17 +3506,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="ViewPlayerTraits">
-          <Key>
-            <PropertyRef Name="Fullname" />
-            <PropertyRef Name="IdPlayer" />
-          </Key>
-          <Property Name="Fullname" Type="String" Nullable="false" MaxLength="452" FixedLength="false" Unicode="true" />
-          <Property Name="Age" Type="Byte" />
-          <Property Name="Traits" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="PlayerImage" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="IdPlayer" Type="Int32" Nullable="false" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3990,6 +4070,9 @@
           <EntitySetMapping Name="ViewDFCharacteristics">
             <EntityTypeMapping TypeName="FootDevModel.ViewDFCharacteristics">
               <MappingFragment StoreEntitySet="ViewDFCharacteristics">
+                <ScalarProperty Name="IdDFChar" ColumnName="IdDFChar" />
+                <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
+                <ScalarProperty Name="IdPlaToDF" ColumnName="IdPlaToDF" />
                 <ScalarProperty Name="PositioningDF" ColumnName="PositioningDF" />
                 <ScalarProperty Name="StrengthDF" ColumnName="StrengthDF" />
                 <ScalarProperty Name="JumpingDF" ColumnName="JumpingDF" />
@@ -4025,6 +4108,9 @@
           <EntitySetMapping Name="ViewGkCharacteristics">
             <EntityTypeMapping TypeName="FootDevModel.ViewGkCharacteristics">
               <MappingFragment StoreEntitySet="ViewGkCharacteristics">
+                <ScalarProperty Name="IdGKChar" ColumnName="IdGKChar" />
+                <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
+                <ScalarProperty Name="IdPlaToGK" ColumnName="IdPlaToGK" />
                 <ScalarProperty Name="OneOnOnesGK" ColumnName="OneOnOnesGK" />
                 <ScalarProperty Name="CommunicationGK" ColumnName="CommunicationGK" />
                 <ScalarProperty Name="KickingGK" ColumnName="KickingGK" />
@@ -4055,6 +4141,9 @@
           <EntitySetMapping Name="ViewMFCharacteristics">
             <EntityTypeMapping TypeName="FootDevModel.ViewMFCharacteristics">
               <MappingFragment StoreEntitySet="ViewMFCharacteristics">
+                <ScalarProperty Name="IdCharacteristics" ColumnName="IdCharacteristics" />
+                <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
+                <ScalarProperty Name="IdPlToChar" ColumnName="IdPlToChar" />
                 <ScalarProperty Name="TeamWorkMF" ColumnName="TeamWorkMF" />
                 <ScalarProperty Name="TechniqueMF" ColumnName="TechniqueMF" />
                 <ScalarProperty Name="StrengthMF" ColumnName="StrengthMF" />
@@ -4077,9 +4166,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ViewPlayerTraits">
+            <EntityTypeMapping TypeName="FootDevModel.ViewPlayerTraits">
+              <MappingFragment StoreEntitySet="ViewPlayerTraits">
+                <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
+                <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
+                <ScalarProperty Name="Traits" ColumnName="Traits" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ViewPredispositions">
             <EntityTypeMapping TypeName="FootDevModel.ViewPredispositions">
               <MappingFragment StoreEntitySet="ViewPredispositions">
+                <ScalarProperty Name="IdPredToPla" ColumnName="IdPredToPla" />
+                <ScalarProperty Name="idGender" ColumnName="idGender" />
+                <ScalarProperty Name="IdPredisposition" ColumnName="IdPredisposition" />
+                <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
                 <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
                 <ScalarProperty Name="Treatment" ColumnName="Treatment" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -4134,6 +4238,9 @@
           <EntitySetMapping Name="ViewStrikerCharacteristics">
             <EntityTypeMapping TypeName="FootDevModel.ViewStrikerCharacteristics">
               <MappingFragment StoreEntitySet="ViewStrikerCharacteristics">
+                <ScalarProperty Name="IdFWChar" ColumnName="IdFWChar" />
+                <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
+                <ScalarProperty Name="IdPlaToFW" ColumnName="IdPlaToFW" />
                 <ScalarProperty Name="TeamWorkFW" ColumnName="TeamWorkFW" />
                 <ScalarProperty Name="TechniqueFW" ColumnName="TechniqueFW" />
                 <ScalarProperty Name="StrengthFW" ColumnName="StrengthFW" />
@@ -4165,17 +4272,6 @@
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="TrainingName" ColumnName="TrainingName" />
                 <ScalarProperty Name="ClubName" ColumnName="ClubName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ViewPlayerTraits">
-            <EntityTypeMapping TypeName="FootDevModel.ViewPlayerTraits">
-              <MappingFragment StoreEntitySet="ViewPlayerTraits">
-                <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
-                <ScalarProperty Name="PlayerImage" ColumnName="PlayerImage" />
-                <ScalarProperty Name="Traits" ColumnName="Traits" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,0 +1,58 @@
+﻿<Window x:Class="FootDev2.Windows.AddPredisp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FootDev2.Windows"
+        mc:Ignorable="d"
+       WindowStartupLocation="CenterScreen"
+        MinHeight="600" MinWidth="900" Icon="/Images/favicon.png" 
+        ResizeMode="NoResize" WindowStyle="None"
+        Title="Add Tournament| FootDev" FontSize="40" FontFamily="Comic Sans MS" Height="800" Width="500">
+    <Grid>
+        <TextBlock Text="Player" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,35,666,685" Width="175" Height="49"/>
+        <ComboBox Margin="0,50,249,700"  VerticalAlignment="Center" HorizontalAlignment="Right" Name="CmbPlayer" IsEditable="True"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="345" Height="50"/>
+        <TextBlock Text="Predisposition" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,130,620,624" Width="221" Height="46"/>
+        <ComboBox Margin="0,126,366,624"  VerticalAlignment="Center" HorizontalAlignment="Right" Name="CmbPredisposition" IsEditable="True"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="228" Height="50"/>
+        <TextBox VerticalAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Right" x:Name="TxtDescription" CommandManager.PreviewExecuted="TxtDescription_PreviewExecuted" PreviewTextInput="TxtDescription_PreviewTextInput"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,194,122,462" RenderTransformOrigin="0.267,1.515" Width="493" Height="144"/>
+        <TextBlock Text="Description" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,192,646,562" RenderTransformOrigin="0.703,4.314" Height="46" Width="195" />
+        <TextBlock Text="Treatment" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,369,634,375" RenderTransformOrigin="0.267,1.515" Height="56" Width="207" />
+
+        <TextBox  VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TxtTreatment" CommandManager.PreviewExecuted="TxtTreatment_PreviewExecuted" PreviewTextInput="TxtTreatment_PreviewTextInput"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,369,122,261" TextWrapping="Wrap" RenderTransformOrigin="0.267,1.515" Width="493" Height="170"/>
+        <Button x:Name="BtnConfirm" Click="BtnConfirm_Click"
+                        Content="Confirm"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine"  Margin="39,701,592,32"
+                       />
+
+        <Button x:Name="BtnCancel"
+                        Content="Cancel"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnCancel_Click" Height="67" VerticalAlignment="Top" Margin="619,701,50,0"
+                       />
+
+        <Button x:Name="BtnAddPredisp"
+                        Content="Add New Predisposition"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnAddPredisp_Click" Height="50" VerticalAlignment="Top" Margin="556,126,26,0"
+                       />
+
+        <Button x:Name="BtnClear"
+                        Content="Clear All"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnClear_Click" Margin="323,701,317,32"
+                       />
+    </Grid>
+</Window>

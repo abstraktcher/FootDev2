@@ -33,5 +33,8 @@ namespace FootDev2.AppData
         public byte StrengthFW { get; set; }
         public byte TechniqueFW { get; set; }
         public byte TeamWorkFW { get; set; }
+        public int IdPlaToFW { get; set; }
+        public int IdPlayer { get; set; }
+        public int IdFWChar { get; set; }
     }
 }

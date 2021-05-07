@@ -314,6 +314,9 @@
     <Compile Include="Pages\Traits.xaml.cs">
       <DependentUpon>Traits.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddCharacteristics.xaml.cs">
+      <DependentUpon>AddCharacteristics.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AddEditPlayer.xaml.cs">
       <DependentUpon>AddEditPlayer.xaml</DependentUpon>
     </Compile>
@@ -323,8 +326,14 @@
     <Compile Include="Windows\AddInjury.xaml.cs">
       <DependentUpon>AddInjury.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddNewPredisp.xaml.cs">
+      <DependentUpon>AddNewPredisp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AddPosition.xaml.cs">
       <DependentUpon>AddPosition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddPredisp.xaml.cs">
+      <DependentUpon>AddPredisp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AddTournament.xaml.cs">
       <DependentUpon>AddTournament.xaml</DependentUpon>
@@ -419,6 +428,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\AddCharacteristics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AddEditPlayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -431,7 +444,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\AddNewPredisp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AddPosition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddPredisp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

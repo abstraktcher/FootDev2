@@ -29,5 +29,8 @@ namespace FootDev2.AppData
         public byte KickingGK { get; set; }
         public byte CommunicationGK { get; set; }
         public byte OneOnOnesGK { get; set; }
+        public int IdPlaToGK { get; set; }
+        public int IdPlayer { get; set; }
+        public int IdGKChar { get; set; }
     }
 }

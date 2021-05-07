@@ -114,7 +114,7 @@ namespace FootDev2.Windows
                                 
                                 context.SaveChanges();
                                 MessageBox.Show("Information was successfully changed", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                VarIdTournament = 0;
+                                VarIdInjury = 0;
                                 Close();
                             }
                             else
