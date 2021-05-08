@@ -314,8 +314,8 @@
     <Compile Include="Pages\Traits.xaml.cs">
       <DependentUpon>Traits.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\AddCharacteristics.xaml.cs">
-      <DependentUpon>AddCharacteristics.xaml</DependentUpon>
+    <Compile Include="Windows\AddDFCharacteristics.xaml.cs">
+      <DependentUpon>AddDFCharacteristics.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AddEditPlayer.xaml.cs">
       <DependentUpon>AddEditPlayer.xaml</DependentUpon>
@@ -323,8 +323,17 @@
     <Compile Include="Windows\AddEditRespPers.xaml.cs">
       <DependentUpon>AddEditRespPers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddFWCharacteristics.xaml.cs">
+      <DependentUpon>AddFWCharacteristics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddGKCharacteristics.xaml.cs">
+      <DependentUpon>AddGKCharacteristics.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AddInjury.xaml.cs">
       <DependentUpon>AddInjury.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddMfCharacteristics.xaml.cs">
+      <DependentUpon>AddMfCharacteristics.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AddNewPredisp.xaml.cs">
       <DependentUpon>AddNewPredisp.xaml</DependentUpon>
@@ -428,7 +437,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\AddCharacteristics.xaml">
+    <Page Include="Windows\AddDFCharacteristics.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -440,7 +449,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\AddFWCharacteristics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddGKCharacteristics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AddInjury.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddMfCharacteristics.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -51,16 +51,18 @@ namespace FootDev2.Pages
 
         private void BtnDeleteCharacteristics_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
+            try
+            {
 
-            if (ListViewGK.SelectedItem is FootDev2.AppData.ViewGkCharacteristics gkchara)
+                if (ListViewGK.SelectedItem is FootDev2.AppData.ViewGkCharacteristics gkchara)
             {
                 var result = MessageBox.Show($@"Are you sure you want to delete this characteristics? {gkchara.FullName}, All  data will be permanently deleted", "Remove Information",
                     MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
                     context.PlayerToGKCharacteristics.Remove(context.PlayerToGKCharacteristics.Where(i => i.IdPlaToGK == gkchara.IdPlaToGK).FirstOrDefault());
+                    context.SaveChanges();
+                    context.GoalKeeperCharacteristics.Remove(context.GoalKeeperCharacteristics.Where(i => i.IdGKChar == gkchara.IdGKChar).FirstOrDefault());
                     context.SaveChanges();
                     MessageBox.Show("Removing ", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     Filter();
@@ -73,12 +75,12 @@ namespace FootDev2.Pages
                 MessageBox.Show("Select entry!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Error ", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
         }
+            catch
+            {
+                MessageBox.Show("Error ", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+}
 
         private void BtnEditCharacteristics_Click(object sender, RoutedEventArgs e)
         {
@@ -89,11 +91,11 @@ namespace FootDev2.Pages
                 if (ListViewGK.SelectedItem is FootDev2.AppData.ViewGkCharacteristics gkchara)
                 {
                     VarIdCharacteristics = gkchara.IdPlaToGK;
-                    VarIdChara = gkchara.IdGKChar
-                    AddPredisp addpredisp = new AddPredisp(ListViewPredispositions.SelectedItem as FootDev2.AppData.ViewPredispositions);
+                    VarIdChara = gkchara.IdGKChar;
+                    AddGKCharacteristics addgk = new AddGKCharacteristics(ListViewGK.SelectedItem as FootDev2.AppData.ViewGkCharacteristics);
                     this.Opacity = 0.3;
                     Filter();
-                    addpredisp.ShowDialog();
+                    addgk.ShowDialog();
                     Filter();
                     this.Opacity = 1;
                 }
@@ -114,10 +116,10 @@ namespace FootDev2.Pages
 
         private void BtnAddCharacteristics_Click(object sender, RoutedEventArgs e)
         {
-            AddPredisp addpredisp = new AddPredisp();
+            AddGKCharacteristics addgk = new AddGKCharacteristics();
             this.Opacity = 0.3;
             Filter();
-            addpredisp.ShowDialog();
+            addgk.ShowDialog();
             Filter();
             this.Opacity = 1;
         }

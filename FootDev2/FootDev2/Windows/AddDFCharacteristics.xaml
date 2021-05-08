@@ -1,0 +1,105 @@
+﻿<Window x:Class="FootDev2.Windows.AddDFCharacteristics"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FootDev2.Windows"
+      WindowStartupLocation="CenterScreen"
+        MinHeight="1000" MinWidth="900" Icon="/Images/favicon.png" 
+        ResizeMode="NoResize" WindowStyle="None"
+        Title="Add Tournament| FootDev" FontSize="40" FontFamily="Comic Sans MS" Height="800" Width="500">
+    <Grid>
+        <TextBlock Text="Player" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,10,749,941" Width="128" Height="49"/>
+        <ComboBox Margin="0,9,474,941"  VerticalAlignment="Center" HorizontalAlignment="Right" Name="CmbPlayer" IsEditable="True"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="250" Height="50"/>
+        <TextBlock Text="Dribbling &#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,130,651,782" Width="226" Height="88"/>
+        <TextBlock Text="Heading &#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,218,656,693" RenderTransformOrigin="0.703,4.314" Height="89" Width="221" />
+        <TextBlock Text="Height" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,312,670,632" RenderTransformOrigin="0.267,1.515" Height="56" Width="207" />
+        <TextBlock Text="Marking (1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,592,651,352" RenderTransformOrigin="0.267,1.515" Height="56" Width="226" />
+        <TextBlock Text="Long Shots&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,484,657,432" RenderTransformOrigin="0.267,1.515" Height="84" Width="220" />
+        <TextBlock Text="Weight" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,392,670,552" RenderTransformOrigin="0.267,1.515" Height="56" Width="207" />
+        <TextBlock Text="Passing&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,674,670,242" RenderTransformOrigin="0.267,1.515" Height="84" Width="207" />
+        <TextBlock Text="Strength&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,780,230,136" RenderTransformOrigin="0.267,1.515" Height="84" Width="207" />
+        <TextBlock Text="Tackling&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,780,670,136" RenderTransformOrigin="0.267,1.515" Height="84" Width="207" />
+
+        <TextBlock Text="Positioning&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,49,263,870" Width="174" Height="81"/>
+        <TextBlock Text="Crossing&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,130,216,787" Width="221" Height="83"/>
+        <TextBlock Text="Work Rate&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,218,242,693" RenderTransformOrigin="0.703,4.314" Height="89" Width="195" />
+        <TextBlock Text="Bravery&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,312,230,608" RenderTransformOrigin="0.267,1.515" Height="80" Width="207" />
+        <TextBlock Text="Stamina&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,592,230,331" RenderTransformOrigin="0.267,1.515" Height="77" Width="207" />
+        <TextBlock Text="Leadership&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,484,216,432" RenderTransformOrigin="0.267,1.515" Height="84" Width="221" />
+        <TextBlock Text="Concentration&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,392,230,521" RenderTransformOrigin="0.267,1.515" Height="87" Width="207" />
+        <TextBlock Text="Jumping&#10;(1-40)" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,674,230,242" RenderTransformOrigin="0.267,1.515" Height="84" Width="207" />
+        <Button x:Name="BtnConfirm" Click="BtnConfirm_Click"
+                        Content="Confirm"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine"  Margin="39,910,592,32"
+                       />
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TxtDribbling" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,130,494,814" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right"  x:Name="TxtHeading" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,218,494,726" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right"  x:Name="TxtMarking" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,592,494,352" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right"  x:Name="TxtLongShots" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,484,494,460" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right"  x:Name="TxtWeight" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,392,494,552" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right"  x:Name="TxtHeight" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,312,494,632" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right"  x:Name="TxtPassing" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,674,494,270" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" x:Name="TxtCrossing" HorizontalAlignment="Right" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,130,59,814" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TxtWorkRate" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,208,59,736" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TxtBravery" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,312,59,632" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TxtConcentration" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,392,59,552" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TxtLeadership" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,484,54,460" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TxtStamina" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,592,54,352" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="TxtJumping" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,674,59,270" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <Button x:Name="BtnCancel"
+                        Content="Cancel"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnCancel_Click" Height="58" VerticalAlignment="Top" Margin="603,910,41,0"
+                       />
+
+        <Button x:Name="BtnClear"
+                        Content="Clear All"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnClear_Click" Margin="323,910,317,32"
+                       />
+        <TextBox   VerticalAlignment="Center" x:Name="TxtPositioning" HorizontalAlignment="Right" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+            FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,49,59,895" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right"  x:Name="TxtTackling" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+            FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,780,494,164" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+        <TextBox   VerticalAlignment="Center" HorizontalAlignment="Right"  x:Name="TxtStrength" CommandManager.PreviewExecuted="TxtCharacteristic_PreviewExecuted" PreviewTextInput="TxtCharacteristic_PreviewTextInput" PreviewKeyDown="TxtCharacteristics_PreviewKeyDown"
+            FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Margin="0,780,59,164" RenderTransformOrigin="0.267,1.515" Height="56" Width="157"/>
+    </Grid>
+</Window>
