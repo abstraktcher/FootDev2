@@ -175,8 +175,6 @@ namespace FootDev2.AppData
 
         public string Date1 { get => $"Date of Training: {Date}"; }
 
-        public string ManagersName { get => $"Manager's Name: {Manager_s_Name}"; }
-
     }
 
     public partial class ViewIndTrainings

@@ -19,5 +19,8 @@ namespace FootDev2.AppData
         public string Time { get; set; }
         public string Number { get; set; }
         public System.DateTime DateTesting { get; set; }
+        public int IdExerciseForTest { get; set; }
+        public int IdPlayer { get; set; }
+        public int IdExercise { get; set; }
     }
 }

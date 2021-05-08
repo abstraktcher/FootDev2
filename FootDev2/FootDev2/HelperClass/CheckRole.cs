@@ -23,5 +23,9 @@ namespace FootDev2.HelperClass
         public static int VarIdPredisposition { get; set; } = 0;
         public static int VarIdCharacteristics { get; set; } = 0;
         public static int VarIdChara { get; set; } = 0;
+
+        public static int VarIdTraining { get; set; } = 0;
+
+        public static int VarIdReprimand { get; set; } = 0;
     }
 }

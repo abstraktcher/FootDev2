@@ -21,5 +21,9 @@ namespace FootDev2.AppData
         public string ReprimandName { get; set; }
         public Nullable<byte> Age { get; set; }
         public byte[] PlayerImage { get; set; }
+        public int IdPlayer { get; set; }
+        public int IdPlaToRep { get; set; }
+        public byte IdPunishment { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     }
 }

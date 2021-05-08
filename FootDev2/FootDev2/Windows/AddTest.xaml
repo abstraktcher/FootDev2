@@ -1,0 +1,51 @@
+﻿<Window x:Class="FootDev2.Windows.AddTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FootDev2.Windows"
+        mc:Ignorable="d"
+         WindowStartupLocation="CenterScreen"
+        MinHeight="500" MinWidth="900" Icon="/Images/favicon.png" 
+        ResizeMode="NoResize" WindowStyle="None"
+        Title="Add Tournament| FootDev" FontSize="40" FontFamily="Comic Sans MS" Height="600" Width="500">
+    <Grid>
+        <TextBlock Text="Player" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="176" Height="48" Margin="0,38,662,514"/>
+        <TextBlock Text="Exercise" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="175" Height="50" Margin="0,110,663,440"/>
+        <ComboBox Margin="0,38,164,512"  VerticalAlignment="Center" HorizontalAlignment="Right" Name="CmbPlayer" IsEditable="True"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="444" Height="50" RenderTransformOrigin="0.261,-2.35"/>
+        <ComboBox Margin="0,110,164,440"  VerticalAlignment="Center" HorizontalAlignment="Right" Name="CmbExercise" IsEditable="True"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="446" Height="50"/>
+        <TextBlock Text="Date of Exercise" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="257" Height="48" Margin="0,192,633,360" RenderTransformOrigin="0.471,2.582"/>
+        <DatePicker x:Name="DPDate" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="444" Height="88" Margin="0,203,164,309" RenderTransformOrigin="0.914,0.02"/>
+        <TextBlock Text="Number" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="146" Height="48" Margin="0,345,76,207" RenderTransformOrigin="0.471,2.582"/>
+        <TextBlock Text="Or" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="72" Height="48" Margin="0,345,472,207" RenderTransformOrigin="0.471,2.582"/>
+        <TextBlock Text="Time" VerticalAlignment="Center" HorizontalAlignment="Right"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="124" Height="48" Margin="0,345,766,207" RenderTransformOrigin="0.471,2.582"/>
+        <TextBox VerticalAlignment="Center" HorizontalAlignment="Right" Name="TxtTime"  CommandManager.PreviewExecuted="TxtTime_PreviewExecuted" 
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="189" Height="48" Margin="0,345,598,207"/>
+        <TextBox VerticalAlignment="Center" HorizontalAlignment="Right" Name="TxtNumber" PreviewTextInput="TxtNumber_PreviewTextInput" CommandManager.PreviewExecuted="TxtNumber_PreviewExecuted" PreviewKeyDown="TxtNumber_PreviewKeyDown"
+                       FontWeight="Bold" FontSize="30" FontFamily="Comic Sans MS" Foreground="Black" Width="189" Height="48" Margin="0,345,243,207"/>
+
+
+        <Button x:Name="BtnConfirm"
+                        Content="Confirm"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Margin="62,508,598,35" Click="BtnConfirm_Click"
+                       />
+
+        <Button x:Name="BtnCancel"
+                        Content="Cancel"
+                        FontWeight="Bold" FontSize="25" 
+                        FontFamily="Comic Sans MS" Foreground="Black"
+                        Background="Aquamarine" Click="BtnCancel_Click" Height="66" VerticalAlignment="Top" Margin="596,503,42,0" RenderTransformOrigin="0.714,0.851"
+                       />
+    </Grid>
+</Window>

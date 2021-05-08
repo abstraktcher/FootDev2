@@ -17,5 +17,8 @@ namespace FootDev2.AppData
         public string FullName { get; set; }
         public string TrainingName { get; set; }
         public System.DateTime DateStart { get; set; }
+        public int IdIndTra { get; set; }
+        public int IdPlayer { get; set; }
+        public int Idtraining { get; set; }
     }
 }
