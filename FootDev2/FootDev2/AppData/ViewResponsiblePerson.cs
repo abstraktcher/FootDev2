@@ -25,5 +25,6 @@ namespace FootDev2.AppData
         public string LastName { get; set; }
         public string MiddleName { get; set; }
         public string MiddleName2 { get; set; }
+        public Nullable<int> IdPlayer { get; set; }
     }
 }

@@ -25,7 +25,6 @@ namespace FootDev2.Windows
     /// </summary>
     public partial class AddEditPlayer : Window
     {
-        string pathPhoto = null;
 
         public AddEditPlayer()
         {

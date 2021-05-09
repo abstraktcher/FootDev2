@@ -39,7 +39,7 @@
                    FontSize="20"
                    Background="BlueViolet"
                    Foreground="Black"
-                   FontWeight="DemiBold" Margin="95,123,98,0"
+                   FontWeight="DemiBold" Margin="50,123,54,0"
                    ToolTip="Enter Login" Height="40"
                        BorderThickness="2" BorderBrush="Aquamarine"
                    VerticalAlignment="Top">
@@ -50,10 +50,10 @@
                    FontSize="20"
                    Background="BlueViolet"
                    Foreground="Black"
-                   FontWeight="DemiBold" Margin="95,200,98,0"
+                   FontWeight="DemiBold" Margin="50,200,54,0"
                    ToolTip="Enter Password" Height="40"
                        BorderThickness="2" BorderBrush="Aquamarine"
-                   VerticalAlignment="Top" Width="200"/>
+                   VerticalAlignment="Top"/>
         <Button x:Name="BtnAuthorization" Margin="133,264,132,93"
                 Content="Sign In"
                 FontSize="18"

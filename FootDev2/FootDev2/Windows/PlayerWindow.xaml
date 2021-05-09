@@ -37,8 +37,6 @@
                     Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Click="BtnTournaments_Click"/>
             <Button x:Name="BtnInjuries" Content="Injuries" BorderThickness="0"
                    Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBlack" Margin="5" Click="BtnInjuries_Click"/>
-            <Button x:Name="BtnTraits" Content="Traits" Foreground="Black" Background="Transparent" BorderThickness="0"
-                     FontSize="23" FontWeight="ExtraBold" Margin="5" Click="BtnTraits_Click"/>
             <Button x:Name="BtnPositions" Content="Positions" BorderThickness="0"
                     Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Click="BtnPositions_Click"/>
             <Button x:Name="BtnPredispositions" Content="Predispositions"  BorderThickness="0"
@@ -59,11 +57,6 @@
                     Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Height="69" Click="BtnIndTrainings_Click"/>
             <Button x:Name="BtnExerciseForTest" Content="Exercise Test"  BorderThickness="0"
                     Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnExerciseForTest_Click"/>
-            <Button x:Name="BtnChanges" Content="Changes"  BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="23" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnExerciseForTest_Click_1"/>
-            <Border BorderThickness="25" Height="10" BorderBrush="Black"/>
-            <Button x:Name="BtnReprimands" Content="Reprimands"  BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="22" FontWeight="ExtraBold" Margin="5" Height="43" Click="BtnReprimands_Click"/>
         </StackPanel>
     </Grid>
 </Window>

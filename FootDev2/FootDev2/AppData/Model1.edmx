@@ -772,6 +772,7 @@
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
           <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
           <Property Name="MiddleName2" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdPlayer" Type="int" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "FootDev.dbo.ViewShowPositions" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -1663,7 +1664,8 @@
     [ViewResponsiblePerson].[FirstName] AS [FirstName], 
     [ViewResponsiblePerson].[LastName] AS [LastName], 
     [ViewResponsiblePerson].[MiddleName] AS [MiddleName], 
-    [ViewResponsiblePerson].[MiddleName2] AS [MiddleName2]
+    [ViewResponsiblePerson].[MiddleName2] AS [MiddleName2], 
+    [ViewResponsiblePerson].[IdPlayer] AS [IdPlayer]
     FROM [dbo].[ViewResponsiblePerson] AS [ViewResponsiblePerson]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewShowPositions" EntityType="Self.ViewShowPositions" store:Type="Views" store:Schema="dbo">
@@ -2959,6 +2961,7 @@
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MiddleName2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdPlayer" Type="Int32" />
         </EntityType>
         <EntityType Name="ViewShowPositions">
           <Key>
@@ -4270,6 +4273,7 @@
           <EntitySetMapping Name="ViewResponsiblePerson">
             <EntityTypeMapping TypeName="FootDevModel.ViewResponsiblePerson">
               <MappingFragment StoreEntitySet="ViewResponsiblePerson">
+                <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
                 <ScalarProperty Name="MiddleName2" ColumnName="MiddleName2" />
                 <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />

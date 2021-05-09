@@ -101,11 +101,11 @@ namespace FootDev2.CommonPages
             TxtSearch.Text = "";
         }
 
-        private void CmbTraining_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private
+ void CmbTraining_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Filter();
         }
-
         private void BtnDeleteTest_Click(object sender, RoutedEventArgs e)
         {
             try

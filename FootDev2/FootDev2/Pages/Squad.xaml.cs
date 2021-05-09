@@ -22,9 +22,9 @@ namespace FootDev2.CommonPages
     /// <summary>
     /// Логика взаимодействия для Squad.xaml
     /// </summary>
-    public partial class Squad : Page
+    public partial class CommonSquad : Page
     {
-        public Squad()
+        public CommonSquad()
         {
             InitializeComponent();
             ListViewSquad.ItemsSource = context.ViewAllInfo.ToList();

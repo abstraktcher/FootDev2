@@ -26,7 +26,7 @@ namespace FootDev2.Windows
         public ManagerWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new Squad();
+            MainFrame.Content = new CommonSquad();
         }
 
         
@@ -43,7 +43,7 @@ namespace FootDev2.Windows
 
         private void BtnSquad_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new Squad();
+            MainFrame.Content = new CommonSquad();
         }
 
         private void BtnTraits_Click(object sender, RoutedEventArgs e)

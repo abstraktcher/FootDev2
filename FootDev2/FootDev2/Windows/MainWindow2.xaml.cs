@@ -39,35 +39,48 @@ namespace FootDev2.Windows
 
             var accountPerson = context.Personnel.ToList().Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).FirstOrDefault();
 
-
-            if (accountPlayer is Player player)
+            var peroncheck = context.Personnel.Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).Select(b => b.IdRole).FirstOrDefault();
+            var playercheck = context.Player.Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).Select(b => b.IdRole).FirstOrDefault();
+            if (peroncheck == 0 && playercheck == 0)
             {
-                VarCheckRole = context.Player.Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).Select(b => b.IdRole).FirstOrDefault();
-                PlayerWindow playerwindow = new PlayerWindow();
-                this.Hide();
-                playerwindow.Show();
-                this.Close();
+                MessageBox.Show("Wrong Email or Password", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            if (accountPerson is Personnel person)
+            else
             {
-                VarCheckRole = context.Personnel.Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).Select(b => b.IdRole).FirstOrDefault();
-                if (VarCheckRole == 1)
+                if (accountPlayer is Player player)
                 {
-                    ManagerWindow managerwindow = new ManagerWindow();
+                    VarCheckRole = context.Player.Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).Select(b => b.IdRole).FirstOrDefault();
+                    PlayerWindow playerwindow = new PlayerWindow();
                     this.Hide();
-                    managerwindow.Show();
+                    playerwindow.Show();
                     this.Close();
                 }
-                if (VarCheckRole == 3)
+
+                if (accountPerson is Personnel person)
                 {
-                    MessageBox.Show("Service is temporarily unavailable. We are sorry", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                if (VarCheckRole == 4)
-                {
-                    MessageBox.Show("Service is temporarily unavailable. We are sorry", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+
+                    VarCheckRole = context.Personnel.Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).Select(b => b.IdRole).FirstOrDefault();
+                    if (VarCheckRole == 1)
+                    {
+                        ManagerWindow managerwindow = new ManagerWindow();
+                        this.Hide();
+                        managerwindow.Show();
+                        this.Close();
+                    }
+                    if (VarCheckRole == 3)
+                    {
+                        MessageBox.Show("Service is temporarily unavailable. We are sorry", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    if (VarCheckRole == 4)
+                    {
+                        MessageBox.Show("Service is temporarily unavailable. We are sorry", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
                 }
             }
+
+           
         }
     }
 }

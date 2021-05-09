@@ -261,6 +261,45 @@
     <Compile Include="AppData\ViewTeamTrainings.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="CommonPages\PageDF.xaml.cs">
+      <DependentUpon>PageDF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PageExercise.xaml.cs">
+      <DependentUpon>PageExercise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PageFW.xaml.cs">
+      <DependentUpon>PageFW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PageGK.xaml.cs">
+      <DependentUpon>PageGK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PageIndTraining.xaml.cs">
+      <DependentUpon>PageIndTraining.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PageInjuries.xaml.cs">
+      <DependentUpon>PageInjuries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PageMF.xaml.cs">
+      <DependentUpon>PageMF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PagePositions.xaml.cs">
+      <DependentUpon>PagePositions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PagePredispositions.xaml.cs">
+      <DependentUpon>PagePredispositions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PageRespPers.xaml.cs">
+      <DependentUpon>PageRespPers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PageSquad.xaml.cs">
+      <DependentUpon>PageSquad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PageTeamTrainings.xaml.cs">
+      <DependentUpon>PageTeamTrainings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\PageTournament.xaml.cs">
+      <DependentUpon>PageTournament.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helper1.xaml.cs">
       <DependentUpon>Helper1.xaml</DependentUpon>
     </Compile>
@@ -371,6 +410,58 @@
     <Compile Include="Windows\PlayerWindow.xaml.cs">
       <DependentUpon>PlayerWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="CommonPages\PageDF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PageExercise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PageFW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PageGK.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PageIndTraining.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PageInjuries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PageMF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PagePositions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PagePredispositions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PageRespPers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PageSquad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PageTeamTrainings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonPages\PageTournament.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Helper1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -594,8 +685,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CommonPages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

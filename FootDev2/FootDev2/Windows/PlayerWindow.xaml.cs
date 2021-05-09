@@ -24,91 +24,75 @@ namespace FootDev2.Windows
         public PlayerWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new Squad();
+            MainFrame.Content = new PageSquad();
         }
 
 
 
         private void BtnTournaments_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new Tournaments();
+            MainFrame.Content = new PageTournament();
         }
 
         private void BtnInjuries_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new Injuries();
+            MainFrame.Content = new PageInjuries();
         }
 
         private void BtnSquad_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new Squad();
+            MainFrame.Content = new PageSquad();
         }
-
-        private void BtnTraits_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Content = new Traits();
-        }
-
-
 
         private void BtnPositions_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new Positions();
+            MainFrame.Content = new PagePositions();
         }
 
         private void BtnPredispositions_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new Predispositions();
+            MainFrame.Content = new PagePredispositions();
         }
 
         private void BtnGkCharacteristics_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new GKCharacteristics();
+            MainFrame.Content = new PageGK();
         }
 
         private void BtnDFCharacteristics_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new DFCharacteristics();
+            MainFrame.Content = new PageDF();
         }
 
         private void BtnMFCharacteristics_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new MFCharacteristics();
+            MainFrame.Content = new PageMF();
         }
 
         private void BtnFWCharacteristics_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new FWCharacteristics();
+            MainFrame.Content = new PageFW();
         }
 
         private void BtnTeamTrainings_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new TeamTrainings();
+            MainFrame.Content = new PageTeamTrainings();
         }
 
         private void BtnIndTrainings_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new IndividualTrainings();
+            MainFrame.Content = new PageIndTraining();
         }
 
         private void BtnExerciseForTest_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new ExcForTest();
+            MainFrame.Content = new PageExercise();
         }
 
-        private void BtnExerciseForTest_Click_1(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Content = new Changes();
-        }
-
-        private void BtnReprimands_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Content = new Reprimands();
-        }
 
         private void BtnRespPeople_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new ResponsiblePerson();
+            MainFrame.Content = new PageRespPers();
         }
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)
