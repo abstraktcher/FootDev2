@@ -1,5 +1,4 @@
-﻿using FootDev2.CommonPages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,24 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using static FootDev2.AppData.AppDataClass;
-using FootDev2.Windows;
 using static FootDev2.HelperClass.CheckRole;
+using FootDev2.CommonPages;
 
 namespace FootDev2.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для ManagerWindow.xaml
+    /// Логика взаимодействия для PlayerWindow.xaml
     /// </summary>
-    public partial class ManagerWindow : Window
+    public partial class PlayerWindow : Window
     {
-        public ManagerWindow()
+        public PlayerWindow()
         {
             InitializeComponent();
             MainFrame.Content = new Squad();
         }
 
-        
+
 
         private void BtnTournaments_Click(object sender, RoutedEventArgs e)
         {
@@ -51,7 +49,7 @@ namespace FootDev2.Windows
             MainFrame.Content = new Traits();
         }
 
-        
+
 
         private void BtnPositions_Click(object sender, RoutedEventArgs e)
         {

@@ -61,6 +61,6 @@
                 Background="BlueViolet"
                 BorderBrush="Aquamarine"
                 BorderThickness="2"
-                FontWeight="Bold"/>
+                FontWeight="Bold" Click="BtnAuthorization_Click"/>
     </Grid>
 </Window>

@@ -18,7 +18,7 @@ using FootDev2.AppData;
 using static FootDev2.HelperClass.CheckRole;
 
 
-namespace FootDev2.Pages
+namespace FootDev2.CommonPages
 {
     /// <summary>
     /// Логика взаимодействия для Tournaments.xaml
