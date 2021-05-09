@@ -300,9 +300,6 @@
     <Compile Include="CommonPages\PageTournament.xaml.cs">
       <DependentUpon>PageTournament.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helper1.xaml.cs">
-      <DependentUpon>Helper1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="HelperClass\Helper.cs" />
     <Compile Include="HelperClass\Helper11.cs" />
     <Compile Include="Pages\Changes.xaml.cs">
@@ -459,10 +456,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CommonPages\PageTournament.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Helper1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

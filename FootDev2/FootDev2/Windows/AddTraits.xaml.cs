@@ -63,6 +63,7 @@ namespace FootDev2.Windows
 
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
         {
+            try { 
 
             if (CmbPlayer.SelectedIndex == 0 || traitsList.Count == 0)
             {
@@ -82,12 +83,17 @@ namespace FootDev2.Windows
                         });
                     }
                 }
+             }
 
-
+            
                 context.SaveChanges();
 
                 Close();
 
+            }
+            catch
+            {
+                MessageBox.Show("Error", "Error");
             }
 
         }
