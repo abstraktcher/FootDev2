@@ -27,24 +27,24 @@ namespace FootDev2.CommonPages
         public PageDF()
         {
             InitializeComponent(); 
-            ListViewDF.ItemsSource = context.ViewDFCharacteristics.ToList();
+            ListViewDF.ItemsSource = context.ViewDFCharacteristics.ToList(); //filling the table with data from the Database from ViewDF
         }
         public void Filter()
         {
-            var list = context.ViewDFCharacteristics.Where(i => i.FullName.Contains(TxtSearch.Text)).ToList();
-            ListViewDF.ItemsSource = list;
+            var list = context.ViewDFCharacteristics.Where(i => i.FullName.Contains(TxtSearch.Text)).ToList(); //declaration of List, assigning a value to it, containing data from the view, where the name contains data from the search
+            ListViewDF.ItemsSource = list; //assigning a table value from this List
 
         }
 
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Filter();
+            Filter(); //filter method application
         }
 
         private void BtnResetFilters_Click(object sender, RoutedEventArgs e)
         {
 
-            TxtSearch.Text = "";
+            TxtSearch.Text = "";//Clearing Text Box
         }
     }
 }

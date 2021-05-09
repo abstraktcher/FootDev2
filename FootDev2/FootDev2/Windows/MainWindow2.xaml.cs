@@ -35,28 +35,26 @@ namespace FootDev2.Windows
 
         private void BtnAuthorization_Click(object sender, RoutedEventArgs e)
         {
-            var accountPlayer = context.Player.ToList().Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).FirstOrDefault();
+            var accountPlayer = context.Player.ToList().Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).FirstOrDefault(); //select an entry from the Database according to the corresponding data of the text fields(Player)
 
-            var accountPerson = context.Personnel.ToList().Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).FirstOrDefault();
+            var accountPerson = context.Personnel.ToList().Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).FirstOrDefault();//select an entry from the Database according to the corresponding data of the text fields(Person)
 
-            var peroncheck = context.Personnel.Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).Select(b => b.IdRole).FirstOrDefault();
-            var playercheck = context.Player.Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).Select(b => b.IdRole).FirstOrDefault();
-            if (peroncheck == 0 && playercheck == 0)
+            if (accountPlayer == null && accountPerson == null) //Checking is there entry or the entered data is not correct
             {
                 MessageBox.Show("Wrong Email or Password", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                if (accountPlayer is Player player)
+                if (accountPlayer is Player player) // If entered data is correct and and this is the player's data, then the Player window opens
                 {
-                    VarCheckRole = context.Player.Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).Select(b => b.IdRole).FirstOrDefault();
+                    VarCheckRole = context.Player.Where(i => i.Email == TextLogin.Text && i.Password == TextPassword.Password).Select(b => b.IdRole).FirstOrDefault(); //assigning a variable to a value
                     PlayerWindow playerwindow = new PlayerWindow();
                     this.Hide();
                     playerwindow.Show();
                     this.Close();
                 }
-
-                if (accountPerson is Personnel person)
+                 
+                if (accountPerson is Personnel person) // If entered data is correct and and this is the manager's data, then the Manager window opens
                 {
 
 
@@ -68,11 +66,11 @@ namespace FootDev2.Windows
                         managerwindow.Show();
                         this.Close();
                     }
-                    if (VarCheckRole == 3)
+                    if (VarCheckRole == 3) // If entered data is correct and and this is the medic's data, then  an error occurs because the window has not been developed yet
                     {
                         MessageBox.Show("Service is temporarily unavailable. We are sorry", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
-                    if (VarCheckRole == 4)
+                    if (VarCheckRole == 4) // If entered data is correct and and this is the coaches data, then  an error occurs because the window has not been developed yet
                     {
                         MessageBox.Show("Service is temporarily unavailable. We are sorry", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }

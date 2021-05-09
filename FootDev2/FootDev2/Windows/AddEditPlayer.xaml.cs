@@ -38,16 +38,9 @@ namespace FootDev2.Windows
             CmbLeg.ItemsSource = context.DominantLeg.ToList();
             CmbLeg.DisplayMemberPath = "Name";
 
-
-
-            //           CmbPositions.ItemsSource = context.Position.ToList();
-            //CmbPositions.DisplayMemberPath = "NamePosition";
-            //CmbPositions.SelectedIndex = 0;
-
-
         }
 
-        public AddEditPlayer(ViewAllInfo player)
+        public AddEditPlayer(ViewAllInfo player)//the selected data is transferred from one window to that
         {
             InitializeComponent();
             CmbGender.ItemsSource = context.Gender.ToList();
@@ -59,7 +52,7 @@ namespace FootDev2.Windows
             CmbLeg.ItemsSource = context.DominantLeg.ToList();
             CmbLeg.DisplayMemberPath = "Name";
 
-
+            //assigning values to fields from the passed object
 
             TxtFirstName.Text = player.FirstName.ToString();
             TxtLastName.Text = player.LastName.ToString();
@@ -73,35 +66,29 @@ namespace FootDev2.Windows
             CmbLeg.SelectedIndex = player.IdDominantLeg - 1;
 
 
-
-            //imgMaterial.Source = new BitmapImage(new Uri(material.Image));
-
-
-            //var supMaterial = Context.MaterialSupp.Where(i => i.IdMaterial == material.ID).ToList();
-
         }
 
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
         {
             
 
-            string[] MAssStr = TxtEmail.Text.Split('@');
+            string[] MAssStr = TxtEmail.Text.Split('@'); //creating an array to check if the entered mail is correct
 
-            if (string.IsNullOrWhiteSpace(TxtFirstName.Text) || string.IsNullOrWhiteSpace(TxtLastName.Text))
+            if (string.IsNullOrWhiteSpace(TxtFirstName.Text) || string.IsNullOrWhiteSpace(TxtLastName.Text)) //checking are Name-fileds filled
             {
                 MessageBox.Show("Write your Name", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             else
             {
-                if (string.IsNullOrWhiteSpace(TxtEmail.Text) || string.IsNullOrWhiteSpace(TxtPhone.Text))
+                if (string.IsNullOrWhiteSpace(TxtEmail.Text) || string.IsNullOrWhiteSpace(TxtPhone.Text))//Checking are Email and Phone fields filled
                 {
                     MessageBox.Show("Write your Email or Phone", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
                 else
                 {
-                    if (DpDateOfBirth.SelectedDate == null)
+                    if (DpDateOfBirth.SelectedDate == null) //checking is Date Of Birth filled
                     {
                         MessageBox.Show("Date of Birth cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
@@ -122,7 +109,7 @@ namespace FootDev2.Windows
                             }
                             else
                             {
-                                if (TxtPhone.Text.Length > 11 || TxtPhone.Text.Length < 10)
+                                if (TxtPhone.Text.Length > 11 || TxtPhone.Text.Length < 10) //checking is number entered properly
                                 {
                                     MessageBox.Show("Phone must have  10 characters ", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                                     return;
@@ -137,16 +124,16 @@ namespace FootDev2.Windows
                                             try
                                             {
 
-                                                if (VarIdPlayer != 0)
-                                                
+                                                if (VarIdPlayer != 0) //the variable is assigned a value if the window was called from the edit button. If not, then the value will be 0
+
                                                 {
 
-                                                    Random random = new Random();
+                                                    Random random = new Random(); 
                                                     var resultClick = MessageBox.Show("Do you want to edit the information?", "Adding new player", MessageBoxButton.YesNo, MessageBoxImage.Question);
                                                     if (resultClick == MessageBoxResult.Yes)
                                                     {
 
-                                                        var PlayerVar = context.Player.Where(i => i.IdPlayer == VarIdPlayer).FirstOrDefault();
+                                                        var PlayerVar = context.Player.Where(i => i.IdPlayer == VarIdPlayer).FirstOrDefault(); //creating variable with data where Id Player equals to Id Player from DataBase
 
                                                         PlayerVar.FirstName = TxtFirstName.Text;
                                                         PlayerVar.LastName = TxtLastName.Text;
@@ -160,10 +147,10 @@ namespace FootDev2.Windows
                                                         PlayerVar.IdRole = 2;
                                                         PlayerVar.DateJoining = DateTime.Now;
                                                         PlayerVar.IdDominantLeg = (byte)(CmbLeg.SelectedIndex + 1);
-
+                                                        //assigning values to this variable to edit infromation
                                                       
 
-                                                        context.SaveChanges();
+                                                        context.SaveChanges(); //saving changes
                                                         MessageBox.Show("Information was successfully changed", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                                                         VarIdPlayer = 0;
                                                         Close();
@@ -173,10 +160,10 @@ namespace FootDev2.Windows
                                                     return;
                                                     }
                                             }
-                                            else
+                                            else //if Variable with Id = 0 then it is not editing it is Adding new player
                                                 
                                                 {
-                                                    Player addPlayer = new Player();
+                                                    Player addPlayer = new Player();//creating a new instance of the class
                                                     addPlayer.FirstName = TxtFirstName.Text;
                                                     addPlayer.LastName = TxtLastName.Text;
                                                     addPlayer.MiddleName = TxtMiddleName.Text;
@@ -189,9 +176,10 @@ namespace FootDev2.Windows
                                                     addPlayer.IdRole = 2;
                                                     addPlayer.DateJoining = DateTime.Now;
                                                     addPlayer.IdDominantLeg = (byte)(CmbLeg.SelectedIndex + 1);
+                                                        
+                                                    
 
-
-                                                    context.Player.Add(addPlayer);
+                                                    context.Player.Add(addPlayer); //adding new player
                                                     context.SaveChanges();
                                                     MessageBox.Show("Player was successfully added", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                                                     Close();
@@ -225,7 +213,7 @@ namespace FootDev2.Windows
 
         private void TxtFirstName_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöÖÄ".IndexOf(e.Text) < 0;
+            e.Handled = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöÖÄ".IndexOf(e.Text) < 0; //symbols that you can enter in this field
         }
 
         private void TxtLastName_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -255,7 +243,7 @@ namespace FootDev2.Windows
 
         private void TxtFirstName_PreviewExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            if (e.Command == ApplicationCommands.Copy ||
+            if (e.Command == ApplicationCommands.Copy || //prohibiting to copy cut and paste
                 e.Command == ApplicationCommands.Cut ||
                 e.Command == ApplicationCommands.Paste)
             {
@@ -317,7 +305,7 @@ namespace FootDev2.Windows
         {
             if (e.Key == Key.Space)
             {
-                e.Handled = true;
+                e.Handled = true;  //prohibiting to press space
             }
         }
 

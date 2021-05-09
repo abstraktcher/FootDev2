@@ -24,24 +24,24 @@ namespace FootDev2.Windows
         public PlayerWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new PageSquad();
+            MainFrame.Content = new PageSquad();   //after logging into the system, Squad Page is automatically opened
         }
 
 
 
         private void BtnTournaments_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new PageTournament();
+            MainFrame.Content = new PageTournament();  //opening a page by clicking a button in a frame
         }
 
         private void BtnInjuries_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new PageInjuries();
+            MainFrame.Content = new PageInjuries();  //opening a page by clicking a button in a frame
         }
 
         private void BtnSquad_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new PageSquad();
+            MainFrame.Content = new PageSquad(); 
         }
 
         private void BtnPositions_Click(object sender, RoutedEventArgs e)
